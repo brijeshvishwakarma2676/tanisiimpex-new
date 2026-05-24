@@ -66,29 +66,31 @@ function CategoryFilter({ active, onChange }) {
 }
 
 // Helper to get beautiful context-appropriate Unsplash images
-const getProductImage = (name, categoryImage) => {
-  const n = name.toLowerCase();
-  if (n.includes('onion')) return 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('pomegranate')) return 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('grapes')) return 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('mango')) return 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('chilli') || n.includes('pepper')) return 'https://images.unsplash.com/photo-1563565088-913497f6c436?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('rice')) return 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('turmeric') || n.includes('cumin') || n.includes('spices')) return 'https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('soybean') || n.includes('soymeal')) return 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('honey')) return 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('coconut')) return 'https://images.unsplash.com/photo-1568644380901-ac42993d7ee2?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('moringa')) return 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('sesame')) return 'https://images.unsplash.com/photo-1584947937397-5b6574f9d2d4?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('oil')) return 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('fertilizer') || n.includes('npk')) return 'https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&w=400&q=80';
-  if (n.includes('private label') || n.includes('sourcing')) return 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=400&q=80';
+const getProductImage = (product, categoryImage) => {
+  if (product.image) return product.image;
+  
+  const name = product.name.toLowerCase();
+  if (name.includes('onion')) return 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('pomegranate')) return 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('grapes')) return 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('mango')) return 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('chilli') || name.includes('pepper')) return 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('rice')) return 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('turmeric') || name.includes('cumin') || name.includes('spices')) return 'https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('soybean') || name.includes('soymeal')) return 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('honey')) return 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('coconut')) return 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('moringa')) return 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('sesame')) return 'https://images.unsplash.com/photo-1536638317175-32449e082d60?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('oil')) return 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('fertilizer') || name.includes('npk')) return 'https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&w=400&q=80';
+  if (name.includes('private label') || name.includes('sourcing')) return 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=400&q=80';
   return categoryImage || 'https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=400&q=80';
 };
 
 // ─── Product Card ─────────────────────────────────────────────────────────────
 function ProductCard({ product, category }) {
-  const imgSrc = getProductImage(product.name, category.image);
+  const imgSrc = getProductImage(product, category.image);
 
   return (
     <motion.div

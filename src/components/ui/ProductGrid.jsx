@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Wheat, ShoppingBag, Factory, Leaf, Sprout, Package, Award } from 'lucide-react';
+import { ArrowRight, Wheat, ShoppingBag, Factory, Leaf, Apple, Flame, Package, Award } from 'lucide-react';
 import { productCategories } from '@/data/products';
 
 const categoryConfig = {
-  agricultural:      { Icon: Wheat,       bg: 'from-emerald-900/90 via-emerald-800/60 to-transparent', cardBg: 'bg-gradient-to-br from-emerald-700 to-green-950' },
-  fmcg:              { Icon: ShoppingBag, bg: 'from-blue-900/90 via-blue-800/60 to-transparent',       cardBg: 'bg-gradient-to-br from-blue-700 to-indigo-950' },
-  organic:           { Icon: Leaf,        bg: 'from-green-900/90 via-green-800/60 to-transparent',     cardBg: 'bg-gradient-to-br from-green-700 to-teal-950' },
-  agrochemicals:     { Icon: Sprout,      bg: 'from-amber-900/90 via-amber-800/60 to-transparent',     cardBg: 'bg-gradient-to-br from-amber-700 to-orange-950' },
-  'custom-sourcing': { Icon: Package,     bg: 'from-rose-900/90 via-rose-800/60 to-transparent',       cardBg: 'bg-gradient-to-br from-rose-700 to-red-950' },
+  'fruits-vegetables': { Icon: Apple,       bg: 'from-emerald-900/90 via-emerald-800/60 to-transparent', cardBg: 'bg-gradient-to-br from-emerald-700 to-green-950' },
+  spices:              { Icon: Flame,       bg: 'from-red-900/90 via-red-800/60 to-transparent',         cardBg: 'bg-gradient-to-br from-red-700 to-amber-950' },
+  agricultural:        { Icon: Wheat,       bg: 'from-amber-900/90 via-amber-800/60 to-transparent',     cardBg: 'bg-gradient-to-br from-amber-700 to-orange-950' },
+  fmcg:                { Icon: ShoppingBag, bg: 'from-blue-900/90 via-blue-800/60 to-transparent',       cardBg: 'bg-gradient-to-br from-blue-700 to-indigo-950' },
+  organic:             { Icon: Leaf,        bg: 'from-green-900/90 via-green-800/60 to-transparent',     cardBg: 'bg-gradient-to-br from-green-700 to-teal-950' },
+  'custom-sourcing':   { Icon: Package,     bg: 'from-slate-900/90 via-slate-800/60 to-transparent',     cardBg: 'bg-gradient-to-br from-slate-700 to-slate-950' },
 };
 
 export default function ProductGrid({ limit }) {

@@ -2,17 +2,17 @@
 
 export const productCategories = [
   {
-    id: 'agricultural',
-    name: 'Agricultural Products',
-    slug: 'agricultural',
-    icon: '🌾',
-    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80',
+    id: 'fruits-vegetables',
+    name: 'Fruits & Vegetables',
+    slug: 'fruits-vegetables',
+    icon: '🍎',
+    image: 'https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=600&q=80',
     color: '#16A34A',
     description:
-      'Fresh & processed agricultural commodities sourced directly from Indian farms with full phytosanitary compliance.',
+      'Fresh, premium-grade fruits and vegetables sourced directly from GlobalG.A.P certified farms in Maharashtra and Gujarat.',
     longDescription:
-      'Tanisii Impex sources premium agricultural products directly from the fertile farms of Maharashtra and across India. Our robust supply chain ensures freshness, quality grading, and complete phytosanitary documentation for every shipment.',
-    tags: ['Onion', 'Pomegranate', 'Grapes', 'Mango', 'Spices', 'Pulses'],
+      'Tanisii Impex specializes in exporting farm-fresh produce with absolute quality control. Our cold-chain shipping channels and sorting processes ensure that onions, pomegranates, grapes, mangoes, bananas, and chillies reach international wholesale markets in pristine, ready-to-sell condition.',
+    tags: ['Onion', 'Pomegranate', 'Grapes', 'Mango', 'Banana', 'Green Chilli'],
     products: [
       {
         name: 'Fresh Onion',
@@ -21,6 +21,7 @@ export const productCategories = [
         moq: '1 MT',
         season: 'Oct–Mar',
         certifications: ['APEDA', 'Phytosanitary'],
+        image: 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=600&q=80',
         description: 'Premium Nashik Red & White onions — medium, large, and jumbo grades available.',
       },
       {
@@ -30,6 +31,7 @@ export const productCategories = [
         moq: '500 KG',
         season: 'Sep–Feb',
         certifications: ['APEDA', 'GlobalG.A.P'],
+        image: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80',
         description: 'Ruby-red Bhagwa pomegranates with high ARILS and sweetness. Export-grade packaging.',
       },
       {
@@ -39,6 +41,7 @@ export const productCategories = [
         moq: '1 MT',
         season: 'Jan–May',
         certifications: ['APEDA', 'EurepGAP'],
+        image: 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=600&q=80',
         description: 'Seedless green & red table grapes from Nashik wine country. EU-compliant residue levels.',
       },
       {
@@ -48,17 +51,44 @@ export const productCategories = [
         moq: '500 KG',
         season: 'Apr–Jun',
         certifications: ['APEDA', 'GI Tag'],
+        image: 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80',
         description: 'The King of Mangoes — GI-certified Hapus Alphonso with unmatched aroma and sweetness.',
       },
       {
-        name: 'Red Chilli (Whole & Powder)',
-        hsCode: '0904.21',
-        origin: 'Guntur / Nashik',
+        name: 'Banana (Cavendish)',
+        hsCode: '0803.90',
+        origin: 'Jalgaon, Maharashtra',
+        moq: '1 MT',
+        season: 'Year-round',
+        certifications: ['APEDA', 'GlobalG.A.P'],
+        image: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80',
+        description: 'Premium Cavendish bananas selected for spotless skin and optimal size.',
+      },
+      {
+        name: 'Green Chillies',
+        hsCode: '0709.60',
+        origin: 'Maharashtra / AP',
         moq: '500 KG',
         season: 'Year-round',
-        certifications: ['Spices Board', 'FSSAI'],
-        description: 'S17 and Teja varieties. Tested for aflatoxin, pesticide residues, and moisture.',
+        certifications: ['APEDA', 'Phytosanitary'],
+        image: 'https://images.unsplash.com/photo-1576763595295-c0371a32af78?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
+        description: 'Vibrant green chillies with high pungency, packed in ventilated export cartons.',
       },
+    ],
+  },
+  {
+    id: 'spices',
+    name: 'Premium Spices & Herbs',
+    slug: 'spices',
+    icon: '🌶️',
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80',
+    color: '#DC2626',
+    description:
+      'High-purity, single-origin and blended Indian spices certified by the Spices Board of India.',
+    longDescription:
+      'India is the spice bowl of the world, and Tanisii Impex delivers that authentic rich aroma directly to your shores. We supply premium single-origin whole seeds, powders, and customized retail spice blends tested meticulously for aflatoxins and pesticide residues.',
+    tags: ['Red Chilli', 'Cumin Seeds', 'Turmeric', 'Sesame Seeds', 'Essential Oils'],
+    products: [
       {
         name: 'Cumin Seeds (Jeera)',
         hsCode: '0909.21',
@@ -66,6 +96,7 @@ export const productCategories = [
         moq: '500 KG',
         season: 'Mar–May',
         certifications: ['Spices Board', 'Organic'],
+        image: 'https://images.unsplash.com/photo-1701189975806-97b11541ec82?q=80&w=1074&auto=format&fit=crop&w=600&q=80',
         description: 'Sortex-clean cumin with high essential oil content. Available conventional & organic.',
       },
       {
@@ -75,7 +106,53 @@ export const productCategories = [
         moq: '250 KG',
         season: 'Year-round',
         certifications: ['Spices Board', 'FSSAI'],
+        image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=600&q=80',
         description: 'Sangli Rajapore turmeric with 3–5% curcumin content. Double-steamed & polished.',
+      },
+      {
+        name: 'Packaged Spices (Retail)',
+        hsCode: '0910.99',
+        origin: 'India',
+        moq: '500 units',
+        season: 'Year-round',
+        certifications: ['FSSAI', 'Spices Board'],
+        image: 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=600&q=80',
+        description: 'Retail-packed garam masala, curry powder, and blended spices under custom labels.',
+      },
+      {
+        name: 'Essential Oils & Oleoresins',
+        hsCode: '3301.29',
+        origin: 'India',
+        moq: '10 KG',
+        season: 'Year-round',
+        certifications: ['Organic', 'ISO 9001'],
+        image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80',
+        description: 'Steam-distilled essential oils — turmeric, ginger, black pepper, and coriander.',
+      },
+    ],
+  },
+  {
+    id: 'agricultural',
+    name: 'Grains & Commodities',
+    slug: 'agricultural',
+    icon: '🌾',
+    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80',
+    color: '#D97706',
+    description:
+      'Bulk agricultural food grains, oilseeds, and pulses sourced directly for wholesale commodity markets.',
+    longDescription:
+      'Our commodity division handles large-scale international exports of grains and feeds. We handle procurement, warehousing, container stuffing, and strict independent inspections (like SGS) to guarantee strict grade matching.',
+    tags: ['Basmati Rice', 'Soybean', 'Soymeal', 'Pulses'],
+    products: [
+      {
+        name: 'Basmati Rice (1121 Extra Long)',
+        hsCode: '1006.30',
+        origin: 'Punjab / Haryana',
+        moq: '2 MT',
+        season: 'Year-round',
+        certifications: ['APEDA', 'FSSAI'],
+        image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80',
+        description: 'Premium 1121 extra-long grain basmati with 8mm+ grain length and aromatic profile.',
       },
       {
         name: 'Soybean / Soymeal',
@@ -84,6 +161,7 @@ export const productCategories = [
         moq: '5 MT',
         season: 'Oct–Mar',
         certifications: ['FSSAI'],
+        image: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
         description: 'Non-GMO soybeans and de-oiled soymeal for animal feed and food processing sectors.',
       },
     ],
@@ -96,20 +174,11 @@ export const productCategories = [
     image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80',
     color: '#2563EB',
     description:
-      'Retail-ready FMCG and packaged consumer goods with private-label and OEM options available.',
+      'Retail-ready consumer goods, herbal products, and private label food packaging lines.',
     longDescription:
-      'Our FMCG division offers a curated range of packaged Indian food products, beverages, and consumer goods. From Basmati rice to organic honey — all products carry FSSAI certification and are export-label compliant.',
-    tags: ['Basmati Rice', 'Honey', 'Coconut Oil', 'Spices', 'Herbal'],
+      'We supply finished consumer packaged goods designed with multi-lingual label compliance and export certificates. Tailored branding, barcoding, and carton formats are fully customizable.',
+    tags: ['Organic Honey', 'Coconut Oil', 'Herbal Supplements'],
     products: [
-      {
-        name: 'Basmati Rice (1121 Extra Long)',
-        hsCode: '1006.30',
-        origin: 'Punjab / Haryana',
-        moq: '2 MT',
-        season: 'Year-round',
-        certifications: ['APEDA', 'FSSAI'],
-        description: 'Premium 1121 extra-long grain basmati with 8mm+ grain length and aromatic profile.',
-      },
       {
         name: 'Organic Honey (Multiflora)',
         hsCode: '0409.00',
@@ -117,6 +186,7 @@ export const productCategories = [
         moq: '100 KG',
         season: 'Year-round',
         certifications: ['FSSAI', 'Organic India'],
+        image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80',
         description: 'Raw, unprocessed multiflora honey with HMF < 40mg/kg and moisture < 20%.',
       },
       {
@@ -126,16 +196,8 @@ export const productCategories = [
         moq: '200 KG',
         season: 'Year-round',
         certifications: ['FSSAI', 'APEDA', 'Organic'],
+        image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80',
         description: 'Cold-pressed VCO with lauric acid > 48%. Available in bulk drums or retail bottles.',
-      },
-      {
-        name: 'Packaged Spices (Retail)',
-        hsCode: '0910.99',
-        origin: 'India',
-        moq: '500 units',
-        season: 'Year-round',
-        certifications: ['FSSAI', 'Spices Board'],
-        description: 'Retail-packed garam masala, curry powder, and blended spices under your brand or ours.',
       },
       {
         name: 'Herbal Supplements',
@@ -144,6 +206,7 @@ export const productCategories = [
         moq: '1000 units',
         season: 'Year-round',
         certifications: ['FSSAI', 'GMP'],
+        image: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=600&q=80',
         description: 'Ashwagandha, Moringa, Amla capsules and powders. Ayurvedic-grade ingredients.',
       },
     ],
@@ -156,10 +219,10 @@ export const productCategories = [
     image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80',
     color: '#059669',
     description:
-      'Certified organic spices, herbal products, essential oils, and seeds — direct from organic farms.',
+      'Certified organic agricultural foods, wellness powders, and seed products direct from farmers.',
     longDescription:
-      'Our organic portfolio is sourced exclusively from certified organic farms with full chain-of-custody traceability. All products carry valid organic certification (NPOP/NOP/EU Organic) and are available in bulk and retail formats.',
-    tags: ['Organic Spices', 'Essential Oils', 'Herbal', 'Seeds', 'Moringa'],
+      'Our dedicated organic catalog holds NPOP, USDA Organic, and EU Organic certifications. Total traceability from farming clusters guarantees high quality standards.',
+    tags: ['Organic Moringa', 'Certified Organic', 'Natural Food'],
     products: [
       {
         name: 'Organic Moringa Powder',
@@ -168,58 +231,8 @@ export const productCategories = [
         moq: '100 KG',
         season: 'Year-round',
         certifications: ['Organic', 'FSSAI'],
+        image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80',
         description: 'Drumstick leaf powder rich in iron and vitamins. Steam-sterilized to <100 CFU/g TPC.',
-      },
-      {
-        name: 'Organic Sesame Seeds (White/Black)',
-        hsCode: '1207.40',
-        origin: 'Gujarat / Rajasthan',
-        moq: '500 KG',
-        season: 'Sep–Dec',
-        certifications: ['Organic', 'Spices Board', 'APEDA'],
-        description: 'Hulled and natural sesame seeds. Purity 99.95%+, aflatoxin-tested.',
-      },
-      {
-        name: 'Organic Essential Oils',
-        hsCode: '3301.29',
-        origin: 'India',
-        moq: '10 KG',
-        season: 'Year-round',
-        certifications: ['Organic', 'ISO 9001'],
-        description: 'Steam-distilled essential oils — turmeric, ginger, black pepper, coriander, cumin.',
-      },
-    ],
-  },
-  {
-    id: 'agrochemicals',
-    name: 'Agro-Chemicals & Fertilizers',
-    slug: 'agrochemicals',
-    icon: '🪴',
-    image: 'https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=600&q=80',
-    color: '#D97706',
-    description:
-      'Crop protection products, bio-fertilizers, and plant nutrition solutions for global agricultural markets.',
-    longDescription:
-      'We supply a carefully curated range of registered crop protection chemicals, bio-stimulants, and organic fertilizers. All products are registered in India and available with full label compliance documentation for destination countries.',
-    tags: ['Bio Fertilizers', 'Pesticides', 'Micronutrients', 'PGR'],
-    products: [
-      {
-        name: 'Water Soluble Fertilizers (NPK)',
-        hsCode: '3105.20',
-        origin: 'India',
-        moq: '1 MT',
-        season: 'Year-round',
-        certifications: ['FCO India'],
-        description: 'Fully water-soluble NPK blends for fertigation and foliar application. Custom NPK ratios available.',
-      },
-      {
-        name: 'Bio Pesticides (Neem-based)',
-        hsCode: '3808.92',
-        origin: 'India',
-        moq: '200 KG',
-        season: 'Year-round',
-        certifications: ['CIB Registered', 'Organic'],
-        description: 'Azadirachtin-based botanical pesticides. Approved for organic farming in EU and USA.',
       },
     ],
   },
@@ -229,11 +242,11 @@ export const productCategories = [
     slug: 'custom-sourcing',
     icon: '📦',
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80',
-    color: '#DC2626',
+    color: '#4B5563',
     description:
-      'Private label, OEM, bulk procurement, and B2B sourcing solutions tailored to your specifications.',
+      'Custom manufacturing, private-label branding, packaging, and product procurement across India.',
     longDescription:
-      'Can\'t find what you need in our catalog? Our pan-India sourcing network spans 500+ verified manufacturers and farms. We handle procurement, quality testing, branding, and logistics — you simply receive your goods.',
+      'Our nationwide sourcing network covers thousands of verified vendors, mills, and farms. We manage the vendor vetting, regulatory audits, custom packing, quality checks, and sea freight logistics.',
     tags: ['Private Label', 'OEM', 'Bulk Procurement', 'B2B Sourcing'],
     products: [
       {
@@ -243,6 +256,7 @@ export const productCategories = [
         moq: 'MOQ varies',
         season: 'Year-round',
         certifications: ['As per product'],
+        image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80',
         description: 'Your brand on Indian products — we handle sourcing, quality control, labeling, and export.',
       },
       {
@@ -252,6 +266,7 @@ export const productCategories = [
         moq: 'By specification',
         season: 'Year-round',
         certifications: ['ISO 9001', 'GMP'],
+        image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
         description: 'Contract manufacturing for food, nutraceuticals, cosmetics, and industrial goods.',
       },
     ],
@@ -314,7 +329,7 @@ export const featuredProducts = [
   {
     name: 'Green Chillies',
     badge: 'Farm Fresh',
-    image: 'https://images.unsplash.com/photo-1563565088-913497f6c436?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1576763595295-c0371a32af78?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
     origin: 'Maharashtra / AP',
     hsCode: '0709.60',
     moq: '500 KG',

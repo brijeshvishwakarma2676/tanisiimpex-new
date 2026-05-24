@@ -12,12 +12,13 @@ export default function ProductCategory() {
   if (!cat) return <Navigate to="/products" replace />;
 
   const gradients = {
-    agricultural: 'from-emerald-800 to-green-950',
+    'fruits-vegetables': 'from-emerald-800 to-green-950',
+    spices: 'from-red-800 to-amber-950',
+    agricultural: 'from-amber-700 to-orange-950',
     fmcg: 'from-blue-800 to-indigo-950',
     industrial: 'from-slate-700 to-slate-950',
     organic: 'from-green-700 to-teal-950',
-    agrochemicals: 'from-amber-700 to-orange-950',
-    'custom-sourcing': 'from-rose-800 to-red-950',
+    'custom-sourcing': 'from-slate-800 to-slate-950',
   };
 
   return (
@@ -66,7 +67,7 @@ export default function ProductCategory() {
             {/* Product list */}
             <div className="lg:col-span-2">
               <h2 className="font-heading text-navy-800 text-2xl mb-6">{cat.products.length} Products Available</h2>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {cat.products.map((p, i) => (
                   <motion.div
                     key={p.name}
@@ -74,38 +75,61 @@ export default function ProductCategory() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.07 }}
-                    className="card p-6"
+                    className="card overflow-hidden group"
                   >
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <h3 className="font-heading font-semibold text-navy-800 text-lg">{p.name}</h3>
-                      <span className="badge-gold shrink-0">HS: {p.hsCode}</span>
-                    </div>
-                    {p.description && (
-                      <p className="text-gray-500 font-body text-sm leading-relaxed mb-4">{p.description}</p>
-                    )}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                      {[
-                        ['Origin', p.origin],
-                        ['MOQ', p.moq],
-                        p.season && ['Season', p.season],
-                      ]
-                        .filter(Boolean)
-                        .map(([k, v]) => (
-                          <div key={k} className="bg-gray-50 rounded-lg p-2.5">
-                            <div className="text-xs text-gray-400 font-body">{k}</div>
-                            <div className="text-sm font-semibold text-navy-700 font-body">{v}</div>
-                          </div>
-                        ))}
-                    </div>
-                    {p.certifications && (
-                      <div className="flex flex-wrap gap-1.5 mt-3">
-                        {p.certifications.map((c) => (
-                          <span key={c} className="badge bg-green-50 text-green-700 text-[10px]">
-                            <CheckCircle size={9} /> {c}
-                          </span>
-                        ))}
+                    <div className="flex flex-col sm:flex-row">
+                      {/* Product Image */}
+                      {p.image && (
+                        <div className="sm:w-48 h-48 sm:h-auto shrink-0 overflow-hidden relative">
+                          <img 
+                            src={p.image} 
+                            alt={p.name} 
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                      )}
+                      
+                      <div className="p-6 flex-1">
+                        <div className="flex items-start justify-between gap-4 mb-3">
+                          <h3 className="font-heading font-semibold text-navy-800 text-xl">{p.name}</h3>
+                          <span className="badge-gold shrink-0">HS: {p.hsCode}</span>
+                        </div>
+                        {p.description && (
+                          <p className="text-gray-500 font-body text-sm leading-relaxed mb-4">{p.description}</p>
+                        )}
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                          {[
+                            ['Origin', p.origin],
+                            ['MOQ', p.moq],
+                            p.season && ['Season', p.season],
+                          ]
+                            .filter(Boolean)
+                            .map(([k, v]) => (
+                              <div key={k} className="bg-gray-50 rounded-lg p-2.5">
+                                <div className="text-xs text-gray-400 font-body">{k}</div>
+                                <div className="text-sm font-semibold text-navy-700 font-body">{v}</div>
+                              </div>
+                            ))}
+                        </div>
+                        <div className="flex flex-wrap items-center justify-between gap-4 mt-5">
+                          {p.certifications && (
+                            <div className="flex flex-wrap gap-1.5">
+                              {p.certifications.map((c) => (
+                                <span key={c} className="badge bg-green-50 text-green-700 text-[10px]">
+                                  <CheckCircle size={9} /> {c}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                          <Link 
+                            to={`/inquiry?product=${encodeURIComponent(p.name)}`}
+                            className="text-navy-800 font-body font-bold text-sm flex items-center gap-1.5 hover:text-gold-500 transition-colors"
+                          >
+                            Inquire Now <ArrowRight size={14} />
+                          </Link>
+                        </div>
                       </div>
-                    )}
+                    </div>
                   </motion.div>
                 ))}
               </div>

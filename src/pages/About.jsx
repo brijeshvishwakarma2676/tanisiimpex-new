@@ -173,38 +173,88 @@ function CoreValues() {
 }
 
 // ─── Team ─────────────────────────────────────────────────────────────────────
+const FemaleAvatar = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full text-gold-300">
+    <defs>
+      <radialGradient id="female-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="#10B981" stopOpacity="0.4"/>
+        <stop offset="100%" stopColor="#10B981" stopOpacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="50" cy="50" r="46" fill="url(#female-glow)" />
+    <circle cx="50" cy="50" r="42" fill="#07162C" stroke="#E5C158" strokeWidth="1.5" />
+    <path d="M50 25c-6.6 0-12 5.4-12 12c0 4.5 2.5 8.4 6.2 10.4c-7.2 2-12.7 8.3-13.8 16.1h39.2c-1.1-7.8-6.6-14.1-13.8-16.1c3.7-2 6.2-5.9 6.2-10.4c0-6.6-5.4-12-12-12z" fill="#E5C158" opacity="0.9" />
+    <path d="M37 32c-2 4-1 9 2 12m22-12c2 4 1 9-2 12" stroke="#E5C158" strokeWidth="1" strokeLinecap="round" opacity="0.7" />
+  </svg>
+);
+
+const MaleAvatar = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full text-gold-300">
+    <defs>
+      <radialGradient id="male-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="#10B981" stopOpacity="0.4"/>
+        <stop offset="100%" stopColor="#10B981" stopOpacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="50" cy="50" r="46" fill="url(#male-glow)" />
+    <circle cx="50" cy="50" r="42" fill="#07162C" stroke="#E5C158" strokeWidth="1.5" />
+    <path d="M50 24c-6.6 0-12 5.4-12 12c0 4.8 2.8 8.9 6.9 10.8c-7.6 2.1-13.4 8.7-14.4 16.7h39c-1-8-6.8-14.6-14.4-16.7c4.1-1.9 6.9-6 6.9-10.8c0-6.6-5.4-12-12-12z" fill="#E5C158" opacity="0.9" />
+  </svg>
+);
+
 function Team() {
   const team = [
-    { name: 'Rajesh Tanisii', role: 'Founder & Managing Director', bio: '20+ years in agricultural exports. Pioneer of Nashik onion exports to Middle East.', initial: 'R' },
-    { name: 'Priya Sharma', role: 'Head of International Trade', bio: 'MBA in International Business. Manages buyer relationships across Europe and Asia.', initial: 'P' },
-    { name: 'Amit Kulkarni', role: 'Quality & Compliance Manager', bio: 'Food technologist with 12 years in pre-shipment inspection and certification management.', initial: 'A' },
-    { name: 'Sneha Patil', role: 'Logistics & Documentation', bio: 'Customs broker and logistics specialist. Ensures zero documentation errors across all shipments.', initial: 'S' },
+    { 
+      name: 'Vishakha M Agarwal', 
+      role: 'FOUNDER & BUSINESS HEAD', 
+      bio: 'Expert in brand positioning, international sourcing, and product curation. Vishakha leads client-centric strategy across agribusiness and global commodity logistics.', 
+      Avatar: FemaleAvatar 
+    },
+    { 
+      name: 'Manish K Agarwal', 
+      role: 'FINANCE & ADMIN HEAD', 
+      bio: 'Expert in export-import compliance, documentation channels, and risk mitigation. Manish directs trade financial controls and operational administration cycles.', 
+      Avatar: MaleAvatar 
+    },
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="section-container">
-        <SectionHeader
-          label="Our Team"
-          heading="The People Behind Tanisii Impex"
-        />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+    <section className="py-20 bg-navy-900 text-white relative overflow-hidden">
+      {/* Background radial soft green gradient aura */}
+      <div className="absolute inset-0 bg-radial-gradient opacity-10 pointer-events-none" />
+      
+      <div className="section-container relative z-10">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <span className="section-label text-gold-300">Leadership Team</span>
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white mt-3 mb-6">Our Team</h2>
+          <p className="text-white/70 font-body leading-relaxed text-base sm:text-lg mb-4">
+            At Tanisii Impex, our team is the cornerstone of global trade excellence. With deep expertise in export-import operations, sourcing, quality assurance, and brand positioning, we deliver innovative, client-centric solutions across markets.
+          </p>
+          <p className="text-white/60 font-body leading-relaxed text-sm">
+            From curating premium gemstones and jewelry to managing agribusiness logistics, our professionals leverage strategic marketing, social media engagement, and robust customer relationship management to drive trust, visibility, and value for our global clientele.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
           {team.map((m, i) => (
             <motion.div
               key={m.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="card p-6 text-center group"
+              transition={{ delay: i * 0.15, duration: 0.6 }}
+              className="bg-navy-800/40 border border-white/5 rounded-3xl p-8 text-center group hover:border-gold-400/20 transition-all duration-300 shadow-xl"
             >
-              <div className="w-20 h-20 rounded-full bg-navy-gradient flex items-center justify-center mx-auto mb-4
-                              shadow-card group-hover:shadow-card-hover transition-shadow">
-                <span className="font-heading font-bold text-white text-3xl">{m.initial}</span>
+              {/* Profile icon container with a soft green neon glow ring */}
+              <div className="w-28 h-28 rounded-full bg-navy-950 flex items-center justify-center mx-auto mb-6
+                              shadow-lg group-hover:shadow-green-500/10 border-2 border-white/10 group-hover:border-gold-400/30 transition-all duration-300">
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <m.Avatar />
+                </div>
               </div>
-              <h3 className="font-heading font-semibold text-navy-800 text-lg mb-1">{m.name}</h3>
-              <div className="badge-gold mb-3">{m.role}</div>
-              <p className="text-gray-500 text-sm font-body leading-relaxed">{m.bio}</p>
+              <h3 className="font-heading font-semibold text-white text-xl mb-1 group-hover:text-gold-300 transition-colors">{m.name}</h3>
+              <div className="inline-block text-gold-400 font-heading font-semibold text-xs tracking-wider uppercase mb-4">{m.role}</div>
+              <p className="text-white/60 text-sm font-body leading-relaxed max-w-sm mx-auto">{m.bio}</p>
             </motion.div>
           ))}
         </div>

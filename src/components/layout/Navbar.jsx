@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu, X, ChevronDown, Phone, Mail,
-  Wheat, ShoppingBag, Factory, Leaf, Sprout, Package,
+  Wheat, ShoppingBag, Factory, Leaf, Apple, Flame, Package,
   Globe, Award, FileText, Headphones, Shield, Ship,
 } from 'lucide-react';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
@@ -15,10 +15,11 @@ const navLinks = [
     label: 'Products',
     to: '/products',
     children: [
-      { label: 'Agricultural Products', to: '/products/agricultural', Icon: Wheat },
+      { label: 'Fruits & Vegetables', to: '/products/fruits-vegetables', Icon: Apple },
+      { label: 'Premium Spices', to: '/products/spices', Icon: Flame },
+      { label: 'Grains & Commodities', to: '/products/agricultural', Icon: Wheat },
       { label: 'FMCG & Consumer Goods', to: '/products/fmcg', Icon: ShoppingBag },
       { label: 'Organic & Natural', to: '/products/organic', Icon: Leaf },
-      { label: 'Agro-Chemicals', to: '/products/agrochemicals', Icon: Sprout },
       { label: 'Custom Sourcing', to: '/products/custom-sourcing', Icon: Package },
     ],
   },

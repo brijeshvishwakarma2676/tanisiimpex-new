@@ -17,10 +17,11 @@ const footerLinks = {
     { label: 'Bulk Inquiry', to: '/inquiry' },
   ],
   categories: [
-    { label: 'Agricultural Products', to: '/products/agricultural' },
+    { label: 'Fruits & Vegetables', to: '/products/fruits-vegetables' },
+    { label: 'Premium Spices', to: '/products/spices' },
+    { label: 'Grains & Commodities', to: '/products/agricultural' },
     { label: 'FMCG & Consumer Goods', to: '/products/fmcg' },
     { label: 'Organic & Natural', to: '/products/organic' },
-    { label: 'Agro-Chemicals', to: '/products/agrochemicals' },
     { label: 'Custom Sourcing', to: '/products/custom-sourcing' },
   ],
 };
