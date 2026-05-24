@@ -11,117 +11,37 @@ import StatCard from '@/components/ui/StatCard';
 import ProductGrid from '@/components/ui/ProductGrid';
 import TestimonialCarousel from '@/components/ui/TestimonialCarousel';
 import CTABanner from '@/components/ui/CTABanner';
+import GlobalMap from '@/components/ui/GlobalMap';
 
-// ─── Hero ─────────────────────────────────────────────────────────────────────
+import { HeroSection as CustomHeroSection } from '@/components/ui/hero-section-2';
+
+// ─── Hero Section ─────────────────────────────────────────────────────────────
 function HeroSection() {
-  const stagger = {
-    hidden: {},
-    show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-  };
-  const item = {
-    hidden: { opacity: 0, y: 32 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
-  };
-
-  const floatStats = [
-    { Icon: Package, value: '500+', label: 'Products in Catalog' },
-    { Icon: Globe, value: '30+', label: 'Countries Served' },
-    { Icon: Award, value: '15+', label: 'Years Experience' },
-    { Icon: Users, value: '1000+', label: 'Global Clients' },
-  ];
-
   return (
-    <section className="relative min-h-[92vh] bg-hero-gradient flex items-center overflow-hidden">
-      {/* Dot grid */}
-      <div
-        className="absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage: 'radial-gradient(circle, #D4A017 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }}
-      />
-      {/* Orbs */}
-      <div className="absolute top-1/4 right-1/3 w-96 h-96 rounded-full bg-gold-400/8 blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/6 w-64 h-64 rounded-full bg-navy-500/40 blur-2xl" />
-
-      <div className="section-container relative z-10 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
-          {/* Left */}
-          <motion.div variants={stagger} initial="hidden" animate="show">
-            <motion.div variants={item}>
-              <span className="inline-flex items-center gap-2 section-label text-gold-300">
-                <MapPin size={13} /> Nashik, Maharashtra — India
-              </span>
-            </motion.div>
-            <motion.h1 variants={item} className="mt-4 font-heading font-bold text-white leading-tight text-balance">
-              Your Trusted Partner in{' '}
-              <span className="text-gradient-gold">Global Trade</span>
-            </motion.h1>
-            <motion.p variants={item} className="mt-6 text-white/70 text-lg font-body leading-relaxed max-w-xl">
-              Premium Indian Exports — Delivered Worldwide with Reliability, Quality &amp; Trust.
-              Agricultural produce, FMCG, and organic goods shipped to 30+ countries.
-            </motion.p>
-            <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 mt-8">
-              <Link to="/products" className="btn-primary text-base px-8 py-4">
-                Explore Products <ArrowRight size={18} />
-              </Link>
-              <Link to="/inquiry" className="btn-outline text-base px-8 py-4">
-                Get a Free Quote
-              </Link>
-            </motion.div>
-            <motion.div variants={item} className="flex flex-wrap gap-2.5 mt-7">
-              {['ISO 9001:2015', 'APEDA Registered', 'FIEO Member', '30+ Countries'].map((b) => (
-                <span key={b} className="badge bg-white/10 text-white/80 border border-white/15 text-xs">
-                  <CheckCircle size={11} className="text-gold-300 shrink-0" /> {b}
-                </span>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Right — stat cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:grid grid-cols-2 gap-4"
-          >
-            {floatStats.map(({ Icon, value, label }, i) => (
-              <motion.div
-                key={label}
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4 + i * 0.8, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 }}
-                className="glass rounded-2xl p-6 text-white"
-              >
-                <Icon size={28} className="text-gold-300 mb-3" />
-                <div className="font-heading font-bold text-3xl text-gold-300">{value}</div>
-                <div className="text-white/60 text-sm font-body mt-1">{label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Certification marquee */}
-      <div className="absolute bottom-0 left-0 right-0 bg-navy-900/80 backdrop-blur-sm border-t border-white/10 py-3 overflow-hidden">
-        <div className="flex animate-marquee whitespace-nowrap">
-          {[
-            'ISO 9001:2015 Certified', 'APEDA Registered', 'Exporting to 30+ Nations',
-            '10,000+ Shipments Delivered', 'FIEO Member', 'Spices Board Certified',
-            'FOB · CIF · DDP Supported', 'LC · TT · DP Payment Terms',
-            'DGFT Authorized Exporter', 'Organic Products Available',
-          ].flatMap((t, i) => [
-            <span key={`a${i}`} className="text-white/55 text-[11px] font-body mx-8 shrink-0 flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-gold-400 inline-block" />
-              {t}
-            </span>,
-            <span key={`b${i}`} className="text-white/55 text-[11px] font-body mx-8 shrink-0 flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-gold-400 inline-block" />
-              {t}
-            </span>,
-          ])}
-        </div>
-      </div>
-    </section>
+    <CustomHeroSection
+      logo={{
+        url: "/images/logo.png",
+        alt: "Tanisii Impex Logo",
+      }}
+      slogan="MIRA ROAD, MUMBAI — INDIA"
+      title={
+        <>
+          Your Trusted Partner in <br />
+          <span className="text-gold-400">Global Trade</span>
+        </>
+      }
+      subtitle="Premium Indian Exports — Delivered Worldwide with Reliability, Quality & Trust. Agricultural produce, FMCG, and organic goods shipped to 30+ countries."
+      callToAction={{
+        text: "EXPLORE PRODUCTS",
+        href: "/products",
+      }}
+      backgroundImage="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&auto=format&fit=crop&q=80"
+      contactInfo={{
+        website: "www.tanisiiimpex.com",
+        phone: "+91 91521 21077",
+        address: "1403, A Wing, Vasudev Paradise, Kanakia Road, Near Unique Garden, Mira Road, Mumbai",
+      }}
+    />
   );
 }
 
@@ -170,7 +90,7 @@ function AboutSnapshot() {
   return (
     <section className="py-20 bg-white">
       <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Visual grid */}
           <motion.div
             initial={{ opacity: 0, x: -32 }}
@@ -179,7 +99,7 @@ function AboutSnapshot() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
               {iconBoxes.map(({ Icon, label, bg }, i) => (
                 <motion.div
                   key={label}
@@ -187,10 +107,10 @@ function AboutSnapshot() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className={`${bg} rounded-2xl p-5 flex flex-col items-center justify-center gap-2 text-white aspect-square`}
+                  className={`${bg} rounded-2xl p-4 md:p-5 flex flex-col items-center justify-center gap-2 text-white aspect-square shadow-sm`}
                 >
-                  <Icon size={28} className="opacity-90" />
-                  <span className="text-[10px] font-body text-white/70 text-center leading-tight">{label}</span>
+                  <Icon size={24} className="opacity-90 md:w-7 md:h-7" />
+                  <span className="text-[10px] md:text-xs font-body text-white/80 text-center leading-tight">{label}</span>
                 </motion.div>
               ))}
             </div>
@@ -210,7 +130,7 @@ function AboutSnapshot() {
           >
             <SectionHeader align="left" label="About Tanisii Impex" heading="Rooted in India. Trusted Globally." />
             <div className="mt-6 space-y-4 text-gray-600 font-body leading-relaxed">
-              <p>Founded in Nashik — India's premier agricultural hub — Tanisii Impex has grown into a globally trusted export house with presence in 30+ countries across five continents.</p>
+              <p>Founded in Mumbai — India's premier trade gateway — Tanisii Impex has grown into a globally trusted export house with presence in 30+ countries across five continents.</p>
               <p>We handle everything from farm-gate procurement to CIF delivery, ensuring our buyers experience zero friction throughout the trade cycle.</p>
               <p>With ISO 9001:2015 certification, APEDA registration, and a dedicated team of trade professionals, we deliver not just products — but peace of mind.</p>
             </div>
@@ -321,41 +241,90 @@ function ProcessSection() {
 
 // ─── Global Reach Teaser ──────────────────────────────────────────────────────
 function GlobalReachTeaser() {
-  const regions = [
-    { label: 'Middle East', Icon: Globe },
-    { label: 'Africa', Icon: Globe },
-    { label: 'Europe', Icon: Globe },
-    { label: 'Southeast Asia', Icon: Globe },
-    { label: 'Americas', Icon: Globe },
-    { label: 'CIS Countries', Icon: Globe },
-  ];
   return (
     <section className="py-20 bg-white">
       <div className="section-container">
         <SectionHeader
-          label="Global Presence"
-          heading="From Nashik to the World"
-          subtext="We ship to buyers across six global regions — from the souks of Dubai to supermarkets in London."
+          label="Global Scale"
+          heading="Interactive Trade Routes"
+          subtext="Tracking live shipment corridors from India's primary ports to wholesale hubs across the globe."
         />
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {regions.map(({ label, Icon }, i) => (
-            <motion.div
-              key={label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="text-center p-4 rounded-2xl bg-navy-50 border border-navy-100 hover:border-gold-300 hover:shadow-gold transition-all"
-            >
-              <Globe size={22} className="text-navy-400 mx-auto mb-2" />
-              <div className="text-sm font-body font-semibold text-navy-700">{label}</div>
-            </motion.div>
-          ))}
+        <div className="mt-12">
+          <GlobalMap />
         </div>
-        <div className="text-center mt-8">
+        <div className="text-center mt-10">
           <Link to="/global-reach" className="btn-outline-navy">
-            View Full Global Reach <ArrowRight size={16} />
+            Explore Global Footprint <ArrowRight size={16} />
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Export Logistics & Incoterms ─────────────────────────────────────────────
+function LogisticsSection() {
+  const incoterms = [
+    { term: 'FOB', name: 'Free On Board', desc: 'We deliver goods to the port of origin (e.g. JNPT Mumbai).' },
+    { term: 'CIF', name: 'Cost, Insurance & Freight', desc: 'We handle freight and insurance to your destination port.' },
+    { term: 'DDP', name: 'Delivered Duty Paid', desc: 'End-to-end delivery right to your warehouse facility.' },
+  ];
+  const containers = [
+    { type: '20ft Dry', desc: 'Ideal for heavy, non-perishable goods like spices and rice.' },
+    { type: '40ft HC', desc: 'High Cube containers for maximum volume efficiency.' },
+    { type: '40ft Reefer', desc: 'Temperature-controlled for fresh produce like onions and fruits.' },
+  ];
+
+  return (
+    <section className="py-20 bg-gray-50 border-t border-gray-100">
+      <div className="section-container">
+        <SectionHeader 
+          label="Shipping & Logistics" 
+          heading="Export Grade Packaging & Logistics" 
+          subtext="We ensure your cargo arrives in pristine condition with industry-standard maritime logistics." 
+        />
+        
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-10 mt-10 md:mt-16">
+          <div className="bg-white rounded-3xl p-6 md:p-8 shadow-card border border-gray-100 relative overflow-hidden">
+            <div className="absolute -right-6 -top-6 w-32 h-32 bg-navy-50 rounded-full blur-3xl opacity-50" />
+            <div className="flex items-center gap-3 md:gap-4 mb-6 relative z-10">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-navy-50 text-navy-600 rounded-xl flex items-center justify-center shrink-0">
+                <Ship size={20} className="md:w-6 md:h-6" />
+              </div>
+              <h3 className="font-heading font-bold text-navy-800 text-xl md:text-2xl">Supported Incoterms</h3>
+            </div>
+            <div className="space-y-4 md:space-y-5 relative z-10">
+              {incoterms.map(term => (
+                <div key={term.term} className="flex gap-3 md:gap-4 items-start">
+                  <div className="w-14 md:w-16 shrink-0 font-heading font-bold text-base md:text-lg text-gold-500 bg-gold-50 text-center py-1 md:py-1.5 rounded-lg">{term.term}</div>
+                  <div>
+                    <div className="font-body font-semibold text-navy-800 text-sm mb-0.5 md:mb-1">{term.name}</div>
+                    <div className="font-body text-gray-500 text-xs md:text-sm leading-relaxed">{term.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-3xl p-6 md:p-8 shadow-card border border-gray-100 relative overflow-hidden">
+            <div className="absolute -right-6 -top-6 w-32 h-32 bg-emerald-50 rounded-full blur-3xl opacity-50" />
+            <div className="flex items-center gap-3 md:gap-4 mb-6 relative z-10">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                <Package size={20} className="md:w-6 md:h-6" />
+              </div>
+              <h3 className="font-heading font-bold text-navy-800 text-xl md:text-2xl">Container Capacities</h3>
+            </div>
+            <div className="space-y-4 md:space-y-5 relative z-10">
+              {containers.map(cont => (
+                <div key={cont.type} className="flex gap-3 md:gap-4 items-start">
+                  <div className="w-20 md:w-24 shrink-0 font-heading font-bold text-xs md:text-sm text-emerald-600 bg-emerald-50 text-center py-2 md:py-2.5 rounded-lg">{cont.type}</div>
+                  <div className="flex items-center mt-1 md:mt-0">
+                    <div className="font-body text-gray-500 text-xs md:text-sm leading-relaxed">{cont.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -408,8 +377,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Tanisii Impex | Premium Indian Exporter — Nashik, Maharashtra</title>
-        <meta name="description" content="Tanisii Impex — leading Indian export company from Nashik specializing in agricultural products, FMCG, spices, and organic products. Trusted in 30+ countries." />
+        <title>Tanisii Impex | Premium Indian Exporter — Mira Road, Mumbai</title>
+        <meta name="description" content="Tanisii Impex — leading Indian export company from Mumbai specializing in agricultural products, FMCG, spices, and organic products. Trusted in 30+ countries." />
       </Helmet>
       <HeroSection />
       <TrustBar />
@@ -426,6 +395,7 @@ export default function Home() {
       <WhyChooseUs />
       <GlobalReachTeaser />
       <ProcessSection />
+      <LogisticsSection />
       <section className="py-20 bg-white">
         <div className="section-container">
           <SectionHeader label="Client Reviews" heading="What Our Global Clients Say" subtext="Trusted by buyers from UAE to UK, Nigeria to Singapore." />

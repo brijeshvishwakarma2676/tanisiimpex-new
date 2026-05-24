@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { MessageCircle, X } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '919876543210';
+const WHATSAPP_NUMBER = '919152121077';
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hello! I'm interested in importing products from Tanisii Impex. Please share details about your products and pricing."
 );

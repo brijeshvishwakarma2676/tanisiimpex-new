@@ -6,12 +6,13 @@ import { Search, ArrowRight, Filter } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
 import { productCategories, featuredProducts } from '@/data/products';
 import CTABanner from '@/components/ui/CTABanner';
+import ContainerCalculator from '@/components/ui/ContainerCalculator';
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function ProductsHero({ search, setSearch }) {
   return (
     <section className="bg-hero-gradient py-28 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-gold-400 blur-3xl" />
       </div>
       <div className="section-container relative z-10 text-center">
@@ -22,7 +23,7 @@ function ProductsHero({ search, setSearch }) {
             500+ products across 6 categories. All export-ready with full documentation support.
           </p>
           {/* Search */}
-          <div className="max-w-lg mx-auto relative">
+          <div className="max-w-lg mx-auto relative z-20">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
             <input
               type="text"
@@ -30,7 +31,7 @@ function ProductsHero({ search, setSearch }) {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full pl-11 pr-4 py-4 rounded-2xl bg-white border border-white/20 text-gray-800
-                         placeholder:text-gray-400 font-body text-sm shadow-lg focus:outline-none focus:ring-2 focus:ring-gold-400"
+                         placeholder:text-gray-400 font-body text-sm shadow-lg focus:outline-none focus:ring-2 focus:ring-gold-400 relative z-30"
             />
           </div>
         </motion.div>
@@ -64,59 +65,95 @@ function CategoryFilter({ active, onChange }) {
   );
 }
 
+// Helper to get beautiful context-appropriate Unsplash images
+const getProductImage = (name, categoryImage) => {
+  const n = name.toLowerCase();
+  if (n.includes('onion')) return 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('pomegranate')) return 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('grapes')) return 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('mango')) return 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('chilli') || n.includes('pepper')) return 'https://images.unsplash.com/photo-1563565088-913497f6c436?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('rice')) return 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('turmeric') || n.includes('cumin') || n.includes('spices')) return 'https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('soybean') || n.includes('soymeal')) return 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('honey')) return 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('coconut')) return 'https://images.unsplash.com/photo-1568644380901-ac42993d7ee2?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('moringa')) return 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('sesame')) return 'https://images.unsplash.com/photo-1584947937397-5b6574f9d2d4?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('oil')) return 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('fertilizer') || n.includes('npk')) return 'https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&w=400&q=80';
+  if (n.includes('private label') || n.includes('sourcing')) return 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=400&q=80';
+  return categoryImage || 'https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=400&q=80';
+};
+
 // ─── Product Card ─────────────────────────────────────────────────────────────
 function ProductCard({ product, category }) {
+  const imgSrc = getProductImage(product.name, category.image);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="card p-5 flex flex-col gap-3"
+      className="card overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300 group"
     >
-      <div className="flex items-start justify-between">
-        <h3 className="font-heading font-semibold text-navy-800 text-base leading-tight">{product.name}</h3>
-        <span className="badge-navy shrink-0 ml-2">{category.icon}</span>
+      {/* Card Image header */}
+      <div className="h-40 w-full overflow-hidden relative bg-navy-50">
+        <img 
+          src={imgSrc} 
+          alt={product.name} 
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute top-3 right-3 z-10 w-8 h-8 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm">
+          <span className="text-lg">{category.icon}</span>
+        </div>
       </div>
 
-      <p className="text-gray-500 text-sm font-body leading-relaxed flex-1">{product.description}</p>
+      <div className="p-5 flex flex-col flex-1 gap-3">
+        <div className="flex items-start justify-between">
+          <h3 className="font-heading font-semibold text-navy-800 text-base leading-tight">{product.name}</h3>
+        </div>
 
-      <div className="grid grid-cols-2 gap-2 text-xs font-body">
-        <div>
-          <span className="text-gray-400">HS Code:</span>
-          <div className="font-semibold text-navy-700">{product.hsCode}</div>
-        </div>
-        <div>
-          <span className="text-gray-400">Origin:</span>
-          <div className="font-semibold text-navy-700">{product.origin}</div>
-        </div>
-        <div>
-          <span className="text-gray-400">MOQ:</span>
-          <div className="font-semibold text-navy-700">{product.moq}</div>
-        </div>
-        {product.season && (
+        <p className="text-gray-500 text-sm font-body leading-relaxed flex-1">{product.description}</p>
+
+        <div className="grid grid-cols-2 gap-2 text-xs font-body border-t border-gray-100 pt-3">
           <div>
-            <span className="text-gray-400">Season:</span>
-            <div className="font-semibold text-navy-700">{product.season}</div>
+            <span className="text-gray-400">HS Code:</span>
+            <div className="font-semibold text-navy-700">{product.hsCode}</div>
+          </div>
+          <div>
+            <span className="text-gray-400">Origin:</span>
+            <div className="font-semibold text-navy-700">{product.origin}</div>
+          </div>
+          <div>
+            <span className="text-gray-400">MOQ:</span>
+            <div className="font-semibold text-navy-700">{product.moq}</div>
+          </div>
+          {product.season && (
+            <div>
+              <span className="text-gray-400">Season:</span>
+              <div className="font-semibold text-navy-700">{product.season}</div>
+            </div>
+          )}
+        </div>
+
+        {product.certifications && (
+          <div className="flex flex-wrap gap-1.5 pt-1">
+            {product.certifications.map((c) => (
+              <span key={c} className="badge bg-green-50 text-green-700 text-[10px]">{c}</span>
+            ))}
           </div>
         )}
+
+        <Link
+          to={`/inquiry?product=${encodeURIComponent(product.name)}&incoterm=FOB`}
+          className="mt-1 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-navy-800 text-white text-sm font-semibold
+                     hover:bg-navy-700 transition-colors"
+        >
+          Request Quote <ArrowRight size={14} />
+        </Link>
       </div>
-
-      {product.certifications && (
-        <div className="flex flex-wrap gap-1.5">
-          {product.certifications.map((c) => (
-            <span key={c} className="badge bg-green-50 text-green-700 text-[10px]">{c}</span>
-          ))}
-        </div>
-      )}
-
-      <Link
-        to="/inquiry"
-        className="mt-1 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-navy-800 text-white text-sm font-semibold
-                   hover:bg-navy-700 transition-colors"
-      >
-        Request Quote <ArrowRight size={14} />
-      </Link>
     </motion.div>
   );
 }
@@ -129,35 +166,53 @@ function FeaturedProducts() {
         <SectionHeader label="Star Exports" heading="Our Signature Products" subtext="High-demand Indian produce globally recognized for superior quality." />
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredProducts.map((fp) => (
-            <div key={fp.name} className="bg-white rounded-3xl shadow-card p-6 flex flex-col transition-transform hover:-translate-y-1">
-              <div className="flex justify-between items-start mb-4">
-                <span className="badge bg-gold-400 text-navy-800 font-semibold">{fp.badge}</span>
-                <span className="text-3xl">{fp.icon}</span>
-              </div>
-              <h3 className="font-heading text-navy-800 text-xl mb-3">{fp.name}</h3>
-              <p className="text-gray-600 text-sm font-body leading-relaxed mb-5 flex-1">{fp.description}</p>
-              
-              <div className="grid grid-cols-2 gap-3 mb-5 text-xs font-body border-t border-gray-100 pt-4">
-                <div>
-                  <div className="text-gray-400">HS Code</div>
-                  <div className="font-semibold text-navy-800">{fp.hsCode}</div>
+            <div key={fp.name} className="bg-white rounded-3xl shadow-card overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover group">
+              {/* Product Image */}
+              <div className="h-52 overflow-hidden relative">
+                <img 
+                  src={fp.image} 
+                  alt={fp.name} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="badge bg-gold-400 text-navy-800 font-semibold shadow-sm">{fp.badge}</span>
                 </div>
-                <div>
-                  <div className="text-gray-400">Origin</div>
-                  <div className="font-semibold text-navy-800">{fp.origin}</div>
-                </div>
-                <div>
-                  <div className="text-gray-400">MOQ</div>
-                  <div className="font-semibold text-navy-800">{fp.moq}</div>
-                </div>
-                <div>
-                  <div className="text-gray-400">Season</div>
-                  <div className="font-semibold text-navy-800">{fp.season}</div>
+                <div className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm">
+                  <span className="text-xl">{fp.icon}</span>
                 </div>
               </div>
-              
-              <div className="flex gap-2 mt-auto">
-                <Link to="/inquiry" className="btn-primary flex-1 text-center py-2 text-sm">Get Quote</Link>
+
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="font-heading font-bold text-navy-800 text-xl mb-3">{fp.name}</h3>
+                <p className="text-gray-500 text-sm font-body leading-relaxed mb-5 flex-1">{fp.description}</p>
+                
+                <div className="grid grid-cols-2 gap-3 mb-5 text-xs font-body border-t border-gray-100 pt-4">
+                  <div>
+                    <div className="text-gray-400">HS Code</div>
+                    <div className="font-semibold text-navy-800">{fp.hsCode}</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-400">Origin</div>
+                    <div className="font-semibold text-navy-800">{fp.origin}</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-400">MOQ</div>
+                    <div className="font-semibold text-navy-800">{fp.moq}</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-400">Season</div>
+                    <div className="font-semibold text-navy-800">{fp.season}</div>
+                  </div>
+                </div>
+                
+                <div className="flex gap-2 mt-auto">
+                  <Link 
+                    to={`/inquiry?product=${encodeURIComponent(fp.name)}&incoterm=CIF`} 
+                    className="btn-primary w-full text-center py-3 text-sm justify-center"
+                  >
+                    Request Bulk Quote
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
@@ -193,11 +248,28 @@ export default function Products() {
     <>
       <Helmet>
         <title>Products | Tanisii Impex — Agricultural, FMCG, Industrial, Organic Exports</title>
-        <meta name="description" content="Browse Tanisii Impex's export product catalog — agricultural produce, FMCG, industrial goods, organic products, and custom sourcing from Nashik, India." />
+        <meta name="description" content="Browse Tanisii Impex's export product catalog — agricultural produce, FMCG, industrial goods, organic products, and custom sourcing from Mumbai, India." />
       </Helmet>
 
       <ProductsHero search={search} setSearch={setSearch} />
-      <FeaturedProducts />
+      
+      {!search && <FeaturedProducts />}
+
+      {/* Container Cargo Estimator Section */}
+      {!search && (
+        <section className="py-20 bg-white border-t border-b border-gray-100">
+          <div className="section-container">
+            <SectionHeader
+              label="B2B Tool"
+              heading="Container Cargo Load Estimator"
+              subtext="Select a commodity and input your target order weight to estimate container counts, package units, temp controls, and stowage specs."
+            />
+            <div className="mt-12">
+              <ContainerCalculator />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Product grid with filters */}
       <section className="py-16 bg-gray-50">

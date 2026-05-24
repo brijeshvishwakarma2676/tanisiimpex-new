@@ -29,39 +29,50 @@ export default function ProductGrid({ limit }) {
           >
             <Link
               to={`/products/${cat.slug}`}
-              className="group relative block h-72 rounded-2xl overflow-hidden shadow-card"
+              className="group relative block h-72 rounded-2xl overflow-hidden shadow-card bg-navy-900"
             >
               {/* Background */}
-              <div className={`absolute inset-0 ${cfg.cardBg} transition-transform duration-500 group-hover:scale-105`} />
+              {cat.image ? (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${cat.image})` }}
+                />
+              ) : (
+                <div className={`absolute inset-0 ${cfg.cardBg} transition-transform duration-500 group-hover:scale-105`} />
+              )}
 
               {/* Dot pattern */}
               <div className="absolute inset-0 opacity-10"
                 style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
-              {/* Gradient overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-t ${cfg.bg} transition-opacity duration-300 group-hover:opacity-100`} />
+              {/* Bottom-focused gradient overlay for reading contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900/95 via-navy-900/50 to-transparent" />
 
               {/* Icon top-left */}
-              <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center backdrop-blur-sm">
+              <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center backdrop-blur-sm relative z-10">
                 <Icon size={24} className="text-white" />
               </div>
 
               {/* Product count badge */}
-              <div className="absolute top-4 right-4">
+              <div className="absolute top-4 right-4 z-10">
                 <span className="badge bg-white/20 text-white text-[10px] backdrop-blur-sm">
                   <Award size={10} /> {cat.products.length} Products
                 </span>
               </div>
 
               {/* Content bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <h3 className="font-heading font-semibold text-white text-xl mb-2 leading-tight">{cat.name}</h3>
+              <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+                <h3 className="font-heading font-bold text-white text-xl mb-2.5 leading-tight tracking-wide drop-shadow-sm">{cat.name}</h3>
                 <div className="flex flex-wrap gap-1.5 mb-3">
                   {cat.tags.slice(0, 3).map((tag) => (
-                    <span key={tag} className="badge bg-white/20 text-white text-[10px]">{tag}</span>
+                    <span key={tag} className="px-2 py-0.5 rounded-md bg-white text-navy-900 text-[10px] font-body font-bold tracking-wide shadow-sm">
+                      {tag}
+                    </span>
                   ))}
                   {cat.tags.length > 3 && (
-                    <span className="badge bg-white/20 text-white text-[10px]">+{cat.tags.length - 3} more</span>
+                    <span className="px-2 py-0.5 rounded-md bg-white/80 text-navy-900 text-[10px] font-body font-bold shadow-sm">
+                      +{cat.tags.length - 3} more
+                    </span>
                   )}
                 </div>
                 <div className="flex items-center gap-1.5 text-gold-300 text-sm font-semibold font-body

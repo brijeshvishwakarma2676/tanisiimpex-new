@@ -52,22 +52,22 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/55 text-sm leading-relaxed mb-5 font-body">
-              Premium Indian exports from Nashik, Maharashtra. Trusted by B2B buyers in 30+ countries across
+              Premium Indian exports from Mira Road, Mumbai. Trusted by B2B buyers in 30+ countries across
               the globe since 2009.
             </p>
             <div className="space-y-2.5 text-sm text-white/60 font-body">
               <div className="flex gap-2">
                 <MapPin size={15} className="text-gold-400 shrink-0 mt-0.5" />
-                <span>Plot No. 14, MIDC Industrial Area,<br />Nashik, Maharashtra – 422010, India</span>
+                <span>1403, A Wing, Vasudev Paradise,<br />Kanakia Road, Near Unique Garden,<br />Mira Road, Mumbai - 401107, India</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={14} className="text-gold-400 shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-gold-300 transition-colors">+91 98765 43210</a>
+                <a href="tel:+919152121077" className="hover:text-gold-300 transition-colors">+91 91521 21077</a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-gold-400 shrink-0" />
-                <a href="mailto:info@tanisiiimpex.com" className="hover:text-gold-300 transition-colors">
-                  info@tanisiiimpex.com
+                <a href="mailto:tenisiimpex@gmail.com" className="hover:text-gold-300 transition-colors">
+                  tenisiimpex@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -90,7 +90,7 @@ export default function Footer() {
                 </a>
               ))}
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919152121077"
                 aria-label="WhatsApp"
                 className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center text-white/60
                            hover:bg-green-500 hover:text-white transition-all duration-200"
@@ -180,7 +180,7 @@ export default function Footer() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/919876543210?text=Hello%2C%20I'm%20interested%20in%20importing%20from%20Tanisii%20Impex."
+              href="https://wa.me/919152121077?text=Hello%2C%20I'm%20interested%20in%20importing%20from%20Tanisii%20Impex."
               className="mt-6 flex items-center gap-2.5 bg-green-600/20 border border-green-500/30 text-green-400
                          rounded-xl px-4 py-3 text-sm font-semibold hover:bg-green-600/30 transition-colors"
             >
@@ -194,13 +194,13 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="section-container py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40 font-body">
-          <div>© {new Date().getFullYear()} Tanisii Impex. All rights reserved. Nashik, Maharashtra, India.</div>
+          <div>© {new Date().getFullYear()} Tanisii Impex. All rights reserved. Mira Road, Mumbai, India.</div>
           <div className="flex items-center gap-4">
             <Link to="/privacy-policy" className="hover:text-gold-300 transition-colors">Privacy Policy</Link>
             <span>•</span>
             <Link to="/terms" className="hover:text-gold-300 transition-colors">Terms of Use</Link>
             <span>•</span>
-            <span>IEC: AABCT1234A</span>
+            <span>IEC: AAMCT5095R</span>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function Inquiry() {
           </div>
           <h2 className="font-heading text-navy-800 text-2xl mb-3">Inquiry Submitted!</h2>
           <p className="text-gray-500 font-body mb-2">We'll respond within <strong>24 hours</strong> with a Proforma Invoice.</p>
-          <p className="text-gray-400 font-body text-sm mb-8">For urgent: WhatsApp +91 98765 43210</p>
+          <p className="text-gray-400 font-body text-sm mb-8">For urgent: WhatsApp +91 91521 21077</p>
           <button onClick={() => setSubmitted(false)} className="btn-primary w-full justify-center">
             Submit Another <ArrowRight size={16} />
           </button>

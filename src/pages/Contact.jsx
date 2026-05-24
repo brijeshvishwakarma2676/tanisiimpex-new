@@ -6,9 +6,9 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { useState } from 'react';
 
 const contactInfo = [
-  { Icon: MapPin, label: 'Address', value: 'Plot No. 14, MIDC Industrial Area,\nNashik, Maharashtra – 422010, India' },
-  { Icon: Phone, label: 'Phone / WhatsApp', value: '+91 98765 43210', href: 'tel:+919876543210' },
-  { Icon: Mail, label: 'Email', value: 'info@tanisiiimpex.com', href: 'mailto:info@tanisiiimpex.com' },
+  { Icon: MapPin, label: 'Address', value: '1403, A Wing, Vasudev Paradise,\nKanakia Road, Near Unique Garden,\nMira Road, Mumbai - 401107, India' },
+  { Icon: Phone, label: 'Phone / WhatsApp', value: '+91 91521 21077', href: 'tel:+919152121077' },
+  { Icon: Mail, label: 'Email', value: 'tenisiimpex@gmail.com', href: 'mailto:tenisiimpex@gmail.com' },
   { Icon: Clock, label: 'Business Hours', value: 'Mon – Sat: 9:00 AM – 7:00 PM IST' },
 ];
 
@@ -123,8 +123,8 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Tanisii Impex — Nashik, Maharashtra, India</title>
-        <meta name="description" content="Contact Tanisii Impex for export inquiries. Nashik, Maharashtra, India. Phone, WhatsApp, email. We respond within 24 hours." />
+        <title>Contact Us | Tanisii Impex — Mira Road, Mumbai, India</title>
+        <meta name="description" content="Contact Tanisii Impex for export inquiries. Mira Road, Mumbai, India. Phone, WhatsApp, email. We respond within 24 hours." />
       </Helmet>
 
       <section className="bg-hero-gradient py-28 relative overflow-hidden">
@@ -161,7 +161,7 @@ export default function Contact() {
               ))}
 
               {/* WhatsApp CTA */}
-              <a href="https://wa.me/919876543210?text=Hello%20Tanisii%20Impex%2C%20I%20have%20an%20inquiry."
+              <a href="https://wa.me/919152121077?text=Hello%20Tanisii%20Impex%2C%20I%20have%20an%20inquiry."
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-3 w-full bg-green-500 text-white rounded-xl px-5 py-4 font-semibold font-body hover:bg-green-600 transition-colors">
                 <FaWhatsapp size={22} />
@@ -175,8 +175,8 @@ export default function Contact() {
               <div className="rounded-2xl overflow-hidden border border-gray-200 h-48 bg-navy-50 flex items-center justify-center">
                 <div className="text-center text-gray-400 font-body text-sm">
                   <MapPin size={28} className="mx-auto mb-2 text-navy-400" />
-                  <div className="font-semibold text-navy-700">Nashik, Maharashtra</div>
-                  <div className="text-xs">MIDC Industrial Area, 422010</div>
+                  <div className="font-semibold text-navy-700">Mira Road, Mumbai</div>
+                  <div className="text-xs">Kanakia Road, Near Unique Garden</div>
                 </div>
               </div>
             </div>

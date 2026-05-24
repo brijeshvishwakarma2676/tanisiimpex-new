@@ -52,15 +52,15 @@ export default function Navbar() {
       <div className="fixed top-0 left-0 right-0 z-50 hidden lg:flex bg-navy-900">
         <div className="section-container flex items-center justify-between w-full py-1.5">
           <div className="flex items-center gap-6 text-xs text-white/65">
-            <a href="tel:+919876543210" className="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
-              <Phone size={11} /> +91 98765 43210
+            <a href="tel:+919152121077" className="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
+              <Phone size={11} /> +91 91521 21077
             </a>
-            <a href="mailto:info@tanisiiimpex.com" className="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
-              <Mail size={11} /> info@tanisiiimpex.com
+            <a href="mailto:tenisiimpex@gmail.com" className="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
+              <Mail size={11} /> tenisiimpex@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-3 text-[11px] text-white/45">
-            <span>IEC: AABCT1234A</span>
+            <span>IEC: AAMCT5095R</span>
             <span className="text-white/20">|</span>
             <span>APEDA Registered</span>
             <span className="text-white/20">|</span>
@@ -286,11 +286,11 @@ export default function Navbar() {
                   Request a Quote
                 </Link>
                 <div className="flex flex-col gap-2 text-sm text-white/45">
-                  <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-gold-300 transition-colors">
-                    <Phone size={13} /> +91 98765 43210
+                  <a href="tel:+919152121077" className="flex items-center gap-2 hover:text-gold-300 transition-colors">
+                    <Phone size={13} /> +91 91521 21077
                   </a>
-                  <a href="mailto:info@tanisiiimpex.com" className="flex items-center gap-2 hover:text-gold-300 transition-colors">
-                    <Mail size={13} /> info@tanisiiimpex.com
+                  <a href="mailto:tenisiimpex@gmail.com" className="flex items-center gap-2 hover:text-gold-300 transition-colors">
+                    <Mail size={13} /> tenisiimpex@gmail.com
                   </a>
                 </div>
               </div>

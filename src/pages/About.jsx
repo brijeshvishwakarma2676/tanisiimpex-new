@@ -22,7 +22,7 @@ function AboutHero() {
           <span className="section-label text-gold-300">Who We Are</span>
           <h1 className="font-heading text-white mt-4 mb-6">About Tanisii Impex</h1>
           <p className="text-white/70 text-lg font-body max-w-2xl mx-auto leading-relaxed">
-            A globally trusted Indian export house headquartered in Nashik, Maharashtra — connecting
+            A globally trusted Indian export house headquartered in Mira Road, Mumbai — connecting
             India's finest produce with buyers across 30+ countries since 2009.
           </p>
         </motion.div>
@@ -34,8 +34,8 @@ function AboutHero() {
 // ─── Company Story / Timeline ─────────────────────────────────────────────────
 function CompanyStory() {
   const milestones = [
-    { year: '2009', title: 'Company Founded', desc: 'Tanisii Impex established in Nashik as a regional agricultural trading firm.' },
-    { year: '2012', title: 'First International Export', desc: 'First container of fresh Nashik onions shipped to Dubai, UAE. Beginning of our global journey.' },
+    { year: '2009', title: 'Company Founded', desc: 'Tanisii Impex established as a regional agricultural trading firm.' },
+    { year: '2012', title: 'First International Export', desc: 'First container of premium fresh onions shipped to Dubai, UAE. Beginning of our global journey.' },
     { year: '2015', title: 'APEDA Registration', desc: 'Secured APEDA registration, enabling access to regulated export markets across Europe and Asia.' },
     { year: '2017', title: 'ISO 9001:2015 Certification', desc: 'Achieved ISO certification for quality management systems across all operations.' },
     { year: '2019', title: 'FMCG & Spices Division', desc: 'Expanded beyond fresh agriculture into processed FMCG consumer goods and premium Indian spices.' },
@@ -49,7 +49,7 @@ function CompanyStory() {
         <SectionHeader
           label="Our Journey"
           heading="The Tanisii Impex Story"
-          subtext="From a small trading desk in Nashik to a globally recognized export house — 15 years of growth, trust, and excellence."
+          subtext="From a small trading desk in Mumbai to a globally recognized export house — 15 years of growth, trust, and excellence."
         />
 
         <div className="mt-14 relative">
@@ -282,7 +282,7 @@ export default function About() {
     <>
       <Helmet>
         <title>About Us | Tanisii Impex — Indian Export Company</title>
-        <meta name="description" content="Learn about Tanisii Impex — founded in Nashik, Maharashtra. Our story, mission, team, certifications, and 15 years of global export experience." />
+        <meta name="description" content="Learn about Tanisii Impex — founded in Mira Road, Mumbai. Our story, mission, team, certifications, and 15 years of global export experience." />
       </Helmet>
       <AboutHero />
       <StatsBar />

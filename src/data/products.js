@@ -6,6 +6,7 @@ export const productCategories = [
     name: 'Agricultural Products',
     slug: 'agricultural',
     icon: '🌾',
+    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80',
     color: '#16A34A',
     description:
       'Fresh & processed agricultural commodities sourced directly from Indian farms with full phytosanitary compliance.',
@@ -92,6 +93,7 @@ export const productCategories = [
     name: 'FMCG & Consumer Goods',
     slug: 'fmcg',
     icon: '🧴',
+    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80',
     color: '#2563EB',
     description:
       'Retail-ready FMCG and packaged consumer goods with private-label and OEM options available.',
@@ -151,6 +153,7 @@ export const productCategories = [
     name: 'Organic & Natural Products',
     slug: 'organic',
     icon: '🌿',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80',
     color: '#059669',
     description:
       'Certified organic spices, herbal products, essential oils, and seeds — direct from organic farms.',
@@ -192,6 +195,7 @@ export const productCategories = [
     name: 'Agro-Chemicals & Fertilizers',
     slug: 'agrochemicals',
     icon: '🪴',
+    image: 'https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=600&q=80',
     color: '#D97706',
     description:
       'Crop protection products, bio-fertilizers, and plant nutrition solutions for global agricultural markets.',
@@ -224,6 +228,7 @@ export const productCategories = [
     name: 'Custom Sourcing',
     slug: 'custom-sourcing',
     icon: '📦',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80',
     color: '#DC2626',
     description:
       'Private label, OEM, bulk procurement, and B2B sourcing solutions tailored to your specifications.',
@@ -257,7 +262,7 @@ export const featuredProducts = [
   {
     name: 'Basmati Rice (1121 Extra Long)',
     badge: 'Premium Export Grade',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80',
     origin: 'Punjab / Haryana',
     hsCode: '1006.30',
     moq: '2 MT',
@@ -270,7 +275,7 @@ export const featuredProducts = [
   {
     name: 'Pomegranate (Bhagwa)',
     badge: 'Seasonal Bestseller',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80',
     origin: 'Nashik, Maharashtra',
     hsCode: '0810.90',
     moq: '500 KG',
@@ -283,7 +288,7 @@ export const featuredProducts = [
   {
     name: 'Banana (Cavendish)',
     badge: 'High Demand',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80',
     origin: 'Jalgaon / Maharashtra',
     hsCode: '0803.90',
     moq: '1 MT',
@@ -296,7 +301,7 @@ export const featuredProducts = [
   {
     name: 'Indian Spices',
     badge: 'Authentic Quality',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80',
     origin: 'All over India',
     hsCode: '0904-0910',
     moq: '500 KG',
@@ -309,7 +314,7 @@ export const featuredProducts = [
   {
     name: 'Green Chillies',
     badge: 'Farm Fresh',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1563565088-913497f6c436?auto=format&fit=crop&w=600&q=80',
     origin: 'Maharashtra / AP',
     hsCode: '0709.60',
     moq: '500 KG',

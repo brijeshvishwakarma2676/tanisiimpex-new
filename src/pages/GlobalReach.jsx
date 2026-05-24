@@ -6,89 +6,21 @@ import SectionHeader from '@/components/ui/SectionHeader';
 import StatCard from '@/components/ui/StatCard';
 import { globalMarkets, exportStats, incotermsList, portsList } from '@/data/globalData';
 import CTABanner from '@/components/ui/CTABanner';
+import GlobalMap from '@/components/ui/GlobalMap';
 
 // Simple SVG world map placeholder with country dots
 function WorldMapSection() {
-  const exportedCountries = [
-    { name: 'UAE', cx: '58%', cy: '42%' },
-    { name: 'Saudi Arabia', cx: '56%', cy: '44%' },
-    { name: 'UK', cx: '46%', cy: '27%' },
-    { name: 'France', cx: '47%', cy: '29%' },
-    { name: 'Germany', cx: '49%', cy: '27%' },
-    { name: 'Nigeria', cx: '48%', cy: '52%' },
-    { name: 'Singapore', cx: '74%', cy: '55%' },
-    { name: 'USA', cx: '22%', cy: '36%' },
-    { name: 'Russia', cx: '62%', cy: '22%' },
-    { name: 'Kenya', cx: '55%', cy: '55%' },
-    { name: 'Malaysia', cx: '73%', cy: '52%' },
-    { name: 'Japan', cx: '82%', cy: '32%' },
-  ];
-
   return (
     <section className="py-20 bg-navy-900 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          {/* Simplified world map grid lines */}
-          {[0, 1, 2, 3, 4, 5].map((i) => (
-            <line key={`h${i}`} x1="0" y1={i * 120} x2="1200" y2={i * 120} stroke="#D4A017" strokeWidth="0.5" />
-          ))}
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
-            <line key={`v${i}`} x1={i * 120} y1="0" x2={i * 120} y2="600" stroke="#D4A017" strokeWidth="0.5" />
-          ))}
-          <ellipse cx="600" cy="300" rx="560" ry="260" fill="none" stroke="#D4A017" strokeWidth="1" />
-        </svg>
-      </div>
-
       <div className="section-container relative z-10">
         <SectionHeader
           label="Global Footprint"
-          heading="From Nashik to the World"
-          subtext="Our products reach buyers in 30+ countries across six continents."
+          heading="Interactive Trade Routes"
+          subtext="Tracking our cargo transit corridors from Nashik and JNPT Mumbai to major international wholesale hubs."
           light
         />
-
-        {/* Map with dots */}
-        <div className="mt-10 relative bg-navy-800/50 rounded-3xl border border-white/10 overflow-hidden h-80">
-          <svg viewBox="0 0 100 50" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            {/* India (source) */}
-            <circle cx="65" cy="45" r="1.2" fill="#D4A017" />
-            <circle cx="65" cy="45" r="2.5" fill="none" stroke="#D4A017" strokeWidth="0.5" opacity="0.6">
-              <animate attributeName="r" from="1.5" to="4" dur="2s" repeatCount="indefinite" />
-              <animate attributeName="opacity" from="0.6" to="0" dur="2s" repeatCount="indefinite" />
-            </circle>
-            <text x="66" y="44" fontSize="1.5" fill="#F0C040" fontFamily="sans-serif">Nashik</text>
-
-            {/* Export destination dots */}
-            {exportedCountries.map((c) => (
-              <g key={c.name}>
-                <circle
-                  cx={parseFloat(c.cx)}
-                  cy={parseFloat(c.cy)}
-                  r="0.8"
-                  fill="#16A34A"
-                />
-                <circle
-                  cx={parseFloat(c.cx)}
-                  cy={parseFloat(c.cy)}
-                  r="1.8"
-                  fill="none"
-                  stroke="#16A34A"
-                  strokeWidth="0.3"
-                  opacity="0.5"
-                />
-              </g>
-            ))}
-          </svg>
-
-          {/* Legend */}
-          <div className="absolute bottom-4 left-4 flex items-center gap-6 text-xs font-body text-white/60">
-            <div className="flex items-center gap-1.5">
-              <div className="w-2.5 h-2.5 rounded-full bg-gold-400" /> Origin (Nashik)
-            </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-2.5 h-2.5 rounded-full bg-green-500" /> Export Destinations
-            </div>
-          </div>
+        <div className="mt-12">
+          <GlobalMap />
         </div>
       </div>
     </section>

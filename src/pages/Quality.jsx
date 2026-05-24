@@ -14,6 +14,33 @@ const qualitySteps = [
   { n: '06', Icon: ClipboardList,title: 'Certification & Dispatch',   desc: 'All certifications issued, documents compiled, goods dispatched with full paperwork.' },
 ];
 
+const statutoryLicenses = [
+  {
+    name: 'APEDA RCMC',
+    full: 'Agricultural & Processed Food Products Export Development Authority',
+    authority: 'Ministry of Commerce & Industry, Government of India',
+    status: 'Active & Verified',
+    number: 'RCMC/APEDA/25809/2025-2026',
+    desc: 'Mandatory statutory license authorizing Tanisi Impex Private Limited to process and export premium Indian agricultural commodities including spices, grains, and fresh produce globally.',
+  },
+  {
+    name: 'Import Export Code (IEC)',
+    full: 'Primary Global Trade Authorization License',
+    authority: 'Directorate General of Foreign Trade (DGFT), Government of India',
+    status: 'Active & Compliant',
+    number: 'AAMCT5095R',
+    desc: 'The fundamental legal code issued by DGFT Mumbai to conduct commercial shipping cargo, logistics distribution, and custom clearance worldwide.',
+  },
+  {
+    name: 'FSSAI Central License',
+    full: 'Food Safety & Standards Authority of India',
+    authority: 'Ministry of Health & Family Welfare, Government of India',
+    status: 'Compliant Food Handler',
+    number: '11526998000056',
+    desc: 'Central category food safety regulatory license ensuring all processing, import, trading, and merchant export standards strictly adhere to hygienic parameters.',
+  },
+];
+
 const certifications = [
   { name: 'ISO 9001:2015', body: 'Bureau Veritas', category: 'Quality Management' },
   { name: 'APEDA', body: 'Govt. of India', category: 'Agricultural Export' },
@@ -51,7 +78,7 @@ export default function Quality() {
   return (
     <>
       <Helmet>
-        <title>Quality & Certifications | Tanisii Impex</title>
+        <title>Quality & Compliance Certifications | Tanisii Impex</title>
         <meta name="description" content="ISO 9001:2015 certified. APEDA, FSSAI, FIEO registered. Pre-shipment inspection, lab testing, and full compliance documentation for all Tanisii Impex products." />
       </Helmet>
 
@@ -83,6 +110,83 @@ export default function Quality() {
                 <p className="text-gray-500 text-sm font-body leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- Verified Statutory Licenses --- */}
+      <section className="py-20 bg-gray-50 border-t border-b border-gray-100">
+        <div className="section-container">
+          <SectionHeader 
+            label="Compliance & Trust" 
+            heading="Verified Statutory Licenses" 
+            subtext="Our operations are fully registered and monitored by primary Indian export authorities, giving global buyers absolute confidence." 
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-6xl mx-auto">
+            {statutoryLicenses.map((lic, i) => (
+              <motion.div
+                key={lic.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white rounded-3xl p-6 border border-gray-200/60 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex justify-between items-start mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-navy-50 flex items-center justify-center text-navy-800 font-bold group-hover:bg-navy-800 group-hover:text-gold-300 transition-all duration-300">
+                      <Award size={20} className="text-navy-700 group-hover:text-gold-200" />
+                    </div>
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 text-[10px] font-bold uppercase tracking-wider font-body">
+                      Active & Verified
+                    </span>
+                  </div>
+
+                  <h3 className="font-heading font-bold text-navy-800 text-lg mb-1 group-hover:text-gold-500 transition-colors duration-300">
+                    {lic.name}
+                  </h3>
+                  <p className="text-[10px] font-body font-bold uppercase tracking-wider text-gray-400 mb-4">
+                    {lic.authority}
+                  </p>
+                  
+                  <div className="inline-block px-3 py-1.5 rounded-xl bg-gold-100/50 border border-gold-300/20 text-navy-900 text-[11px] font-mono tracking-wide mb-4 font-bold select-all">
+                    Lic No: {lic.number}
+                  </div>
+
+                  <p className="text-gray-500 font-body text-xs leading-relaxed">
+                    {lic.desc}
+                  </p>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-[10px] font-bold font-body uppercase tracking-wider text-gray-400">
+                  Registered Entity: Tanisi Impex Private Limited
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- Trade Confidentiality Policy --- */}
+      <section className="py-16 bg-navy-900 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold-400/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/20 to-transparent" />
+        
+        <div className="section-container relative z-10 max-w-3xl text-center">
+          <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-5">
+            <Shield size={20} className="text-gold-300 animate-pulse" />
+          </div>
+
+          <h2 className="text-2xl font-heading font-bold text-white mb-3">
+            Trade Confidentiality & Security Policy
+          </h2>
+          <p className="text-white/60 font-body text-sm leading-relaxed max-w-2xl mx-auto mb-6">
+            To safeguard commercial sensitivity, proprietary logistics routing, and secure fiscal compliance records, select business documents—including state tax registrations (GSTIN), custom bond receipts, bank invoices, and private incorporation certificates—are kept strictly confidential and withheld from the public domain.
+          </p>
+
+          <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gold-300 font-body bg-white/5 px-5 py-2.5 rounded-full border border-gold-300/10">
+            Verified importers can request certified copies of shipping bonds during order negotiation.
           </div>
         </div>
       </section>
