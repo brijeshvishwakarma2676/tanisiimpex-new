@@ -16,7 +16,7 @@ function WorldMapSection() {
         <SectionHeader
           label="Global Footprint"
           heading="Interactive Trade Routes"
-          subtext="Tracking our cargo transit corridors from Nashik and JNPT Mumbai to major international wholesale hubs."
+          subtext="Tracking our cargo transit corridors from Mira Road and JNPT Mumbai to major international wholesale hubs."
           light
         />
         <div className="mt-12">

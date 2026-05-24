@@ -335,7 +335,7 @@ function LogisticsSection() {
 function BlogTeaser() {
   const posts = [
     { tag: 'Export Policy', title: "India's Agricultural Export Policy 2024: What Buyers Need to Know", excerpt: 'Key changes in APEDA regulations, minimum export price updates, and new phytosanitary protocols affecting fresh produce.', date: 'Nov 12, 2024', readTime: '4 min read', Icon: FileText },
-    { tag: 'Market Insights', title: "Why Nashik Onion is the World's Most Exported Vegetable", excerpt: "Nashik's unique climate, volcanic soil, and extensive cold-chain infrastructure make it the global onion capital.", date: 'Oct 28, 2024', readTime: '5 min read', Icon: TrendingUp },
+    { tag: 'Market Insights', title: "Why Indian Onion is the World's Most Exported Vegetable", excerpt: "India's unique climate, volcanic soil, and extensive cold-chain infrastructure make it the global onion capital.", date: 'Oct 28, 2024', readTime: '5 min read', Icon: TrendingUp },
     { tag: 'Trade Finance', title: 'Understanding LC, DP, and TT Payment Terms for Indian Imports', excerpt: 'A practical guide for first-time importers on choosing the right payment structure for Indian export transactions.', date: 'Oct 5, 2024', readTime: '6 min read', Icon: Award },
   ];
   return (

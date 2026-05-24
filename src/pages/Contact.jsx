@@ -171,12 +171,32 @@ export default function Contact() {
                 </div>
               </a>
 
-              {/* Map placeholder */}
-              <div className="rounded-2xl overflow-hidden border border-gray-200 h-48 bg-navy-50 flex items-center justify-center">
-                <div className="text-center text-gray-400 font-body text-sm">
-                  <MapPin size={28} className="mx-auto mb-2 text-navy-400" />
-                  <div className="font-semibold text-navy-700">Mira Road, Mumbai</div>
-                  <div className="text-xs">Kanakia Road, Near Unique Garden</div>
+              {/* Live Google Map */}
+              <div className="rounded-2xl overflow-hidden border border-gray-200 h-64 bg-navy-50 relative group shadow-sm">
+                <iframe 
+                  src="https://maps.google.com/maps?q=Vasudev%20Paradise,%20Kanakia%20Road,%20Near%20Unique%20Garden,%20Mira%20Road%20East,%20Mumbai&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Tanisii Impex Office Location"
+                  className="w-full h-full filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
+                ></iframe>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/80 via-navy-950/50 to-transparent p-4 flex items-center justify-between pointer-events-none">
+                  <div className="text-white font-body">
+                    <div className="font-bold text-xs">Vasudev Paradise</div>
+                    <div className="text-[10px] text-white/70">Kanakia Road, Mira Road East</div>
+                  </div>
+                  <a 
+                    href="https://maps.app.goo.gl/vobMz7xwQtJLqhio7" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="pointer-events-auto bg-gold-400 hover:bg-gold-500 text-navy-950 text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-sm transition-colors"
+                  >
+                    Directions <MapPin size={10} />
+                  </a>
                 </div>
               </div>
             </div>
