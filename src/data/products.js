@@ -6,7 +6,7 @@ export const productCategories = [
     name: 'Fruits & Vegetables',
     slug: 'fruits-vegetables',
     icon: '🍎',
-    image: 'https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80',
     color: '#16A34A',
     description:
       'Fresh, premium-grade fruits and vegetables sourced directly from GlobalG.A.P certified farms in Maharashtra and Gujarat.',
@@ -71,7 +71,7 @@ export const productCategories = [
         moq: '500 KG',
         season: 'Year-round',
         certifications: ['APEDA', 'Phytosanitary'],
-        image: 'https://images.unsplash.com/photo-1599307734110-df4b3badb3ad?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1576763595295-c0371a32af78?auto=format&fit=crop&w=600&q=80',
         description: 'Vibrant green chillies with high pungency, packed in ventilated export cartons.',
       },
     ],
@@ -136,7 +136,7 @@ export const productCategories = [
         moq: '500 KG',
         season: 'Sep–Dec',
         certifications: ['Organic', 'Spices Board', 'APEDA'],
-        image: 'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1584947937397-5b6574f9d2d4?auto=format&fit=crop&w=600&q=80',
         description: 'Hulled and natural white/black sesame seeds. Purity 99.95%+, aflatoxin-tested.',
       },
       {
@@ -216,7 +216,7 @@ export const productCategories = [
         moq: '200 KG',
         season: 'Year-round',
         certifications: ['FSSAI', 'APEDA', 'Organic'],
-        image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80',
         description: 'Cold-pressed VCO with lauric acid > 48%. Available in bulk drums or retail bottles.',
       },
       {
@@ -226,7 +226,7 @@ export const productCategories = [
         moq: '1000 units',
         season: 'Year-round',
         certifications: ['FSSAI', 'GMP'],
-        image: 'https://images.unsplash.com/photo-1611080626919-7cf5a9caab53?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=600&q=80',
         description: 'Ashwagandha, Moringa, Amla capsules and powders. Ayurvedic-grade ingredients.',
       },
     ],
@@ -349,7 +349,7 @@ export const featuredProducts = [
   {
     name: 'Green Chillies',
     badge: 'Farm Fresh',
-    image: 'https://images.unsplash.com/photo-1599307734110-df4b3badb3ad?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1576763595295-c0371a32af78?auto=format&fit=crop&w=600&q=80',
     origin: 'Maharashtra / AP',
     hsCode: '0709.60',
     moq: '500 KG',
