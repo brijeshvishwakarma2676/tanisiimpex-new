@@ -41,9 +41,11 @@ export default function Footer() {
           {/* Column 1 — Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-gold-gradient rounded-lg flex items-center justify-center">
-                <span className="text-navy-800 font-heading font-bold text-lg">TI</span>
-              </div>
+              <img 
+                src="/images/logo.png" 
+                alt="Tanisii Impex Logo" 
+                className="h-10 w-auto object-contain" 
+              />
               <div>
                 <div className="font-heading font-bold text-lg leading-none">TANISII IMPEX</div>
                 <div className="text-gold-300 text-[10px] tracking-widest uppercase font-body mt-0.5">

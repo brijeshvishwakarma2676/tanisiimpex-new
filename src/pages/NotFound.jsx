@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>404 — Page Not Found | Tanisii Impex</title>
+        <title>Under Maintenance | Tanisii Impex</title>
       </Helmet>
       <div className="min-h-screen bg-hero-gradient flex items-center justify-center px-4">
         <motion.div
@@ -16,11 +16,11 @@ export default function NotFound() {
           transition={{ duration: 0.7 }}
           className="text-center max-w-lg"
         >
-          <div className="text-8xl mb-6">🌍</div>
-          <div className="font-heading font-bold text-gold-300 text-8xl mb-4">404</div>
-          <h1 className="font-heading text-white text-3xl mb-4">Page Not Found</h1>
-          <p className="text-white/65 font-body mb-10 leading-relaxed">
-            This page seems to have gone off-course. Let's get you back to the right port.
+          <div className="text-8xl mb-6 animate-bounce">⚙️</div>
+          <div className="font-heading font-bold text-gold-300 text-[64px] sm:text-8xl mb-4 tracking-wider">503</div>
+          <h1 className="font-heading text-white text-3xl mb-4">Portal Under Maintenance</h1>
+          <p className="text-white/65 font-body mb-10 leading-relaxed max-w-md mx-auto">
+            We are currently optimizing this section of our trade gateway to enhance your B2B sourcing experience. The rest of our global export channels are fully active!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/" className="btn-primary">
