@@ -41,8 +41,32 @@ export default function CookieBanner() {
       setPlaneSrc(canvas.toDataURL('image/png'));
     };
 
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
+    const consentStr = localStorage.getItem('cookieConsent');
+    let isValidConsent = false;
+    
+    if (consentStr) {
+      try {
+        // Support for new TTL format
+        if (consentStr.startsWith('{')) {
+          const consent = JSON.parse(consentStr);
+          const now = new Date().getTime();
+          const ONE_DAY = 24 * 60 * 60 * 1000; // 24 hours in ms
+          
+          if (consent.timestamp && (now - consent.timestamp < ONE_DAY)) {
+            isValidConsent = true;
+          } else {
+            localStorage.removeItem('cookieConsent'); // Expired
+          }
+        } else {
+          // Legacy plain string format handling (optional clean up)
+          localStorage.removeItem('cookieConsent'); 
+        }
+      } catch (e) {
+        localStorage.removeItem('cookieConsent');
+      }
+    }
+
+    if (!isValidConsent) {
       const timer = setTimeout(() => setIsVisible(true), 2000);
       return () => clearTimeout(timer);
     } else {
@@ -51,7 +75,12 @@ export default function CookieBanner() {
   }, []);
 
   const handleConsent = (type) => {
-    localStorage.setItem('cookieConsent', type);
+    const consentData = {
+      type,
+      timestamp: new Date().getTime()
+    };
+    localStorage.setItem('cookieConsent', JSON.stringify(consentData));
+    
     setStatus('packing');
     
     setTimeout(() => {
