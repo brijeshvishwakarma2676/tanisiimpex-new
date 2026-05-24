@@ -1,71 +1,37 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay, A11y } from 'swiper/modules';
-import { Star, Quote } from 'lucide-react';
 import { testimonials } from '@/data/testimonials';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { AnimatedTestimonials } from '@/components/ui/animated-testimonials';
 
-function StarRating({ count = 5 }) {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} size={14} className="fill-gold-400 text-gold-400" />
-      ))}
-    </div>
-  );
-}
+const avatars = [
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+];
 
 export default function TestimonialCarousel() {
+  const formattedTestimonials = testimonials.map((t, i) => ({
+    id: t.id,
+    name: t.name,
+    role: t.role,
+    company: t.company,
+    content: t.text,
+    rating: t.rating,
+    country: t.country,
+    flag: t.flag,
+    avatar: avatars[i % avatars.length]
+  }));
+
   return (
-    <Swiper
-      modules={[Pagination, Autoplay, A11y]}
-      spaceBetween={24}
-      slidesPerView={1}
-      pagination={{ clickable: true }}
-      autoplay={{ delay: 5000, pauseOnMouseEnter: true, disableOnInteraction: false }}
-      loop
-      breakpoints={{
-        640: { slidesPerView: 1 },
-        1024: { slidesPerView: 2 },
-        1280: { slidesPerView: 3 },
-      }}
-      className="pb-12"
-    >
-      {testimonials.map((t) => (
-        <SwiperSlide key={t.id}>
-          <div className="card p-6 h-full flex flex-col gap-4 rounded-2xl">
-            {/* Quote icon */}
-            <div className="w-10 h-10 rounded-xl bg-navy-50 flex items-center justify-center">
-              <Quote size={18} className="text-navy-500" />
-            </div>
-
-            {/* Stars */}
-            <StarRating count={t.rating} />
-
-            {/* Text */}
-            <p className="text-gray-600 font-body text-sm leading-relaxed flex-1 italic">
-              "{t.text}"
-            </p>
-
-            {/* Client info */}
-            <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-              {/* Avatar initial */}
-              <div className="w-11 h-11 rounded-full bg-navy-gradient flex items-center justify-center shrink-0">
-                <span className="text-white font-heading font-bold text-lg">
-                  {t.name.charAt(0)}
-                </span>
-              </div>
-              <div>
-                <div className="font-body font-semibold text-navy-800 text-sm">{t.name}</div>
-                <div className="text-xs text-gray-400 font-body">{t.role}, {t.company}</div>
-                <div className="text-xs text-gray-400 font-body mt-0.5">
-                  {t.flag} {t.country}
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <AnimatedTestimonials
+      title="Trusted Globally, Endorsed Professionally"
+      subtitle="Hear directly from international importers and trade partners who trust Tanisii Impex for seamless sourcing and flawless logistics."
+      badgeText="Verify Our Credibility"
+      testimonials={formattedTestimonials}
+      trustedCompanies={["Dubai Agro LLC", "EuroFoods Co.", "Singapore Spices", "UK Wholesale Ltd."]}
+      trustedCompaniesTitle="Partnered with leading distributors globally"
+      autoRotateInterval={7000}
+    />
   );
 }

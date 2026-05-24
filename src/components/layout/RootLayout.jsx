@@ -9,11 +9,11 @@ import WhatsAppButton from '@/components/layout/WhatsAppButton';
 
 export default function RootLayout() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden w-full relative">
       <Navbar />
       {/* Spacer that equals the fixed navbar height (info bar + main nav) */}
       <div className="h-16 lg:h-[96px] shrink-0" aria-hidden="true" />
-      <main className="flex-1">
+      <main className="flex-1 overflow-x-hidden w-full relative">
         <Outlet />
       </main>
       <Footer />

@@ -195,7 +195,7 @@ function AboutSnapshot() {
               ))}
             </div>
             {/* Experience badge */}
-            <div className="absolute -bottom-5 -right-5 bg-gold-gradient rounded-2xl p-4 shadow-gold text-center">
+            <div className="absolute -bottom-5 right-4 sm:-right-5 bg-gold-gradient rounded-2xl p-4 shadow-gold text-center">
               <div className="font-heading font-bold text-navy-800 text-3xl">15+</div>
               <div className="text-navy-700 text-xs font-body font-semibold leading-tight mt-0.5">Years of<br />Excellence</div>
             </div>

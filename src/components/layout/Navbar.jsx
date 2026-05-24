@@ -71,7 +71,9 @@ export default function Navbar() {
 
       {/* ── Main Navbar (fixed, below info bar) ── */}
       <header
-        className="fixed left-0 right-0 z-50 transition-all duration-500 top-[30px] lg:top-[32px] bg-navy-800/95 backdrop-blur-xl border-b border-white/10 shadow-lg"
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 bg-navy-800/95 backdrop-blur-xl border-b border-white/10 shadow-lg ${
+          isScrolled ? 'top-0 py-0' : 'top-0 lg:top-[32px] py-1 lg:py-0'
+        }`}
       >
         <div className="section-container">
           <div className="flex items-center justify-between h-16">
@@ -86,7 +88,7 @@ export default function Navbar() {
                 <div className="font-heading font-bold text-white text-[17px] leading-none tracking-wider">
                   TANISII IMPEX
                 </div>
-                <div className="text-gold-300/80 text-[9px] font-body tracking-[0.18em] uppercase leading-none mt-1">
+                <div className="text-gold-300/80 text-[9px] font-body tracking-[0.18em] uppercase leading-none mt-1 hidden sm:block">
                   Global Trade · Indian Excellence
                 </div>
               </div>
