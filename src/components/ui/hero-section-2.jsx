@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { cn } from "@/lib/utils";
 import { motion } from 'framer-motion';
 import { Globe, Phone, MapPin } from 'lucide-react';
@@ -16,6 +16,17 @@ const InfoIcon = ({ type }) => {
 const HeroSection = React.forwardRef(
   ({ className, logo, slogan, title, subtitle, callToAction, backgroundImage, contactInfo, ...props }, ref) => {
     
+    // Check if the intro just finished to delay our animations until the doors open
+    const [animationDelay] = useState(() => {
+      return window.introJustFinished ? 1.0 : 0.2;
+    });
+
+    useEffect(() => {
+      if (window.introJustFinished) {
+        setTimeout(() => { window.introJustFinished = false; }, 2000);
+      }
+    }, []);
+
     // Animation variants for the container to orchestrate children animations
     const containerVariants = {
       hidden: { opacity: 0 },
@@ -23,7 +34,7 @@ const HeroSection = React.forwardRef(
         opacity: 1,
         transition: {
           staggerChildren: 0.15,
-          delayChildren: 0.2,
+          delayChildren: animationDelay,
         },
       },
     };
@@ -60,7 +71,67 @@ const HeroSection = React.forwardRef(
                 <motion.header className="mb-8 md:mb-12" variants={itemVariants}>
                     {logo && (
                         <div className="flex items-center">
-                            {logo.url && <img src={logo.url} alt={logo.alt} className="mr-3 h-8 md:h-10 object-contain" />}
+                            {logo.url && (
+                                <div className="relative mr-3 group">
+                                    {/* Logo Image */}
+                                    <img src={logo.url} alt={logo.alt} className="h-10 md:h-14 object-contain relative z-10" />
+                                    
+                                    {/* Sparkling Star 1 (Top Right) */}
+                                    <motion.svg
+                                        className="absolute -top-1 -right-1 w-4 h-4 text-gold-300 pointer-events-none z-20 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)]"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        animate={{
+                                            scale: [0, 1.2, 1.4, 0],
+                                            rotate: [0, 90, 180, 270],
+                                            opacity: [0, 1, 1, 0]
+                                        }}
+                                        transition={{
+                                            duration: 2.2,
+                                            repeat: Infinity,
+                                            repeatDelay: 3.5,
+                                            ease: "easeInOut"
+                                        }}
+                                    >
+                                        <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z" />
+                                    </motion.svg>
+
+                                    {/* Sparkling Star 2 (Bottom Left-Center) */}
+                                    <motion.svg
+                                        className="absolute -bottom-1 left-2 w-3.5 h-3.5 text-gold-400 pointer-events-none z-20 drop-shadow-[0_0_6px_rgba(250,204,21,0.6)]"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        animate={{
+                                            scale: [0, 1.1, 0],
+                                            rotate: [45, 135, 225],
+                                            opacity: [0, 0.9, 0]
+                                        }}
+                                        transition={{
+                                            duration: 1.8,
+                                            repeat: Infinity,
+                                            repeatDelay: 4.8,
+                                            ease: "easeInOut",
+                                            delay: 1.2
+                                        }}
+                                    >
+                                        <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z" />
+                                    </motion.svg>
+
+                                    {/* Ultra-sharp Metallic Gold Specular Glint */}
+                                    <motion.div
+                                        initial={{ x: '-150%', opacity: 0 }}
+                                        animate={{ x: '250%', opacity: [0, 0.8, 0.8, 0] }}
+                                        transition={{
+                                            duration: 1.6,
+                                            repeat: Infinity,
+                                            repeatDelay: 4.5,
+                                            ease: "easeInOut",
+                                            delay: 0.8
+                                        }}
+                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-200/40 to-transparent w-[25%] h-full -skew-x-20 z-20 pointer-events-none mix-blend-color-dodge"
+                                    />
+                                </div>
+                            )}
                             <div>
                                 {logo.text && <p className="text-base md:text-lg font-heading font-bold tracking-wider text-white">{logo.text}</p>}
                                 {slogan && <p className="text-[9px] md:text-[10px] tracking-[0.18em] uppercase text-gold-300/80 mt-1">{slogan}</p>}

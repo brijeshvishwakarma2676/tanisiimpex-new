@@ -67,7 +67,7 @@ export default function CookieBanner() {
     }
 
     if (!isValidConsent) {
-      const timer = setTimeout(() => setIsVisible(true), 2000);
+      const timer = setTimeout(() => setIsVisible(true), 10000);
       return () => clearTimeout(timer);
     } else {
       setIsRendered(false);
