@@ -115,7 +115,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Tanisi Impex — WhatsApp, Phone & Email for Export Inquiries"
-        description="Contact Tanisi Impex for B2B export inquiries. Call or WhatsApp: +91 91521 21077. Email: tenisiimpex@gmail.com. Office: Mira Road, Mumbai. We respond within 24 hours. Start your import from India today."
+        description="Contact Tanisi Impex for B2B export inquiries. Call or WhatsApp: +91 91521 21077. Email: info@tanisiimpex.com. Office: Mira Road, Mumbai. We respond within 24 hours. Start your import from India today."
         keywords="contact Tanisi Impex, export inquiry India, import from India contact, WhatsApp Indian exporter, Mumbai exporter contact, B2B trade inquiry India"
         path="/contact"
       />
@@ -154,7 +154,7 @@ export default function Contact() {
               ))}
 
               {/* WhatsApp CTA */}
-              <a href="https://wa.me/919152121077?text=Hello%20Tanisii%20Impex%2C%20I%20have%20an%20inquiry."
+              <a href="https://wa.me/919152121077?text=Hello%20Tanisi%20Impex%2C%20I%20have%20an%20inquiry."
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-3 w-full bg-green-500 text-white rounded-xl px-5 py-4 font-semibold font-body hover:bg-green-600 transition-colors">
                 <FaWhatsapp size={22} />
@@ -174,7 +174,7 @@ export default function Contact() {
                   allowFullScreen="" 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Tanisii Impex Office Location"
+                  title="Tanisi Impex Office Location"
                   className="w-full h-full filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
                 ></iframe>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/80 via-navy-950/50 to-transparent p-4 flex items-center justify-between pointer-events-none">

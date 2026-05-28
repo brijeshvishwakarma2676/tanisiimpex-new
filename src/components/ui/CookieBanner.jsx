@@ -175,7 +175,7 @@ export default function CookieBanner() {
                         <h3 className="font-heading font-semibold text-white text-lg tracking-wide">
                           Cookie Policy
                         </h3>
-                        <div className="text-xs text-navy-300 font-body">Tanisii Impex</div>
+                        <div className="text-xs text-navy-300 font-body">Tanisi Impex</div>
                       </div>
                     </div>
                     

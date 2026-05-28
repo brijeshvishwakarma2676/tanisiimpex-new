@@ -79,3 +79,11 @@ export const portsList = [
   { name: 'Chennai Port', code: 'INMAS', state: 'Tamil Nadu', type: 'Container Port', rank: '#3 in India' },
   { name: 'Pipavav Port', code: 'INPAV', state: 'Gujarat', type: 'Multipurpose Port', rank: 'West Coast' },
 ];
+
+export const paymentTermsList = [
+  { term: 'LC at Sight', name: 'Letter of Credit at Sight', description: 'Payment is guaranteed by the buyer\'s bank upon presentation of compliant documents.' },
+  { term: 'LC Usance', name: 'Letter of Credit Usance', description: 'Deferred payment letter of credit (30/60/90 days) allowing credit terms.' },
+  { term: 'TT Advance', name: 'Telegraphic Transfer', description: 'Standard 30% advance via bank transfer, balance against BL scan copy.' },
+  { term: 'DP', name: 'Documents against Payment', description: 'Buyer pays the collecting bank before shipping documents are released.' },
+  { term: 'DA', name: 'Documents against Acceptance', description: 'Buyer accepts a time draft to receive documents, paying on a future date.' }
+];

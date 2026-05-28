@@ -1,6 +1,6 @@
-# Tanisii Impex — Site UI Theme Documentation
+# Tanisi Impex — Site UI Theme Documentation
 
-This document outlines the visual identity and design system of the Tanisii Impex web application. The theme is designed to evoke **Professionalism, Scale, Reliability, and Premium Quality**, aligning with the global export industry.
+This document outlines the visual identity and design system of the Tanisi Impex web application. The theme is designed to evoke **Professionalism, Scale, Reliability, and Premium Quality**, aligning with the global export industry.
 
 ---
 

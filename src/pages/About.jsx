@@ -21,7 +21,7 @@ function AboutHero() {
           transition={{ duration: 0.7 }}
         >
           <span className="section-label text-gold-300">Who We Are</span>
-          <h1 className="font-heading text-white mt-4 mb-6">About Tanisii Impex</h1>
+          <h1 className="font-heading text-white mt-4 mb-6">About Tanisi Impex</h1>
           <p className="text-white/70 text-lg font-body max-w-2xl mx-auto leading-relaxed">
             A globally trusted Indian export house headquartered in Mira Road, Mumbai — connecting
             India's finest produce with buyers across 30+ countries since 2009.
@@ -35,7 +35,7 @@ function AboutHero() {
 // ─── Company Story / Timeline ─────────────────────────────────────────────────
 function CompanyStory() {
   const milestones = [
-    { year: '2009', title: 'Company Founded', desc: 'Tanisii Impex established as a regional agricultural trading firm.' },
+    { year: '2009', title: 'Company Founded', desc: 'Tanisi Impex established as a regional agricultural trading firm.' },
     { year: '2012', title: 'First International Export', desc: 'First container of premium fresh onions shipped to Dubai, UAE. Beginning of our global journey.' },
     { year: '2015', title: 'APEDA Registration', desc: 'Secured APEDA registration, enabling access to regulated export markets across Europe and Asia.' },
     { year: '2017', title: 'ISO 9001:2015 Certification', desc: 'Achieved ISO certification for quality management systems across all operations.' },
@@ -49,7 +49,7 @@ function CompanyStory() {
       <div className="section-container">
         <SectionHeader
           label="Our Journey"
-          heading="The Tanisii Impex Story"
+          heading="The Tanisi Impex Story"
           subtext="From a small trading desk in Mumbai to a globally recognized export house — 15 years of growth, trust, and excellence."
         />
 
@@ -174,34 +174,7 @@ function CoreValues() {
 }
 
 // ─── Team ─────────────────────────────────────────────────────────────────────
-const FemaleAvatar = () => (
-  <svg viewBox="0 0 100 100" className="w-full h-full text-gold-300">
-    <defs>
-      <radialGradient id="female-glow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stopColor="#10B981" stopOpacity="0.4"/>
-        <stop offset="100%" stopColor="#10B981" stopOpacity="0"/>
-      </radialGradient>
-    </defs>
-    <circle cx="50" cy="50" r="46" fill="url(#female-glow)" />
-    <circle cx="50" cy="50" r="42" fill="#07162C" stroke="#E5C158" strokeWidth="1.5" />
-    <path d="M50 25c-6.6 0-12 5.4-12 12c0 4.5 2.5 8.4 6.2 10.4c-7.2 2-12.7 8.3-13.8 16.1h39.2c-1.1-7.8-6.6-14.1-13.8-16.1c3.7-2 6.2-5.9 6.2-10.4c0-6.6-5.4-12-12-12z" fill="#E5C158" opacity="0.9" />
-    <path d="M37 32c-2 4-1 9 2 12m22-12c2 4 1 9-2 12" stroke="#E5C158" strokeWidth="1" strokeLinecap="round" opacity="0.7" />
-  </svg>
-);
 
-const MaleAvatar = () => (
-  <svg viewBox="0 0 100 100" className="w-full h-full text-gold-300">
-    <defs>
-      <radialGradient id="male-glow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stopColor="#10B981" stopOpacity="0.4"/>
-        <stop offset="100%" stopColor="#10B981" stopOpacity="0"/>
-      </radialGradient>
-    </defs>
-    <circle cx="50" cy="50" r="46" fill="url(#male-glow)" />
-    <circle cx="50" cy="50" r="42" fill="#07162C" stroke="#E5C158" strokeWidth="1.5" />
-    <path d="M50 24c-6.6 0-12 5.4-12 12c0 4.8 2.8 8.9 6.9 10.8c-7.6 2.1-13.4 8.7-14.4 16.7h39c-1-8-6.8-14.6-14.4-16.7c4.1-1.9 6.9-6 6.9-10.8c0-6.6-5.4-12-12-12z" fill="#E5C158" opacity="0.9" />
-  </svg>
-);
 
 function Team() {
   const team = [
@@ -209,13 +182,13 @@ function Team() {
       name: 'Vishakha M Agarwal', 
       role: 'FOUNDER & BUSINESS HEAD', 
       bio: 'Expert in brand positioning, international sourcing, and product curation. Vishakha leads client-centric strategy across agribusiness and global commodity logistics.', 
-      Avatar: FemaleAvatar 
+      image: 'https://img.magnific.com/premium-vector/smiling-woman-avatar_937492-6135.jpg?semt=ais_hybrid&w=740&q=80' 
     },
     { 
       name: 'Manish K Agarwal', 
       role: 'FINANCE & ADMIN HEAD', 
       bio: 'Expert in export-import compliance, documentation channels, and risk mitigation. Manish directs trade financial controls and operational administration cycles.', 
-      Avatar: MaleAvatar 
+      image: 'https://static.vecteezy.com/system/resources/thumbnails/024/183/502/small/male-avatar-portrait-of-a-young-man-with-a-beard-illustration-of-male-character-in-modern-color-style-vector.jpg' 
     },
   ];
 
@@ -229,7 +202,7 @@ function Team() {
           <span className="section-label text-gold-300">Leadership Team</span>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white mt-3 mb-6">Our Team</h2>
           <p className="text-white/70 font-body leading-relaxed text-base sm:text-lg mb-4">
-            At Tanisii Impex, our team is the cornerstone of global trade excellence. With deep expertise in export-import operations, sourcing, quality assurance, and brand positioning, we deliver innovative, client-centric solutions across markets.
+            At Tanisi Impex, our team is the cornerstone of global trade excellence. With deep expertise in export-import operations, sourcing, quality assurance, and brand positioning, we deliver innovative, client-centric solutions across markets.
           </p>
           <p className="text-white/60 font-body leading-relaxed text-sm">
             From curating premium gemstones and jewelry to managing agribusiness logistics, our professionals leverage strategic marketing, social media engagement, and robust customer relationship management to drive trust, visibility, and value for our global clientele.
@@ -250,7 +223,7 @@ function Team() {
               <div className="w-28 h-28 rounded-full bg-navy-950 flex items-center justify-center mx-auto mb-6
                               shadow-lg group-hover:shadow-green-500/10 border-2 border-white/10 group-hover:border-gold-400/30 transition-all duration-300">
                 <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <m.Avatar />
+                  <img src={m.image} alt={m.name} className="w-full h-full object-cover" />
                 </div>
               </div>
               <h3 className="font-heading font-semibold text-white text-xl mb-1 group-hover:text-gold-300 transition-colors">{m.name}</h3>

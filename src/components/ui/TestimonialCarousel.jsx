@@ -26,7 +26,7 @@ export default function TestimonialCarousel() {
   return (
     <AnimatedTestimonials
       title="Trusted Globally, Endorsed Professionally"
-      subtitle="Hear directly from international importers and trade partners who trust Tanisii Impex for seamless sourcing and flawless logistics."
+      subtitle="Hear directly from international importers and trade partners who trust Tanisi Impex for seamless sourcing and flawless logistics."
       badgeText="Verify Our Credibility"
       testimonials={formattedTestimonials}
       trustedCompanies={["Dubai Agro LLC", "EuroFoods Co.", "Singapore Spices", "UK Wholesale Ltd."]}

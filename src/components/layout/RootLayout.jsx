@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Outlet, ScrollRestoration } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import WhatsAppButton from '@/components/layout/WhatsAppButton';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import Chatbot from '@/components/ui/chatbot';
 import CookieBanner from '@/components/ui/CookieBanner';
 import IntroScreen from '@/components/ui/IntroScreen';

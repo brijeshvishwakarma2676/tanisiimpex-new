@@ -126,4 +126,18 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Legal -->
+  <url>
+    <loc>https://www.tanisiimpex.com/privacy-policy</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.tanisiimpex.com/terms</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>

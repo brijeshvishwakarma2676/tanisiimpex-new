@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>Under Maintenance | Tanisii Impex</title>
+        <title>Under Maintenance | Tanisi Impex</title>
       </Helmet>
       <div className="min-h-screen bg-hero-gradient flex items-center justify-center px-4">
         <motion.div

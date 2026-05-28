@@ -57,8 +57,8 @@ export default function Navbar() {
             <a href="tel:+919152121077" className="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
               <Phone size={11} /> +91 91521 21077
             </a>
-            <a href="mailto:tenisiimpex@gmail.com" className="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
-              <Mail size={11} /> tenisiimpex@gmail.com
+            <a href="mailto:info@tanisiimpex.com" className="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
+              <Mail size={11} /> info@tanisiimpex.com
             </a>
           </div>
           <div className="flex items-center gap-3 text-[11px] text-white/45">
@@ -83,12 +83,12 @@ export default function Navbar() {
             <Link to="/" className="flex items-center gap-3 group">
               <img 
                 src="/images/logo.png" 
-                alt="Tanisii Impex Logo" 
+                alt="Tanisi Impex Logo" 
                 className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
               />
               <div>
                 <div className="font-heading font-bold text-white text-[17px] leading-none tracking-wider">
-                  TANISII IMPEX
+                  TANISI IMPEX
                 </div>
                 <div className="text-gold-300/80 text-[9px] font-body tracking-[0.18em] uppercase leading-none mt-1 hidden sm:block">
                   Global Trade · Indian Excellence
@@ -207,8 +207,8 @@ export default function Navbar() {
               {/* Drawer header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
                 <div className="flex items-center gap-2.5">
-                  <img src="/images/logo.png" alt="Tanisii Impex Logo" className="h-8 w-auto object-contain" />
-                  <span className="font-heading font-bold text-white text-base">TANISII IMPEX</span>
+                  <img src="/images/logo.png" alt="Tanisi Impex Logo" className="h-8 w-auto object-contain" />
+                  <span className="font-heading font-bold text-white text-base">TANISI IMPEX</span>
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}
@@ -291,8 +291,8 @@ export default function Navbar() {
                   <a href="tel:+919152121077" className="flex items-center gap-2 hover:text-gold-300 transition-colors">
                     <Phone size={13} /> +91 91521 21077
                   </a>
-                  <a href="mailto:tenisiimpex@gmail.com" className="flex items-center gap-2 hover:text-gold-300 transition-colors">
-                    <Mail size={13} /> tenisiimpex@gmail.com
+                  <a href="mailto:info@tanisiimpex.com" className="flex items-center gap-2 hover:text-gold-300 transition-colors">
+                    <Mail size={13} /> info@tanisiimpex.com
                   </a>
                 </div>
               </div>

@@ -83,7 +83,7 @@ export default function GlobalReach() {
             <span className="section-label text-gold-300">Our Global Footprint</span>
             <h1 className="font-heading text-white mt-4 mb-6">Connecting India to the World</h1>
             <p className="text-white/70 text-lg font-body max-w-2xl mx-auto">
-              Tanisii Impex products reach buyers in 30+ countries across six global regions — from
+              Tanisi Impex products reach buyers in 30+ countries across six global regions — from
               the souks of Dubai to the supermarkets of London.
             </p>
           </motion.div>

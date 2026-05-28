@@ -13,6 +13,7 @@ import ProductGrid from '@/components/ui/ProductGrid';
 import TestimonialCarousel from '@/components/ui/TestimonialCarousel';
 import CTABanner from '@/components/ui/CTABanner';
 import GlobalMap from '@/components/ui/GlobalMap';
+import { incotermsList } from '@/data/globalData';
 
 import { HeroSection as CustomHeroSection } from '@/components/ui/hero-section-2';
 
@@ -22,7 +23,7 @@ function HeroSection() {
     <CustomHeroSection
       logo={{
         url: "/images/logo.png",
-        alt: "Tanisii Impex Logo",
+        alt: "Tanisi Impex Logo",
       }}
       slogan="MIRA ROAD, MUMBAI — INDIA"
       title={
@@ -38,7 +39,7 @@ function HeroSection() {
       }}
       backgroundImage="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&auto=format&fit=crop&q=80"
       contactInfo={{
-        website: "www.tanisiiimpex.com",
+        website: "www.tanisiimpex.com",
         phone: "+91 91521 21077",
         address: "1403, A Wing, Vasudev Paradise, Kanakia Road, Near Unique Garden, Mira Road, Mumbai",
       }}
@@ -129,9 +130,9 @@ function AboutSnapshot() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <SectionHeader align="left" label="About Tanisii Impex" heading="Rooted in India. Trusted Globally." />
+            <SectionHeader align="left" label="About Tanisi Impex" heading="Rooted in India. Trusted Globally." />
             <div className="mt-6 space-y-4 text-gray-600 font-body leading-relaxed">
-              <p>Founded in Mumbai — India's premier trade gateway — Tanisii Impex has grown into a globally trusted export house with presence in 30+ countries across five continents.</p>
+              <p>Founded in Mumbai — India's premier trade gateway — Tanisi Impex has grown into a globally trusted export house with presence in 30+ countries across five continents.</p>
               <p>We handle everything from farm-gate procurement to CIF delivery, ensuring our buyers experience zero friction throughout the trade cycle.</p>
               <p>With ISO 9001:2015 certification, APEDA registration, and a dedicated team of trade professionals, we deliver not just products — but peace of mind.</p>
             </div>
@@ -171,7 +172,7 @@ function WhyChooseUs() {
       <div className="section-container relative z-10">
         <SectionHeader
           label="Why Choose Us"
-          heading="Why Global Buyers Choose Tanisii Impex"
+          heading="Why Global Buyers Choose Tanisi Impex"
           subtext="From procurement to delivery, every aspect of the trade is handled with precision."
           light
         />
@@ -265,11 +266,11 @@ function GlobalReachTeaser() {
 
 // ─── Export Logistics & Incoterms ─────────────────────────────────────────────
 function LogisticsSection() {
-  const incoterms = [
-    { term: 'FOB', name: 'Free On Board', desc: 'We deliver goods to the port of origin (e.g. JNPT Mumbai).' },
-    { term: 'CIF', name: 'Cost, Insurance & Freight', desc: 'We handle freight and insurance to your destination port.' },
-    { term: 'DDP', name: 'Delivered Duty Paid', desc: 'End-to-end delivery right to your warehouse facility.' },
-  ];
+  const incoterms = incotermsList.filter(i => ['FOB', 'CIF', 'DDP'].includes(i.term)).map(i => ({
+    term: i.term,
+    name: i.name,
+    desc: i.description
+  }));
   const containers = [
     { type: '20ft Dry', desc: 'Ideal for heavy, non-perishable goods like spices and rice.' },
     { type: '40ft HC', desc: 'High Cube containers for maximum volume efficiency.' },
@@ -342,7 +343,7 @@ function BlogTeaser() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="section-container">
-        <SectionHeader label="Trade Insights" heading="Latest from Tanisii Impex" subtext="Stay updated on India's export landscape, regulations, and commodity trends." />
+        <SectionHeader label="Trade Insights" heading="Latest from Tanisi Impex" subtext="Stay updated on India's export landscape, regulations, and commodity trends." />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {posts.map(({ tag, title, excerpt, date, readTime, Icon: BlogIcon }, i) => (
             <motion.article

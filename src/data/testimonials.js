@@ -7,7 +7,7 @@ export const testimonials = [
     country: 'United Arab Emirates',
     flag: '🇦🇪',
     rating: 5,
-    text: "Tanisii Impex has been our go-to supplier for fresh onions and pomegranates for 5 years. Consistent quality, on-time delivery, and excellent documentation support. They understand international trade requirements better than most exporters we've worked with.",
+    text: "Tanisi Impex has been our go-to supplier for fresh onions and pomegranates for 5 years. Consistent quality, on-time delivery, and excellent documentation support. They understand international trade requirements better than most exporters we've worked with.",
     avatar: null,
   },
   {
@@ -29,7 +29,7 @@ export const testimonials = [
     country: 'Nigeria',
     flag: '🇳🇬',
     rating: 5,
-    text: "Found Tanisii Impex on a trade portal and took a chance. Best decision for our business. Spice quality is exceptional and pricing is very competitive. Their communication is fast and they always deliver as promised.",
+    text: "Found Tanisi Impex on a trade portal and took a chance. Best decision for our business. Spice quality is exceptional and pricing is very competitive. Their communication is fast and they always deliver as promised.",
     avatar: null,
   },
   {
@@ -51,7 +51,7 @@ export const testimonials = [
     country: 'United Kingdom',
     flag: '🇬🇧',
     rating: 5,
-    text: "Impeccable service and quality assurance. Their pre-shipment testing reports give us complete peace of mind with every shipment. We've expanded our Indian product range by 4x since partnering with Tanisii.",
+    text: "Impeccable service and quality assurance. Their pre-shipment testing reports give us complete peace of mind with every shipment. We've expanded our Indian product range by 4x since partnering with Tanisi.",
     avatar: null,
   },
   {

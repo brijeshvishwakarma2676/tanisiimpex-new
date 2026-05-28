@@ -165,7 +165,7 @@ export default function IntroScreen({ onComplete }) {
                     />
                     <img 
                       src="/images/logo.png" 
-                      alt="Tanisii Impex Logo" 
+                      alt="Tanisi Impex Logo" 
                       className="w-16 h-16 object-contain relative z-10 brightness-[0.1] filter drop-shadow-md" 
                     />
                   </motion.div>

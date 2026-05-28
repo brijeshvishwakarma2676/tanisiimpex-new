@@ -24,7 +24,7 @@ export default function ProductCategory() {
   return (
     <>
       <Helmet>
-        <title>{cat.name} | Tanisii Impex — Indian Export Products</title>
+        <title>{cat.name} | Tanisi Impex — Indian Export Products</title>
         <meta name="description" content={cat.longDescription} />
       </Helmet>
 

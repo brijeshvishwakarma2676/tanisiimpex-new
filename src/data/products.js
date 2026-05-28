@@ -11,13 +11,13 @@ export const productCategories = [
     description:
       'Fresh, premium-grade fruits and vegetables sourced directly from GlobalG.A.P certified farms in Maharashtra and Gujarat.',
     longDescription:
-      'Tanisii Impex specializes in exporting farm-fresh produce with absolute quality control. Our cold-chain shipping channels and sorting processes ensure that onions, pomegranates, grapes, mangoes, bananas, and chillies reach international wholesale markets in pristine, ready-to-sell condition.',
+      'Tanisi Impex specializes in exporting farm-fresh produce with absolute quality control. Our cold-chain shipping channels and sorting processes ensure that onions, pomegranates, grapes, mangoes, bananas, and chillies reach international wholesale markets in pristine, ready-to-sell condition.',
     tags: ['Onion', 'Pomegranate', 'Grapes', 'Mango', 'Banana', 'Green Chilli'],
     products: [
       {
         name: 'Fresh Onion',
         hsCode: '0703.10',
-        origin: 'Mira Road, Mumbai',
+        origin: 'Nashik, Maharashtra',
         moq: '1 MT',
         season: 'Oct–Mar',
         certifications: ['APEDA', 'Phytosanitary'],
@@ -27,7 +27,7 @@ export const productCategories = [
       {
         name: 'Pomegranate (Bhagwa)',
         hsCode: '0810.90',
-        origin: 'Mira Road, Mumbai',
+        origin: 'Nashik / Solapur, Maharashtra',
         moq: '500 KG',
         season: 'Sep–Feb',
         certifications: ['APEDA', 'GlobalG.A.P'],
@@ -37,7 +37,7 @@ export const productCategories = [
       {
         name: 'Grapes (Thompson Seedless)',
         hsCode: '0806.10',
-        origin: 'Mira Road, Mumbai',
+        origin: 'Nashik, Maharashtra',
         moq: '1 MT',
         season: 'Jan–May',
         certifications: ['APEDA', 'EurepGAP'],
@@ -86,7 +86,7 @@ export const productCategories = [
     description:
       'High-purity, single-origin and blended Indian spices certified by the Spices Board of India.',
     longDescription:
-      'India is the spice bowl of the world, and Tanisii Impex delivers that authentic rich aroma directly to your shores. We supply premium single-origin whole seeds, powders, and customized retail spice blends tested meticulously for aflatoxins and pesticide residues.',
+      'India is the spice bowl of the world, and Tanisi Impex delivers that authentic rich aroma directly to your shores. We supply premium single-origin whole seeds, powders, and customized retail spice blends tested meticulously for aflatoxins and pesticide residues.',
     tags: ['Red Chilli', 'Cumin Seeds', 'Turmeric', 'Sesame Seeds', 'Essential Oils'],
     products: [
       {
@@ -311,7 +311,7 @@ export const featuredProducts = [
     name: 'Pomegranate (Bhagwa)',
     badge: 'Seasonal Bestseller',
     image: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80',
-    origin: 'Mira Road, Mumbai',
+    origin: 'Nashik, Maharashtra',
     hsCode: '0810.90',
     moq: '500 KG',
     season: 'Sep–Feb',
