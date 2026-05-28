@@ -106,7 +106,6 @@ export default function FAQ() {
                   </motion.div>
                 ))}
               </Accordion>
-        </div>
 
           {/* Still have questions block */}
           <motion.div 
