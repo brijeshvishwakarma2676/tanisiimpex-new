@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Search, ArrowRight, Filter } from 'lucide-react';
@@ -248,10 +249,26 @@ export default function Products() {
 
   return (
     <>
-      <Helmet>
-        <title>Products | Tanisii Impex — Agricultural, FMCG, Industrial, Organic Exports</title>
-        <meta name="description" content="Browse Tanisii Impex's export product catalog — agricultural produce, FMCG, industrial goods, organic products, and custom sourcing from Mumbai, India." />
-      </Helmet>
+      <SEO
+        title="Indian Export Products — Basmati Rice, Spices, Fresh Vegetables, FMCG, Organic"
+        description="Explore Tanisi Impex's full B2B export product catalog. Premium Basmati rice (1121 Golden Sella, Pusa, Sona Masoori), Indian spices (turmeric, cumin, red chilli), fresh vegetables, FMCG, and organic products. ISO & APEDA certified. Ships from Mumbai to 30+ countries."
+        keywords="basmati rice exporter India, Indian spices wholesale, turmeric exporter India, cumin seeds exporter, fresh onion exporter Mumbai, FMCG export India, organic products exporter India, 1121 basmati rice exporter, Sona Masoori rice exporter"
+        path="/products"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Tanisi Impex Export Product Catalog",
+          "description": "Premium Indian agricultural commodities and FMCG products for B2B import",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Basmati Rice", "url": "https://www.tanisiimpex.com/products/rice" },
+            { "@type": "ListItem", "position": 2, "name": "Indian Spices", "url": "https://www.tanisiimpex.com/products/spices" },
+            { "@type": "ListItem", "position": 3, "name": "Fresh Vegetables", "url": "https://www.tanisiimpex.com/products/fresh-vegetables" },
+            { "@type": "ListItem", "position": 4, "name": "Fresh Fruits", "url": "https://www.tanisiimpex.com/products/fresh-fruits" },
+            { "@type": "ListItem", "position": 5, "name": "FMCG Products", "url": "https://www.tanisiimpex.com/products/fmcg" },
+            { "@type": "ListItem", "position": 6, "name": "Organic Products", "url": "https://www.tanisiimpex.com/products/organic" }
+          ]
+        }}
+      />
 
       <ProductsHero search={search} setSearch={setSearch} />
       

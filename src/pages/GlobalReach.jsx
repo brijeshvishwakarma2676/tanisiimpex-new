@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Anchor, Globe, MapPin } from 'lucide-react';
@@ -65,10 +66,12 @@ function WorldMapSection() {
 export default function GlobalReach() {
   return (
     <>
-      <Helmet>
-        <title>Global Reach | Tanisii Impex — Exports to 30+ Countries</title>
-        <meta name="description" content="Tanisii Impex exports to 30+ countries — Middle East, Africa, Europe, Southeast Asia, Americas, CIS. Discover our global markets and logistics capabilities." />
-      </Helmet>
+      <SEO
+        title="Global Export Reach — Tanisi Impex Ships to 30+ Countries Worldwide"
+        description="Tanisi Impex exports premium Indian agricultural products to 30+ countries. Middle East (UAE, Saudi, Oman, Kuwait), Europe (UK, Germany, Netherlands), Southeast Asia (Singapore, Malaysia), Africa, and North America. FOB, CIF, CFR terms available."
+        keywords="Indian exporter UAE, Indian exporter Saudi Arabia, Indian spices Europe, basmati rice UK, Indian food export Africa, agricultural export Southeast Asia, import from India worldwide"
+        path="/global-reach"
+      />
 
       {/* Hero */}
       <section className="bg-hero-gradient py-28 relative overflow-hidden">

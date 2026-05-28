@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Award, CheckCircle, ChevronDown, ChevronUp, Leaf, FlaskConical, Package, Microscope, ClipboardList, Sprout, Shield } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
@@ -77,10 +78,12 @@ function FAQItem({ q, a }) {
 export default function Quality() {
   return (
     <>
-      <Helmet>
-        <title>Quality & Compliance Certifications | Tanisii Impex</title>
-        <meta name="description" content="ISO 9001:2015 certified. APEDA, FSSAI, FIEO registered. Pre-shipment inspection, lab testing, and full compliance documentation for all Tanisii Impex products." />
-      </Helmet>
+      <SEO
+        title="Quality & Certifications — ISO 9001, APEDA, FSSAI Certified Indian Exporter"
+        description="Tanisi Impex maintains rigorous quality standards across all exports. ISO 9001:2015, APEDA, FSSAI, FIEO & Spice Board certified. Pre-shipment SGS/BV inspections, pesticide residue testing, lab reports, and full phytosanitary compliance included."
+        keywords="ISO certified Indian exporter, APEDA certified exporter, FSSAI certified export India, pre-shipment inspection India, SGS inspection India, phytosanitary certificate India, Indian food export quality"
+        path="/quality"
+      />
 
       <section className="bg-hero-gradient py-28 relative overflow-hidden">
         <div className="section-container relative z-10 text-center">

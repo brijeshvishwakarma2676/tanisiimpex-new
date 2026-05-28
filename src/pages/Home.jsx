@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import {
@@ -376,10 +377,23 @@ function BlogTeaser() {
 export default function Home() {
   return (
     <>
-      <Helmet>
-        <title>Tanisii Impex | Premium Indian Exporter — Mira Road, Mumbai</title>
-        <meta name="description" content="Tanisii Impex — leading Indian export company from Mumbai specializing in agricultural products, FMCG, spices, and organic products. Trusted in 30+ countries." />
-      </Helmet>
+      <SEO
+        title="Premium Indian Export Company — Basmati Rice, Spices, Agricultural Products"
+        description="Tanisi Impex is a leading Indian export company from Mira Road, Mumbai. We export premium Basmati rice, Indian spices, fresh vegetables, FMCG products, and organic goods to 30+ countries. ISO 9001:2015 & APEDA certified. Get a free quote today."
+        keywords="Indian export company, basmati rice exporter Mumbai, Indian spices exporter, agricultural products export India, FMCG exporter India, import from India, export company Mira Road, ISO certified Indian exporter"
+        path="/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Tanisi Impex",
+          "url": "https://www.tanisiimpex.com",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.tanisiimpex.com/products?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }}
+      />
       <HeroSection />
       <TrustBar />
       <AboutSnapshot />

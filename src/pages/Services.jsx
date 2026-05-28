@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, Search, FlaskConical, Ship, FileText, Package, CreditCard, BarChart3 } from 'lucide-react';
@@ -10,10 +11,12 @@ import { servicesData as services } from '@/data/companyData';
 export default function Services() {
   return (
     <>
-      <Helmet>
-        <title>Services | Tanisii Impex — Export Management, Logistics, Quality Control</title>
-        <meta name="description" content="Tanisii Impex offers end-to-end export services: product sourcing, quality control, logistics, documentation, custom packaging, and trade finance support." />
-      </Helmet>
+      <SEO
+        title="Export Services — End-to-End Indian Export Management, Logistics & Documentation"
+        description="Tanisi Impex offers full B2B export services: product sourcing, pre-shipment quality inspection, sea freight (FCL/LCL), custom packaging, export documentation (BL, COO, phytosanitary), and trade finance guidance. Mumbai-based export house serving 30+ countries."
+        keywords="Indian export services, export management company India, product sourcing India, pre-shipment inspection India, FCL LCL freight India, export documentation India, custom packaging India, trade finance India"
+        path="/services"
+      />
 
       {/* Hero */}
       <section className="bg-hero-gradient py-28 relative overflow-hidden">

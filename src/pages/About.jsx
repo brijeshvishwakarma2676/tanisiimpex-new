@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Target, Eye, Leaf, Handshake, Award, Zap, Wheat, Ship, Factory, Globe, FileText, ShieldCheck } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
@@ -330,10 +331,30 @@ function StatsBar() {
 export default function About() {
   return (
     <>
-      <Helmet>
-        <title>About Us | Tanisii Impex — Indian Export Company</title>
-        <meta name="description" content="Learn about Tanisii Impex — founded in Mira Road, Mumbai. Our story, mission, team, certifications, and 15 years of global export experience." />
-      </Helmet>
+      <SEO
+        title="About Tanisi Impex — 15+ Years of Premium Indian Exports from Mumbai"
+        description="Tanisi Impex is a trusted Indian export company founded in Mira Road, Mumbai with 15+ years of experience. ISO 9001:2015 & APEDA certified. Exporting Basmati rice, spices, FMCG, and organic products to 30+ countries. Meet our team and story."
+        keywords="about Tanisi Impex, Indian export company history, Mumbai export house, APEDA certified exporter, ISO certified exporter India, Mira Road export company, agricultural exporter Mumbai"
+        path="/about"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Tanisi Impex",
+          "image": "https://www.tanisiimpex.com/images/logo.png",
+          "url": "https://www.tanisiimpex.com",
+          "telephone": "+91-91521-21077",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1403, A Wing, Vasudev Paradise, Kanakia Road",
+            "addressLocality": "Mira Road",
+            "addressRegion": "Maharashtra",
+            "postalCode": "401107",
+            "addressCountry": "IN"
+          },
+          "openingHours": "Mo-Sa 09:00-19:00",
+          "priceRange": "$$"
+        }}
+      />
       <AboutHero />
       <StatsBar />
       <CompanyStory />

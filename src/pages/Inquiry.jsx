@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
+import SEO from '@/components/SEO';
 import { useForm } from 'react-hook-form';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 
@@ -37,10 +38,12 @@ export default function Inquiry() {
 
   return (
     <>
-      <Helmet>
-        <title>Product Inquiry | Tanisii Impex — Request Export Quote</title>
-        <meta name="description" content="Submit a B2B product inquiry to Tanisii Impex. Specify product, quantity, destination, Incoterm, and payment preference." />
-      </Helmet>
+      <SEO
+        title="Request an Export Quote — B2B Product Inquiry Form"
+        description="Submit your B2B import inquiry to Tanisi Impex. Specify product (Basmati rice, spices, vegetables, FMCG), quantity, destination port, Incoterm (FOB/CIF/CFR), and payment preference. Receive a Proforma Invoice within 24 hours."
+        keywords="request export quote India, B2B import inquiry India, FOB quote India, CIF quote basmati rice, Indian spices wholesale inquiry, import from India form"
+        path="/inquiry"
+      />
 
       <section className="bg-hero-gradient py-24">
         <div className="section-container text-center">

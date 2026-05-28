@@ -1,18 +1,32 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MessageCircleQuestion, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import SEO from '@/components/SEO';
 import { faqItems } from '@/data/faqData';
 export default function FAQ() {
   return (
     <>
-      <Helmet>
-        <title>FAQ & AI Chatbot Support | Tanisi Impex</title>
-        <meta name="description" content="Find answers to common questions about importing from India with Tanisi Impex. Chat with Tenisi, our experimental B2B trade AI chatbot assistant." />
-      </Helmet>
+      <SEO
+        title="FAQ — B2B Import from India: MOQ, Payment Terms, Shipping & Quality Questions"
+        description="Answers to the most common questions about importing from Tanisi Impex: minimum order quantity, payment terms (LC/TT), transit times, quality certifications, and product availability. Plus chat with Tenisi, our AI trade assistant."
+        keywords="import from India FAQ, MOQ Indian exporter, LC payment terms India, basmati rice MOQ, Indian export quality certification, shipping time India to UAE, B2B import questions India"
+        path="/faq"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqItems.map(item => ({
+            "@type": "Question",
+            "name": item.title,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.content
+            }
+          }))
+        }}
+      />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-navy-900 border-b border-navy-800">

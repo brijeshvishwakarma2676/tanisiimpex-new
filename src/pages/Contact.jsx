@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { MapPin, Phone, Mail, Clock, MessageCircle, CheckCircle } from 'lucide-react';
@@ -112,10 +113,12 @@ function ContactForm() {
 export default function Contact() {
   return (
     <>
-      <Helmet>
-        <title>Contact Us | Tanisii Impex — Mira Road, Mumbai, India</title>
-        <meta name="description" content="Contact Tanisii Impex for export inquiries. Mira Road, Mumbai, India. Phone, WhatsApp, email. We respond within 24 hours." />
-      </Helmet>
+      <SEO
+        title="Contact Tanisi Impex — WhatsApp, Phone & Email for Export Inquiries"
+        description="Contact Tanisi Impex for B2B export inquiries. Call or WhatsApp: +91 91521 21077. Email: tenisiimpex@gmail.com. Office: Mira Road, Mumbai. We respond within 24 hours. Start your import from India today."
+        keywords="contact Tanisi Impex, export inquiry India, import from India contact, WhatsApp Indian exporter, Mumbai exporter contact, B2B trade inquiry India"
+        path="/contact"
+      />
 
       <section className="bg-hero-gradient py-28 relative overflow-hidden">
         <div className="section-container relative z-10 text-center">
