@@ -5,16 +5,7 @@ import { ArrowRight, Globe, Search, FlaskConical, Ship, FileText, Package, Credi
 import SectionHeader from '@/components/ui/SectionHeader';
 import CTABanner from '@/components/ui/CTABanner';
 
-const services = [
-  { Icon: Globe,        title: 'Export Management',        desc: 'End-to-end handling of your export order — from product sourcing and quality inspection to freight booking and final delivery.', bullets: ['Procurement & quality control', 'Freight & insurance coordination', 'Complete documentation', 'After-delivery support'] },
-  { Icon: Search,       title: 'Product Sourcing',         desc: "Access India's vast manufacturing and farming ecosystem through our pan-India vendor network of 500+ verified suppliers.", bullets: ['Pan-India supplier network', 'Price benchmarking', 'Vendor due diligence', 'Factory audits'] },
-  { Icon: FlaskConical, title: 'Quality Control',          desc: 'Our in-house QC team and accredited third-party labs perform pre-shipment inspection, sampling, and testing.', bullets: ['Pre-shipment inspection', 'Third-party lab testing', 'Pesticide residue analysis', 'Microbiological testing'] },
-  { Icon: Ship,         title: 'Logistics & Freight',      desc: 'We coordinate sea and air freight, customs clearance, inland transport, and cold-chain logistics.', bullets: ['FCL & LCL sea freight', 'Air cargo for perishables', 'Cold-chain logistics', 'Customs clearance support'] },
-  { Icon: FileText,     title: 'Documentation',            desc: 'Our documentation team handles it all — ensuring zero errors, timely submission, and full regulatory compliance.', bullets: ['Certificate of Origin (COO)', 'Phytosanitary Certificate', 'Fumigation Certificate', 'BL, Packing List, Invoice'] },
-  { Icon: Package,      title: 'Custom Packaging',         desc: 'Private label packaging under your brand. Custom artwork, multiple packaging formats, and destination-compliant materials.', bullets: ['Private label design', 'Multi-language labeling', 'Retail & bulk formats', 'Eco-friendly options'] },
-  { Icon: CreditCard,   title: 'Trade Finance Assistance', desc: 'Guidance on the best payment instruments — LC, DP, DA, and advance payment terms that protect both buyer and seller.', bullets: ['LC at Sight & Usance', 'DP & DA terms', 'Advance payment guidance', 'Bank reference on request'] },
-  { Icon: BarChart3,    title: 'Market Intelligence',      desc: 'Commodity price trends, seasonal availability reports, import regulations, and competitor pricing insights.', bullets: ['Commodity price reports', 'Seasonal availability guides', 'Regulatory compliance info', 'Tariff & duty consultation'] },
-];
+import { servicesData as services } from '@/data/companyData';
 
 export default function Services() {
   return (

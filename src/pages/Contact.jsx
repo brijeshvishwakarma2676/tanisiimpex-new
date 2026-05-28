@@ -5,17 +5,7 @@ import { MapPin, Phone, Mail, Clock, MessageCircle, CheckCircle } from 'lucide-r
 import { FaWhatsapp } from 'react-icons/fa';
 import { useState } from 'react';
 
-const contactInfo = [
-  { Icon: MapPin, label: 'Address', value: '1403, A Wing, Vasudev Paradise,\nKanakia Road, Near Unique Garden,\nMira Road, Mumbai - 401107, India' },
-  { Icon: Phone, label: 'Phone / WhatsApp', value: '+91 91521 21077', href: 'tel:+919152121077' },
-  { Icon: Mail, label: 'Email', value: 'tenisiimpex@gmail.com', href: 'mailto:tenisiimpex@gmail.com' },
-  { Icon: Clock, label: 'Business Hours', value: 'Mon – Sat: 9:00 AM – 7:00 PM IST' },
-];
-
-const productOptions = [
-  'Fresh Onion', 'Pomegranate', 'Grapes', 'Alphonso Mango', 'Spices', 'Basmati Rice',
-  'FMCG Products', 'Organic Products', 'Custom Sourcing',
-];
+import { contactInfo, productOptions } from '@/data/companyData';
 
 function ContactForm() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();

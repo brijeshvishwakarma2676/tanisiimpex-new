@@ -4,9 +4,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 
-const productList = ['Fresh Onion', 'Pomegranate', 'Grapes', 'Alphonso Mango', 'Red Chilli', 'Cumin Seeds', 'Turmeric Powder', 'Basmati Rice', 'Organic Honey', 'Virgin Coconut Oil', 'Organic Products', 'Custom Sourcing'];
-const incoterms = ['FOB', 'CIF', 'CFR', 'DDP', 'EXW', 'CPT'];
-const paymentTerms = ['LC at Sight', 'LC Usance 30/60/90 Days', 'TT Advance', 'DP (Documents against Payment)', 'DA (Documents against Acceptance)'];
+import { inquiryProductList as productList, inquiryIncoterms as incoterms, inquiryPaymentTerms as paymentTerms } from '@/data/companyData';
 
 export default function Inquiry() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
