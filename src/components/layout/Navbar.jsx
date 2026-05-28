@@ -26,6 +26,7 @@ const navLinks = [
   { label: 'Services', to: '/services' },
   { label: 'Global Reach', to: '/global-reach' },
   { label: 'Quality', to: '/quality' },
+  { label: 'FAQ', to: '/faq' },
   { label: 'Contact', to: '/contact' },
 ];
 

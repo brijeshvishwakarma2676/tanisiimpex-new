@@ -13,6 +13,7 @@ const footerLinks = {
     { label: 'Our Services', to: '/services' },
     { label: 'Global Reach', to: '/global-reach' },
     { label: 'Quality & Certs', to: '/quality' },
+    { label: 'FAQ', to: '/faq' },
     { label: 'Contact Us', to: '/contact' },
     { label: 'Bulk Inquiry', to: '/inquiry' },
   ],

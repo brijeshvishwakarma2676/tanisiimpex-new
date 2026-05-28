@@ -24,6 +24,7 @@ const GlobalReach = lazy(() => import('@/pages/GlobalReach'));
 const Quality = lazy(() => import('@/pages/Quality'));
 const Contact = lazy(() => import('@/pages/Contact'));
 const Inquiry = lazy(() => import('@/pages/Inquiry'));
+const FAQ = lazy(() => import('@/pages/FAQ'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 function S({ children }) {
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: 'quality',              element: <S><Quality /></S> },
       { path: 'contact',              element: <S><Contact /></S> },
       { path: 'inquiry',              element: <S><Inquiry /></S> },
+      { path: 'faq',                  element: <S><FAQ /></S> },
       { path: '*',                    element: <S><NotFound /></S> },
     ],
   },

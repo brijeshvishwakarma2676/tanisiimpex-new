@@ -3,6 +3,7 @@ import { Outlet, ScrollRestoration } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
+import Chatbot from '@/components/ui/chatbot';
 import CookieBanner from '@/components/ui/CookieBanner';
 import IntroScreen from '@/components/ui/IntroScreen';
 // Top info bar height: ~32px on lg, 0 on mobile
@@ -37,6 +38,7 @@ export default function RootLayout() {
         </main>
         <Footer />
         <WhatsAppButton />
+        <Chatbot />
         <CookieBanner />
       </div>
       
