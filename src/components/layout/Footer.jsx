@@ -24,7 +24,8 @@ const footerLinks = {
     { label: "Bulk Inquiry", to: "/inquiry" },
   ],
   categories: [
-    { label: "Fruits & Vegetables", to: "/products/fruits-vegetables" },
+    { label: "Fresh Fruits", to: "/products/fresh-fruits" },
+    { label: "Fresh Vegetables", to: "/products/fresh-vegetables" },
     { label: "Premium Spices", to: "/products/spices" },
     { label: "Grains & Commodities", to: "/products/agricultural" },
     { label: "FMCG & Consumer Goods", to: "/products/fmcg" },

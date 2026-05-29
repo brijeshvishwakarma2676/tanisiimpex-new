@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Search, ArrowRight, Filter } from 'lucide-react';
+import { Search, ArrowRight, Filter, ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
 import { productCategories, featuredProducts } from '@/data/products';
 import CTABanner from '@/components/ui/CTABanner';
@@ -89,6 +89,77 @@ const getProductImage = (product, categoryImage) => {
   return categoryImage || 'https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=400&q=80';
 };
 
+// ─── Horizontal Scroll Row ────────────────────────────────────────────────────
+function HorizontalScrollRow({ children }) {
+  const ref = useRef(null);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(false);
+
+  const sync = useCallback(() => {
+    const el = ref.current;
+    if (!el) return;
+    setCanLeft(el.scrollLeft > 4);
+    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    sync();
+    el.addEventListener('scroll', sync, { passive: true });
+    const ro = new ResizeObserver(sync);
+    ro.observe(el);
+    return () => { el.removeEventListener('scroll', sync); ro.disconnect(); };
+  }, [sync]);
+
+  const scroll = (dir) => {
+    ref.current?.scrollBy({ left: dir * 300, behavior: 'smooth' });
+  };
+
+  return (
+    <div className="relative group/row">
+      {/* Left arrow */}
+      <button
+        onClick={() => scroll(-1)}
+        aria-label="Scroll left"
+        className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10
+                    w-9 h-9 rounded-full bg-white shadow-card border border-gray-100
+                    flex items-center justify-center text-navy-700
+                    transition-all duration-200 hover:bg-navy-800 hover:text-white hover:scale-110
+                    ${canLeft ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      >
+        <ChevronLeft size={18} />
+      </button>
+
+      {/* Scroll container */}
+      <div
+        ref={ref}
+        className="flex gap-5 overflow-x-auto pb-3 snap-x snap-proximity scroll-smooth
+                   [&::-webkit-scrollbar]:h-1.5
+                   [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100
+                   [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-navy-300
+                   overscroll-x-contain"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
+        {children}
+      </div>
+
+      {/* Right arrow */}
+      <button
+        onClick={() => scroll(1)}
+        aria-label="Scroll right"
+        className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10
+                    w-9 h-9 rounded-full bg-white shadow-card border border-gray-100
+                    flex items-center justify-center text-navy-700
+                    transition-all duration-200 hover:bg-navy-800 hover:text-white hover:scale-110
+                    ${canRight ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      >
+        <ChevronRight size={18} />
+      </button>
+    </div>
+  );
+}
+
 // ─── Product Card ─────────────────────────────────────────────────────────────
 function ProductCard({ product, category }) {
   const imgSrc = getProductImage(product, category.image);
@@ -99,7 +170,7 @@ function ProductCard({ product, category }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="card overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300 group"
+      className="card overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300 group h-full"
     >
       {/* Card Image header */}
       <div className="h-40 w-full overflow-hidden relative bg-navy-50">
@@ -305,24 +376,28 @@ export default function Products() {
           ) : (
             filteredCategories.map((cat) => (
               <div key={cat.id} className="mb-14">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-3xl">{cat.icon}</span>
-                  <div>
-                    <h2 className="font-heading text-navy-800 text-2xl">{cat.name}</h2>
-                    <p className="text-gray-500 text-sm font-body">{cat.description}</p>
+                <div className="flex flex-col sm:flex-row sm:items-end gap-4 mb-6">
+                  <div className="flex items-start gap-3 flex-1">
+                    <span className="text-3xl mt-0.5 shrink-0">{cat.icon}</span>
+                    <div>
+                      <h2 className="font-heading text-navy-800 text-2xl">{cat.name}</h2>
+                      <p className="text-gray-500 text-sm font-body max-w-xl mt-1">{cat.description}</p>
+                    </div>
                   </div>
                   <Link
                     to={`/products/${cat.slug}`}
-                    className="ml-auto btn-ghost text-sm hidden sm:flex"
+                    className="sm:ml-auto btn-ghost text-sm flex shrink-0 self-start sm:self-auto"
                   >
                     View Category <ArrowRight size={14} />
                   </Link>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                <HorizontalScrollRow>
                   {cat.products.map((p) => (
-                    <ProductCard key={p.name} product={p} category={cat} />
+                    <div key={p.name} className="flex-none w-72 snap-start">
+                      <ProductCard product={p} category={cat} />
+                    </div>
                   ))}
-                </div>
+                </HorizontalScrollRow>
               </div>
             ))
           )}

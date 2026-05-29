@@ -4,7 +4,8 @@ import { ArrowRight, Wheat, ShoppingBag, Factory, Leaf, Apple, Flame, Package, A
 import { productCategories } from '@/data/products';
 
 const categoryConfig = {
-  'fruits-vegetables': { Icon: Apple,       bg: 'from-emerald-900/90 via-emerald-800/60 to-transparent', cardBg: 'bg-gradient-to-br from-emerald-700 to-green-950' },
+  'fresh-fruits':      { Icon: Apple,       bg: 'from-fuchsia-900/90 via-fuchsia-800/60 to-transparent', cardBg: 'bg-gradient-to-br from-fuchsia-700 to-pink-950' },
+  'fresh-vegetables':  { Icon: Apple,       bg: 'from-emerald-900/90 via-emerald-800/60 to-transparent', cardBg: 'bg-gradient-to-br from-emerald-700 to-green-950' },
   spices:              { Icon: Flame,       bg: 'from-red-900/90 via-red-800/60 to-transparent',         cardBg: 'bg-gradient-to-br from-red-700 to-amber-950' },
   agricultural:        { Icon: Wheat,       bg: 'from-amber-900/90 via-amber-800/60 to-transparent',     cardBg: 'bg-gradient-to-br from-amber-700 to-orange-950' },
   fmcg:                { Icon: ShoppingBag, bg: 'from-blue-900/90 via-blue-800/60 to-transparent',       cardBg: 'bg-gradient-to-br from-blue-700 to-indigo-950' },

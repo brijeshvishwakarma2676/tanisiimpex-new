@@ -15,7 +15,8 @@ const navLinks = [
     label: 'Products',
     to: '/products',
     children: [
-      { label: 'Fruits & Vegetables', to: '/products/fruits-vegetables', Icon: Apple },
+      { label: 'Fresh Fruits', to: '/products/fresh-fruits', Icon: Apple },
+      { label: 'Fresh Vegetables', to: '/products/fresh-vegetables', Icon: Apple },
       { label: 'Premium Spices', to: '/products/spices', Icon: Flame },
       { label: 'Grains & Commodities', to: '/products/agricultural', Icon: Wheat },
       { label: 'FMCG & Consumer Goods', to: '/products/fmcg', Icon: ShoppingBag },

@@ -12,7 +12,8 @@ export default function ProductCategory() {
   if (!cat) return <Navigate to="/products" replace />;
 
   const gradients = {
-    'fruits-vegetables': 'from-emerald-800 to-green-950',
+    'fresh-fruits': 'from-fuchsia-800 to-pink-950',
+    'fresh-vegetables': 'from-emerald-800 to-green-950',
     spices: 'from-red-800 to-amber-950',
     agricultural: 'from-amber-700 to-orange-950',
     fmcg: 'from-blue-800 to-indigo-950',
@@ -160,16 +161,31 @@ export default function ProductCategory() {
               </div>
 
               {/* Download catalog */}
-              <div className="card p-5 flex items-center gap-4">
-                <div className="w-12 h-12 bg-navy-50 rounded-xl flex items-center justify-center shrink-0">
-                  <Download size={20} className="text-navy-700" />
+              <div className="card p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-navy-50 rounded-xl flex items-center justify-center shrink-0">
+                    <Download size={18} className="text-navy-700" />
+                  </div>
+                  <div>
+                    <div className="font-heading font-semibold text-navy-800 text-sm">Download Catalog</div>
+                    <div className="text-gray-400 text-xs font-body">Product sheet with full specs</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-heading font-semibold text-navy-800 text-sm">Download Catalog</div>
-                  <div className="text-gray-400 text-xs font-body mb-1">PDF product sheet with full specs</div>
-                  <button className="text-gold-500 text-xs font-semibold font-body hover:text-gold-400 transition-colors">
-                    Download PDF →
-                  </button>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="/catalogs/spices-catalog-sample.pdf"
+                    download={`${cat.name.replace(/\s+/g, '-')}-Catalog-TanisiImpex.pdf`}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-red-50 text-red-700 text-xs font-semibold font-body hover:bg-red-100 transition-colors"
+                  >
+                    <Download size={12} /> Download PDF
+                  </a>
+                  <a
+                    href="/catalogs/spices-catalog-template.docx"
+                    download={`${cat.name.replace(/\s+/g, '-')}-Catalog-TanisiImpex.docx`}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 text-xs font-semibold font-body hover:bg-blue-100 transition-colors"
+                  >
+                    <Download size={12} /> Download Word (Editable)
+                  </a>
                 </div>
               </div>
 
