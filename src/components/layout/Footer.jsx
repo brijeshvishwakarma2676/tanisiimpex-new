@@ -105,15 +105,15 @@ export default function Footer() {
 
             {/* Social icons */}
             <div className="flex items-center gap-3 mt-6">
-              <a href="https://linkedin.com/company/tanisiimpex" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:bg-gold-500 hover:text-navy-950 transition-all hover:scale-110">
+              <a href="https://www.linkedin.com/in/tanisiimpex/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:bg-gold-500 hover:text-navy-950 transition-all hover:scale-110">
                 <FaLinkedinIn size={14} />
               </a>
               <a href="https://facebook.com/tanisiimpex" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:bg-gold-500 hover:text-navy-950 transition-all hover:scale-110">
                 <FaFacebookF size={14} />
               </a>
-              <a href="https://twitter.com/tanisiimpex" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:bg-gold-500 hover:text-navy-950 transition-all hover:scale-110">
+              {/* <a href="https://twitter.com/tanisiimpex" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:bg-gold-500 hover:text-navy-950 transition-all hover:scale-110">
                 <FaTwitter size={14} />
-              </a>
+              </a> */}
               <a href="https://instagram.com/tanisiimpex" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:bg-gold-500 hover:text-navy-950 transition-all hover:scale-110">
                 <FaInstagram size={14} />
               </a>

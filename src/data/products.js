@@ -6,7 +6,7 @@ export const productCategories = [
     name: 'Fresh Fruits',
     slug: 'fresh-fruits',
     icon: '🍇',
-    image: 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=600&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1663040589382-88caf6b2bc60?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
     color: '#D946EF',
     description:
       'Export-grade fresh fruits sourced from GlobalG.A.P certified farms in Maharashtra — cold-chain packed for international wholesale markets.',
@@ -21,7 +21,7 @@ export const productCategories = [
         moq: '500 KG',
         season: 'Sep–Feb',
         certifications: ['APEDA', 'GlobalG.A.P'],
-        image: 'https://images.unsplash.com/photo-1570263495483-5dd94fd54e06?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1580636521086-7b0c742dd567?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
         description: 'Ruby-red Bhagwa pomegranates with high ARILS and sweetness. Export-grade packaging.',
       },
       {
@@ -41,7 +41,7 @@ export const productCategories = [
         moq: '1 MT',
         season: 'Year-round',
         certifications: ['APEDA', 'GlobalG.A.P'],
-        image: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1619995750009-5256e91437b0?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
         description: 'Premium Cavendish bananas selected for spotless skin and optimal size.',
       },
     ],
@@ -51,7 +51,7 @@ export const productCategories = [
     name: 'Fresh Vegetables',
     slug: 'fresh-vegetables',
     icon: '🧅',
-    image: 'https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
     color: '#16A34A',
     description:
       'Farm-fresh vegetables from certified farms in Maharashtra and Andhra Pradesh — sorted, graded, and packed to export standards.',
@@ -294,16 +294,6 @@ export const productCategories = [
         image: '/spice_pages/celery_seeds.png',
         description: 'Premium export grade celery seeds — machine cleaned, sortex cleaned. Purity 99–99.9%, volatile oil min 1.5–3%. Whole seeds (1–2mm) or fine powder. Salmonella absent.',
       },
-      {
-        name: 'Packaged Spices (Retail)',
-        hsCode: '0910.99',
-        origin: 'India',
-        moq: '500 units',
-        season: 'Year-round',
-        certifications: ['FSSAI', 'Spices Board'],
-        image: 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=600&q=80',
-        description: 'Retail-packed garam masala, curry powder, and blended spices under custom labels.',
-      },
     ],
   },
   {
@@ -311,7 +301,7 @@ export const productCategories = [
     name: 'Grains & Commodities',
     slug: 'agricultural',
     icon: '🌾',
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80',
+    image: 'https://cpimg.tistatic.com/02007474/b/4/Agro-Commodities.jpg',
     color: '#D97706',
     description:
       'Bulk agricultural food grains, oilseeds, and pulses sourced directly for wholesale commodity markets.',
@@ -326,7 +316,7 @@ export const productCategories = [
         moq: '2 MT',
         season: 'Year-round',
         certifications: ['APEDA', 'FSSAI'],
-        image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80',
+        image: 'https://images.unsplash.com/photo-1723475158232-819e29803f4d?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
         description: 'Premium 1121 extra-long grain basmati with 8mm+ grain length and aromatic profile.',
       },
     ],
@@ -442,7 +432,7 @@ export const featuredProducts = [
   {
     name: 'Basmati Rice (1121 Extra Long)',
     badge: 'Premium Export Grade',
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1723475158232-819e29803f4d?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
     origin: 'Punjab / Haryana',
     hsCode: '1006.30',
     moq: '2 MT',
@@ -455,7 +445,7 @@ export const featuredProducts = [
   {
     name: 'Pomegranate (Bhagwa)',
     badge: 'Seasonal Bestseller',
-    image: 'https://images.unsplash.com/photo-1570263495483-5dd94fd54e06?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1580636521086-7b0c742dd567?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D=format&fit=crop&w=600&q=80',
     origin: 'Nashik, Maharashtra',
     hsCode: '0810.90',
     moq: '500 KG',
@@ -468,7 +458,7 @@ export const featuredProducts = [
   {
     name: 'Banana (Cavendish)',
     badge: 'High Demand',
-    image: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1619995750009-5256e91437b0?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
     origin: 'Jalgaon / Maharashtra',
     hsCode: '0803.90',
     moq: '1 MT',
