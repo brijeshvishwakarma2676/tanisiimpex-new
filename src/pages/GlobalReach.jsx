@@ -5,47 +5,12 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Anchor, Globe, MapPin } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
 import StatCard from '@/components/ui/StatCard';
-import { globalMarkets, exportStats, incotermsList, portsList } from '@/data/globalData';
+import { globalMarkets, exportStats, incotermsList, portsList, worldMapDots } from '@/data/globalData';
 import CTABanner from '@/components/ui/CTABanner';
 import { WorldMap } from '@/components/ui/WorldMap';
 
 // Premium interactive WorldMap with live flight path animations
 function WorldMapSection() {
-  const dots = [
-    {
-      start: { lat: 19.0760, lng: 72.8777, label: "Mumbai, India" },
-      end: { lat: 25.2048, lng: 55.2708, label: "UAE (Jebel Ali)" }
-    },
-    {
-      start: { lat: 19.0760, lng: 72.8777, label: "Mumbai, India" },
-      end: { lat: 51.5072, lng: -0.1276, label: "UK (London)" }
-    },
-    {
-      start: { lat: 19.0760, lng: 72.8777, label: "Mumbai, India" },
-      end: { lat: 1.3521, lng: 103.8198, label: "Singapore" }
-    },
-    {
-      start: { lat: 19.0760, lng: 72.8777, label: "Mumbai, India" },
-      end: { lat: 23.8859, lng: 45.0792, label: "Saudi Arabia" }
-    },
-    {
-      start: { lat: 19.0760, lng: 72.8777, label: "Mumbai, India" },
-      end: { lat: 46.2276, lng: 2.2137, label: "France" }
-    },
-    {
-      start: { lat: 19.0760, lng: 72.8777, label: "Mumbai, India" },
-      end: { lat: 9.0820, lng: 8.6753, label: "Nigeria" }
-    },
-    {
-      start: { lat: 19.0760, lng: 72.8777, label: "Mumbai, India" },
-      end: { lat: 37.0902, lng: -95.7129, label: "USA" }
-    },
-    {
-      start: { lat: 19.0760, lng: 72.8777, label: "Mumbai, India" },
-      end: { lat: 14.0583, lng: 108.2772, label: "Vietnam" }
-    }
-  ];
-
   return (
     <section className="py-20 bg-navy-900 relative overflow-hidden">
       <div className="section-container relative z-10">
@@ -56,7 +21,7 @@ function WorldMapSection() {
           light
         />
         <div className="mt-12 w-full max-w-7xl mx-auto px-2 md:px-6">
-          <WorldMap dots={dots} />
+          <WorldMap dots={worldMapDots} />
         </div>
       </div>
     </section>

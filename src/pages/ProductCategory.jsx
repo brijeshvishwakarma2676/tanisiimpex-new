@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ChevronRight, ArrowRight, Download, CheckCircle } from 'lucide-react';
 import { productCategories } from '@/data/products';
 import CTABanner from '@/components/ui/CTABanner';
+import { createSlug } from '@/pages/ProductDetail';
 
 export default function ProductCategory() {
   const { category } = useParams();
@@ -123,10 +124,10 @@ export default function ProductCategory() {
                             </div>
                           )}
                           <Link 
-                            to={`/inquiry?product=${encodeURIComponent(p.name)}`}
+                            to={`/products/${cat.slug}/${createSlug(p.name)}`}
                             className="text-navy-800 font-body font-bold text-sm flex items-center gap-1.5 hover:text-gold-500 transition-colors"
                           >
-                            Inquire Now <ArrowRight size={14} />
+                            View Details <ArrowRight size={14} />
                           </Link>
                         </div>
                       </div>

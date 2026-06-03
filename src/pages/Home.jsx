@@ -14,6 +14,10 @@ import TestimonialCarousel from '@/components/ui/TestimonialCarousel';
 import CTABanner from '@/components/ui/CTABanner';
 import GlobalMap from '@/components/ui/GlobalMap';
 import { incotermsList } from '@/data/globalData';
+import { 
+  trustBarItems, aboutSnapshotIcons, aboutSnapshotStats, 
+  whyChooseUsFeatures, processSteps, containerTypes, blogPosts 
+} from '@/data/homeData';
 
 import { HeroSection as CustomHeroSection } from '@/components/ui/hero-section-2';
 
@@ -49,18 +53,11 @@ function HeroSection() {
 
 // ─── Trust Bar ────────────────────────────────────────────────────────────────
 function TrustBar() {
-  const items = [
-    { Icon: Award, label: 'ISO 9001:2015 Certified' },
-    { Icon: Globe, label: 'Exporting to 30+ Nations' },
-    { Icon: Package, label: '10,000+ Shipments Delivered' },
-    { Icon: CheckCircle, label: 'APEDA Registered' },
-    { Icon: Star, label: 'FIEO Member' },
-  ];
   return (
     <section className="bg-white border-b border-gray-100 py-5">
       <div className="section-container">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          {items.map(({ Icon, label }, i) => (
+          {trustBarItems.map(({ Icon, label }, i) => (
             <motion.div
               key={label}
               initial={{ opacity: 0, y: 12 }}
@@ -81,14 +78,6 @@ function TrustBar() {
 
 // ─── About Snapshot ───────────────────────────────────────────────────────────
 function AboutSnapshot() {
-  const iconBoxes = [
-    { Icon: Wheat, label: 'Agricultural Exports', bg: 'bg-emerald-700' },
-    { Icon: Ship, label: 'Global Logistics', bg: 'bg-navy-700' },
-    { Icon: Leaf, label: 'Organic Products', bg: 'bg-green-700' },
-    { Icon: Sprout, label: 'Spices & Condiments', bg: 'bg-slate-700' },
-    { Icon: FileText, label: 'Export Documentation', bg: 'bg-indigo-700' },
-    { Icon: Globe, label: 'Worldwide Markets', bg: 'bg-blue-700' },
-  ];
   return (
     <section className="py-20 bg-white">
       <div className="section-container">
@@ -102,7 +91,7 @@ function AboutSnapshot() {
             className="relative"
           >
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
-              {iconBoxes.map(({ Icon, label, bg }, i) => (
+              {aboutSnapshotIcons.map(({ Icon, label, bg }, i) => (
                 <motion.div
                   key={label}
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -137,12 +126,7 @@ function AboutSnapshot() {
               <p>With ISO 9001:2015 certification, APEDA registration, and a dedicated team of trade professionals, we deliver not just products — but peace of mind.</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
-              {[
-                { value: 500, suffix: '+', label: 'Products' },
-                { value: 30, suffix: '+', label: 'Countries' },
-                { value: 15, suffix: '+', label: 'Years' },
-                { value: 1000, suffix: '+', label: 'Clients' },
-              ].map((s, i) => (
+              {aboutSnapshotStats.map((s, i) => (
                 <StatCard key={s.label} value={s.value} suffix={s.suffix} label={s.label} delay={i * 0.1} />
               ))}
             </div>
@@ -158,14 +142,6 @@ function AboutSnapshot() {
 
 // ─── Why Choose Us ────────────────────────────────────────────────────────────
 function WhyChooseUs() {
-  const features = [
-    { Icon: Shield, title: 'Quality Assurance', desc: 'Pre-shipment inspection, third-party lab testing, and full certificate documentation for every shipment.' },
-    { Icon: Ship, title: 'End-to-End Logistics', desc: 'FOB, CIF, DDP Incoterms handled. Sea freight via JNPT Mumbai, Mundra & Chennai ports.' },
-    { Icon: FileText, title: 'Complete Documentation', desc: 'COO, Phytosanitary, Fumigation, FSSAI, BL, and all export docs managed in-house.' },
-    { Icon: Headphones, title: 'Dedicated Support', desc: 'Single point of contact (SPOC) for each buyer. Respond within 4 hours on WhatsApp and email.' },
-    { Icon: Tag, title: 'Competitive Pricing', desc: 'Direct manufacturer relationships ensure FOB pricing 15–25% below market for bulk buyers.' },
-    { Icon: Globe, title: 'Global Network', desc: 'Trusted by 1000+ buyers in UAE, UK, France, Nigeria, Singapore, Saudi Arabia and more.' },
-  ];
   return (
     <section className="py-20 bg-navy-800 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-gold-400/5 blur-3xl" />
@@ -177,7 +153,7 @@ function WhyChooseUs() {
           light
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
-          {features.map(({ Icon, title, desc }, i) => (
+          {whyChooseUsFeatures.map(({ Icon, title, desc }, i) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, y: 24 }}
@@ -201,20 +177,12 @@ function WhyChooseUs() {
 
 // ─── Process ──────────────────────────────────────────────────────────────────
 function ProcessSection() {
-  const steps = [
-    { n: '01', Icon: Search, title: 'Inquiry & Product Selection', desc: 'Share your requirements — product, quantity, destination. We respond within 4 hours.' },
-    { n: '02', Icon: Package, title: 'Sample Dispatch & Approval', desc: 'We dispatch samples for your quality evaluation. Samples shipped within 5 working days.' },
-    { n: '03', Icon: TrendingUp, title: 'Price Negotiation & PI', desc: 'Best FOB/CIF pricing quoted. Proforma Invoice issued within 24 hours of price agreement.' },
-    { n: '04', Icon: Shield, title: 'Quality Inspection & Packaging', desc: 'Pre-shipment inspection, lab testing, and custom packaging per buyer specification.' },
-    { n: '05', Icon: Ship, title: 'Shipment & Documentation', desc: 'Goods loaded; all documents (BL, COO, Phytosanitary) sent within 48 hours.' },
-    { n: '06', Icon: Headphones, title: 'Delivery & After-Sales', desc: 'We track your shipment till delivery and stay on for the next order lifecycle.' },
-  ];
   return (
     <section className="py-20 bg-gray-50">
       <div className="section-container">
         <SectionHeader label="Our Process" heading="How It Works" subtext="A streamlined 6-step process from inquiry to doorstep delivery." />
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {steps.map(({ n, Icon, title, desc }, i) => (
+          {processSteps.map(({ n, Icon, title, desc }, i) => (
             <motion.div
               key={n}
               initial={{ opacity: 0, y: 24 }}
@@ -271,11 +239,6 @@ function LogisticsSection() {
     name: i.name,
     desc: i.description
   }));
-  const containers = [
-    { type: '20ft Dry', desc: 'Ideal for heavy, non-perishable goods like spices and rice.' },
-    { type: '40ft HC', desc: 'High Cube containers for maximum volume efficiency.' },
-    { type: '40ft Reefer', desc: 'Temperature-controlled for fresh produce like onions and fruits.' },
-  ];
 
   return (
     <section className="py-20 bg-gray-50 border-t border-gray-100">
@@ -317,7 +280,7 @@ function LogisticsSection() {
               <h3 className="font-heading font-bold text-navy-800 text-xl md:text-2xl">Container Capacities</h3>
             </div>
             <div className="space-y-4 md:space-y-5 relative z-10">
-              {containers.map(cont => (
+              {containerTypes.map(cont => (
                 <div key={cont.type} className="flex gap-3 md:gap-4 items-start">
                   <div className="w-20 md:w-24 shrink-0 font-heading font-bold text-xs md:text-sm text-emerald-600 bg-emerald-50 text-center py-2 md:py-2.5 rounded-lg">{cont.type}</div>
                   <div className="flex items-center mt-1 md:mt-0">
@@ -335,17 +298,12 @@ function LogisticsSection() {
 
 // ─── Blog Teaser ──────────────────────────────────────────────────────────────
 function BlogTeaser() {
-  const posts = [
-    { tag: 'Export Policy', title: "India's Agricultural Export Policy 2024: What Buyers Need to Know", excerpt: 'Key changes in APEDA regulations, minimum export price updates, and new phytosanitary protocols affecting fresh produce.', date: 'Nov 12, 2024', readTime: '4 min read', Icon: FileText },
-    { tag: 'Market Insights', title: "Why Indian Onion is the World's Most Exported Vegetable", excerpt: "India's unique climate, volcanic soil, and extensive cold-chain infrastructure make it the global onion capital.", date: 'Oct 28, 2024', readTime: '5 min read', Icon: TrendingUp },
-    { tag: 'Trade Finance', title: 'Understanding LC, DP, and TT Payment Terms for Indian Imports', excerpt: 'A practical guide for first-time importers on choosing the right payment structure for Indian export transactions.', date: 'Oct 5, 2024', readTime: '6 min read', Icon: Award },
-  ];
   return (
     <section className="py-20 bg-gray-50">
       <div className="section-container">
         <SectionHeader label="Trade Insights" heading="Latest from Tanisi Impex" subtext="Stay updated on India's export landscape, regulations, and commodity trends." />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          {posts.map(({ tag, title, excerpt, date, readTime, Icon: BlogIcon }, i) => (
+          {blogPosts.map(({ tag, title, excerpt, date, readTime, Icon: BlogIcon }, i) => (
             <motion.article
               key={title}
               initial={{ opacity: 0, y: 20 }}

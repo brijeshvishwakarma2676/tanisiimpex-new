@@ -1,13 +1,14 @@
-import { motion } from 'framer-motion';
-import SEO from '@/components/SEO';
+import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 const sections = [
   {
-    title: '1. Acceptance of Terms',
-    content: 'By accessing and using the Tanisi Impex website (www.tanisiimpex.com), you accept and agree to be bound by these Terms of Use. If you do not agree to these terms, please discontinue use of this website immediately. These terms apply to all visitors, users, and others who access or use our website.',
+    title: "1. Acceptance of Terms",
+    content:
+      "By accessing and using the Tanisi Impex website (www.tanisiimpex.com), you accept and agree to be bound by these Terms of Use. If you do not agree to these terms, please discontinue use of this website immediately. These terms apply to all visitors, users, and others who access or use our website.",
   },
   {
-    title: '2. Use of Website Content',
+    title: "2. Use of Website Content",
     content: `All content on this website — including text, images, product information, pricing guides, logos, and design — is the intellectual property of Tanisi Impex and is protected under applicable Indian and international copyright laws.
 
 You may:
@@ -20,7 +21,7 @@ You may NOT:
 - Misrepresent your identity, company, or intentions when submitting inquiries.`,
   },
   {
-    title: '3. Product Information & Pricing',
+    title: "3. Product Information & Pricing",
     content: `All product specifications, quantities, and pricing information displayed on this website are indicative only and subject to change without notice. Actual prices, quantities, and availability are confirmed only through formal Proforma Invoices issued by Tanisi Impex.
 
 We reserve the right to:
@@ -37,7 +38,7 @@ We reserve the right to:
 - Chat sessions are stored locally in your browser and are not retained on our servers.`,
   },
   {
-    title: '5. Inquiry & Trade Obligations',
+    title: "5. Inquiry & Trade Obligations",
     content: `When submitting an inquiry through our website:
 - You confirm that you are a legitimate B2B buyer or trading entity, or an authorised representative thereof.
 - Submitting an inquiry does not constitute a binding purchase order or contract.
@@ -45,7 +46,7 @@ We reserve the right to:
 - All trade transactions are subject to separate commercial agreements and applicable export/import regulations.`,
   },
   {
-    title: '6. Limitation of Liability',
+    title: "6. Limitation of Liability",
     content: `To the maximum extent permitted by law, Tanisi Impex shall not be liable for:
 - Any indirect, incidental, or consequential damages arising from the use of this website.
 - Inaccuracies in product information, availability, or pricing displayed on the website.
@@ -54,22 +55,24 @@ We reserve the right to:
 Our total liability, if any, shall not exceed the value of the specific transaction in dispute.`,
   },
   {
-    title: '7. Governing Law',
-    content: 'These Terms of Use are governed by and construed in accordance with the laws of India. Any disputes arising from the use of this website shall be subject to the exclusive jurisdiction of the courts in Mumbai, Maharashtra, India.',
+    title: "7. Governing Law",
+    content:
+      "These Terms of Use are governed by and construed in accordance with the laws of India. Any disputes arising from the use of this website shall be subject to the exclusive jurisdiction of the courts in Mumbai, Maharashtra, India.",
   },
   {
-    title: '8. Changes to These Terms',
-    content: 'We reserve the right to modify these Terms of Use at any time. Changes will be effective immediately upon posting to this page. We encourage you to review these terms periodically. Continued use of the website after changes constitutes your acceptance of the revised terms.',
+    title: "8. Changes to These Terms",
+    content:
+      "We reserve the right to modify these Terms of Use at any time. Changes will be effective immediately upon posting to this page. We encourage you to review these terms periodically. Continued use of the website after changes constitutes your acceptance of the revised terms.",
   },
   {
-    title: '9. Contact Information',
+    title: "9. Contact Information",
     content: `For questions, concerns, or disputes regarding these Terms of Use, please contact:
 
 **Tanisi Impex**
 1403, A Wing, Vasudev Paradise, Kanakia Road, Near Unique Garden,
 Mira Road, Mumbai - 401107, Maharashtra, India
 
-**Email:** info@tanisiimpex.com
+**Email:** tanisiimpex@gmail.com
 **Phone / WhatsApp:** +91 91521 21077
 **Business Hours:** Mon – Sat, 9:00 AM – 7:00 PM IST`,
   },
@@ -90,11 +93,16 @@ export default function TermsOfUse() {
           <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-gold-400 blur-3xl" />
         </div>
         <div className="section-container relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
             <span className="section-label text-gold-300">Legal</span>
             <h1 className="font-heading text-white mt-4 mb-4">Terms of Use</h1>
             <p className="text-white/60 font-body text-sm max-w-lg mx-auto">
-              Last updated: May 28, 2026 &nbsp;|&nbsp; Tanisi Impex, Mira Road, Mumbai, India
+              Last updated: May 28, 2026 &nbsp;|&nbsp; Tanisi Impex, Mira Road,
+              Mumbai, India
             </p>
           </motion.div>
         </div>
@@ -104,9 +112,11 @@ export default function TermsOfUse() {
       <section className="py-20 bg-white">
         <div className="section-container max-w-4xl">
           <p className="text-gray-600 font-body text-base leading-relaxed mb-10 p-6 bg-navy-50 border border-navy-100 rounded-2xl">
-            Please read these Terms of Use carefully before using the{' '}
+            Please read these Terms of Use carefully before using the{" "}
             <strong className="text-navy-800">Tanisi Impex</strong> website.
-            These terms govern your access to and use of our website and AI Trade Assistant, and form a legal agreement between you and Tanisi Impex.
+            These terms govern your access to and use of our website and AI
+            Trade Assistant, and form a legal agreement between you and Tanisi
+            Impex.
           </p>
 
           <div className="space-y-10">
@@ -119,12 +129,29 @@ export default function TermsOfUse() {
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="border-b border-gray-100 pb-10 last:border-0"
               >
-                <h2 className="font-heading text-navy-800 text-xl font-semibold mb-4">{title}</h2>
+                <h2 className="font-heading text-navy-800 text-xl font-semibold mb-4">
+                  {title}
+                </h2>
                 <div className="text-gray-600 font-body text-base leading-relaxed">
-                  {content.split('\n').map((line, j) => {
-                    if (line.startsWith('- ')) return <div key={j} className="flex gap-2 mt-2"><span className="text-gold-500 mt-1">•</span><span>{line.slice(2)}</span></div>;
-                    if (line.startsWith('**') && line.endsWith('**')) return <p key={j} className="font-semibold text-navy-800 mt-4">{line.slice(2, -2)}</p>;
-                    return line ? <p key={j} className="mt-2">{line}</p> : null;
+                  {content.split("\n").map((line, j) => {
+                    if (line.startsWith("- "))
+                      return (
+                        <div key={j} className="flex gap-2 mt-2">
+                          <span className="text-gold-500 mt-1">•</span>
+                          <span>{line.slice(2)}</span>
+                        </div>
+                      );
+                    if (line.startsWith("**") && line.endsWith("**"))
+                      return (
+                        <p key={j} className="font-semibold text-navy-800 mt-4">
+                          {line.slice(2, -2)}
+                        </p>
+                      );
+                    return line ? (
+                      <p key={j} className="mt-2">
+                        {line}
+                      </p>
+                    ) : null;
                   })}
                 </div>
               </motion.div>

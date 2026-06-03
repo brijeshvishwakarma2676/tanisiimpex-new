@@ -8,6 +8,7 @@ import SectionHeader from '@/components/ui/SectionHeader';
 import { productCategories, featuredProducts } from '@/data/products';
 import CTABanner from '@/components/ui/CTABanner';
 import ContainerCalculator from '@/components/ui/ContainerCalculator';
+import { createSlug } from '@/pages/ProductDetail';
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function ProductsHero({ search, setSearch }) {
@@ -221,11 +222,11 @@ function ProductCard({ product, category }) {
         )}
 
         <Link
-          to={`/inquiry?product=${encodeURIComponent(product.name)}&incoterm=FOB`}
+          to={`/products/${category.slug}/${createSlug(product.name)}`}
           className="mt-1 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-navy-800 text-white text-sm font-semibold
                      hover:bg-navy-700 transition-colors"
         >
-          Request Quote <ArrowRight size={14} />
+          View Details <ArrowRight size={14} />
         </Link>
       </div>
     </motion.div>
@@ -281,10 +282,13 @@ function FeaturedProducts() {
                 
                 <div className="flex gap-2 mt-auto">
                   <Link 
-                    to={`/inquiry?product=${encodeURIComponent(fp.name)}&incoterm=CIF`} 
+                    to={(() => {
+                      const cat = productCategories.find(c => c.products.some(p => p.name === fp.name));
+                      return cat ? `/products/${cat.slug}/${createSlug(fp.name)}` : `/inquiry?product=${encodeURIComponent(fp.name)}&incoterm=CIF`;
+                    })()} 
                     className="btn-primary w-full text-center py-3 text-sm justify-center"
                   >
-                    Request Bulk Quote
+                    View Details
                   </Link>
                 </div>
               </div>

@@ -22,6 +22,9 @@ export const productCategories = [
         season: 'Sep–Feb',
         certifications: ['APEDA', 'GlobalG.A.P'],
         image: 'https://images.unsplash.com/photo-1580636521086-7b0c742dd567?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1580636521086-7b0c742dd567?q=80&w=1170&auto=format&fit=crop&w=800&q=80'
+        ],
         description: 'Ruby-red Bhagwa pomegranates with high ARILS and sweetness. Export-grade packaging.',
       },
       {
@@ -32,6 +35,11 @@ export const productCategories = [
         season: 'Jan–May',
         certifications: ['APEDA', 'EurepGAP'],
         image: 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1596363505729-4190a9506133?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1601275868399-45bec4f4cd9d?auto=format&fit=crop&w=800&q=80'
+        ],
         description: 'Seedless green & red table grapes. EU-compliant residue levels.',
       },
       {
@@ -42,6 +50,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['APEDA', 'GlobalG.A.P'],
         image: 'https://images.unsplash.com/photo-1619995750009-5256e91437b0?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1619995750009-5256e91437b0?q=80&w=1170&auto=format&fit=crop&w=800&q=80'
+        ],
         description: 'Premium Cavendish bananas selected for spotless skin and optimal size.',
       },
     ],
@@ -67,6 +78,9 @@ export const productCategories = [
         season: 'Oct–Mar',
         certifications: ['APEDA', 'Phytosanitary'],
         image: 'https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?q=80&w=1170&auto=format&fit=crop&w=800&q=80'
+        ],
         description: 'Premium Red & White onions — medium, large, and jumbo grades available.',
       },
       {
@@ -77,6 +91,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['APEDA', 'Phytosanitary'],
         image: 'https://images.unsplash.com/photo-1576763595295-c0371a32af78?auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1576763595295-c0371a32af78?auto=format&fit=crop&w=800&q=80'
+        ],
         description: 'Vibrant green chillies with high pungency, packed in ventilated export cartons.',
       },
     ],
@@ -102,6 +119,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'ISO 22000', 'HACCP', 'Spices Board', 'Organic'],
         image: '/spice_pages/green_cardamom.png',
+        images: [
+          '/spice_pages/green_cardamom.png'
+        ],
         description: 'Premium AGEB, AGB, AGS, AGL grade green cardamom. Essential oil min 3.5%. Whole pods (6–8.5mm) or fine powder (60–100 mesh). Vacuum packed.',
       },
       {
@@ -112,6 +132,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'ISO 22000', 'HACCP', 'Spices Board', 'Organic'],
         image: '/spice_pages/black_cardamom.png',
+        images: [
+          '/spice_pages/black_cardamom.png'
+        ],
         description: 'Smoky Extra Bold, Bold, and Medium black cardamom pods (3–5cm). Essential oil min 1.5%, moisture max 12%. Whole pods or coarse powder (10–30 mesh).',
       },
       {
@@ -122,6 +145,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'ISO 22000', 'HACCP'],
         image: '/spice_pages/black_pepper.png',
+        images: [
+          '/spice_pages/black_pepper.png'
+        ],
         description: 'Tellicherry Garbled Extra Bold (TGEB) and TGSEB grades. Piperine min 4.0%, bolt density 550–600 g/L. Whole or ground/powder. Salmonella negative.',
       },
       {
@@ -132,6 +158,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'ISO 22000', 'HACCP'],
         image: '/spice_pages/red_chilli.png',
+        images: [
+          '/spice_pages/red_chilli.png'
+        ],
         description: 'Teja (S-17), Byadgi (S-12), Guntur Sannam (S-4), and Kashmiri varieties. Heat 20k–90k SHU, color 60–160 ASTA units. Aflatoxin max 10ppb, Sudan dye negative.',
       },
       {
@@ -142,6 +171,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'ISO 22000', 'HACCP', 'Organic'],
         image: '/spice_pages/turmeric.png',
+        images: [
+          '/spice_pages/turmeric.png'
+        ],
         description: 'High-curcumin Alleppey, bright Madras, and Nizamabad varieties. Curcumin min 2.5–5%. Whole fingers (5–8cm), sliced/kibbled, or fine powder (60–100 mesh).',
       },
       {
@@ -152,6 +184,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'ISO 22000', 'HACCP', 'Spices Board', 'Organic'],
         image: '/spice_pages/cumin_seeds.png',
+        images: [
+          '/spice_pages/cumin_seeds.png'
+        ],
         description: 'European quality and Singapore quality cumin. Essential oil min 2.5%, aflatoxin max 10ppb. Whole seeds (4–6mm) or fine powder (60–100 mesh).',
       },
       {
@@ -162,6 +197,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'ISO 22000', 'HACCP'],
         image: '/spice_pages/coriander_seeds.png',
+        images: [
+          '/spice_pages/coriander_seeds.png'
+        ],
         description: 'Eagle, Scooter, Indori, and Badami variety coriander. Volatile oil min 0.3–1.0%, light brown to greenish color. Whole seeds (3–5mm) or powder. Salmonella negative.',
       },
       {
@@ -172,6 +210,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'GSO'],
         image: '/spice_pages/cinnamon.png',
+        images: [
+          '/spice_pages/cinnamon.png'
+        ],
         description: 'Premium Cinnamomum verum and Cassia cinnamon quills (6–10cm), uniform rolled sticks. Moisture max 12%. Vacuum packed in 5kg/10kg food-grade packs.',
       },
       {
@@ -182,6 +223,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'GSO'],
         image: '/spice_pages/cloves.png',
+        images: [
+          '/spice_pages/cloves.png'
+        ],
         description: 'Premium export grade Syzygium aromaticum — whole buds with stems, well-dried and uniform. Moisture max 12%. Available whole or as ground powder. Vacuum packed.',
       },
       {
@@ -192,6 +236,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'ISO', 'HACCP', 'GSO', 'FDA'],
         image: '/spice_pages/star_anise.png',
+        images: [
+          '/spice_pages/star_anise.png'
+        ],
         description: 'Superior whole star anise (2.5cm+ diameter), volatile oil min 8%. Available as whole stars, seeds, or powder (60–100 mesh). Moisture max 12%.',
       },
       {
@@ -202,6 +249,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'GSO', 'FDA', 'CFIA'],
         image: '/spice_pages/nutmeg_mace.png',
+        images: [
+          '/spice_pages/nutmeg_mace.png'
+        ],
         description: 'ABCD grade whole nutmeg (Sound, 60–80/lb) and whole/broken mace arils. Volatile oil: Nutmeg min 5%, Mace min 10%. Vacuum packed in 10kg/25kg cartons.',
       },
       {
@@ -212,6 +262,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'ISO 22000', 'HACCP'],
         image: '/spice_pages/ginger.png',
+        images: [
+          '/spice_pages/ginger.png'
+        ],
         description: 'Cochin, Calicut, Bleached & Unbleached dry ginger varieties. Volatile oil min 1.5%, pale brown/cream color. Moisture max 12%. Salmonella negative.',
       },
       {
@@ -222,6 +275,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ISO 22000', 'HACCP', 'FDA', 'APEDA', 'Organic'],
         image: '/spice_pages/fenugreek.png',
+        images: [
+          '/spice_pages/fenugreek.png'
+        ],
         description: 'Premium Bold fenugreek seeds — machine cleaned, sortex cleaned. Purity 98–99.9%, whole seeds (2–5mm, Bold/Large) or fine powder. Salmonella absent.',
       },
       {
@@ -232,6 +288,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ISO 22000', 'HACCP', 'FDA', 'APEDA'],
         image: '/spice_pages/mustard_seeds.png',
+        images: [
+          '/spice_pages/mustard_seeds.png'
+        ],
         description: 'Bold, micro, sortex-cleaned yellow, white, and brown mustard. Purity 99–99.9%, oil content min 30–40%. Whole seeds (1–3mm), splits, or powder (60–80 mesh).',
       },
       {
@@ -242,6 +301,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'FDA'],
         image: '/spice_pages/carom_seeds.png',
+        images: [
+          '/spice_pages/carom_seeds.png'
+        ],
         description: 'A-Grade carom seeds (ajwain) with pungent aroma, volatile oil min 2.5%. Whole seeds (1–3mm), crushed, or powder (60–80 mesh). Moisture max 10%.',
       },
       {
@@ -252,6 +314,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ISO 22000', 'HACCP', 'FDA'],
         image: '/spice_pages/fennel_aniseed.png',
+        images: [
+          '/spice_pages/fennel_aniseed.png'
+        ],
         description: 'A-Grade, European quality standard fennel and aniseed. Purity 99–99.5%, volatile oil min 1.5%, moisture max 10%. Whole seeds (3–6mm) or powder (40–80 mesh).',
       },
       {
@@ -262,6 +327,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ASTA', 'ISO', 'HACCP', 'FDA'],
         image: '/spice_pages/bay_leaves.png',
+        images: [
+          '/spice_pages/bay_leaves.png'
+        ],
         description: 'A-Grade hand-selected whole bay leaves (4–7cm). Volatile oil min 1.5%, moisture max 10%. Available whole, crushed, or as powder (60–80 mesh).',
       },
       {
@@ -272,6 +340,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ISO', 'HACCP', 'FDA'],
         image: '/spice_pages/curry_leaves.png',
+        images: [
+          '/spice_pages/curry_leaves.png'
+        ],
         description: 'A-Grade dried curry leaves (3–5cm), natural color and aroma. No artificial color, pesticide-free per MRLs. Available whole or as powder (60–80 mesh).',
       },
       {
@@ -282,6 +353,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI'],
         image: '/spice_pages/nigella_seeds.png',
+        images: [
+          '/spice_pages/nigella_seeds.png'
+        ],
         description: 'Premium Nigella Seeds — purity 99.5% min, thymoquinone content min 30%. Machine/sortex cleaned, free of pesticide residues and aflatoxin. Moisture max 8%.',
       },
       {
@@ -292,6 +366,9 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['FSSAI', 'ISO 22000', 'HACCP', 'FDA', 'APEDA', 'Organic'],
         image: '/spice_pages/celery_seeds.png',
+        images: [
+          '/spice_pages/celery_seeds.png'
+        ],
         description: 'Premium export grade celery seeds — machine cleaned, sortex cleaned. Purity 99–99.9%, volatile oil min 1.5–3%. Whole seeds (1–2mm) or fine powder. Salmonella absent.',
       },
     ],
@@ -317,6 +394,10 @@ export const productCategories = [
         season: 'Year-round',
         certifications: ['APEDA', 'FSSAI'],
         image: 'https://images.unsplash.com/photo-1723475158232-819e29803f4d?q=80&w=1170&auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1723475158232-819e29803f4d?q=80&w=1170&auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=1170&auto=format&fit=crop&w=800&q=80'
+        ],
         description: 'Premium 1121 extra-long grain basmati with 8mm+ grain length and aromatic profile.',
       },
     ],

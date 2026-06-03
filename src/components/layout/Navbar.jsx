@@ -1,34 +1,65 @@
-import { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  Menu, X, ChevronDown, Phone, Mail,
-  Wheat, ShoppingBag, Factory, Leaf, Apple, Flame, Package,
-  Globe, Award, FileText, Headphones, Shield, Ship,
-} from 'lucide-react';
-import { useScrollPosition } from '@/hooks/useScrollPosition';
+  Menu,
+  X,
+  ChevronDown,
+  Phone,
+  Mail,
+  Wheat,
+  ShoppingBag,
+  Factory,
+  Leaf,
+  Apple,
+  Flame,
+  Package,
+  Globe,
+  Award,
+  FileText,
+  Headphones,
+  Shield,
+  Ship,
+} from "lucide-react";
+import { useScrollPosition } from "@/hooks/useScrollPosition";
 
 const navLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
   {
-    label: 'Products',
-    to: '/products',
+    label: "Products",
+    to: "/products",
     children: [
-      { label: 'Fresh Fruits', to: '/products/fresh-fruits', Icon: Apple },
-      { label: 'Fresh Vegetables', to: '/products/fresh-vegetables', Icon: Apple },
-      { label: 'Premium Spices', to: '/products/spices', Icon: Flame },
-      { label: 'Grains & Commodities', to: '/products/agricultural', Icon: Wheat },
-      { label: 'FMCG & Consumer Goods', to: '/products/fmcg', Icon: ShoppingBag },
-      { label: 'Organic & Natural', to: '/products/organic', Icon: Leaf },
-      { label: 'Custom Sourcing', to: '/products/custom-sourcing', Icon: Package },
+      { label: "Fresh Fruits", to: "/products/fresh-fruits", Icon: Apple },
+      {
+        label: "Fresh Vegetables",
+        to: "/products/fresh-vegetables",
+        Icon: Apple,
+      },
+      { label: "Premium Spices", to: "/products/spices", Icon: Flame },
+      {
+        label: "Grains & Commodities",
+        to: "/products/agricultural",
+        Icon: Wheat,
+      },
+      {
+        label: "FMCG & Consumer Goods",
+        to: "/products/fmcg",
+        Icon: ShoppingBag,
+      },
+      { label: "Organic & Natural", to: "/products/organic", Icon: Leaf },
+      {
+        label: "Custom Sourcing",
+        to: "/products/custom-sourcing",
+        Icon: Package,
+      },
     ],
   },
-  { label: 'Services', to: '/services' },
-  { label: 'Global Reach', to: '/global-reach' },
-  { label: 'Quality', to: '/quality' },
-  { label: 'FAQ', to: '/faq' },
-  { label: 'Contact', to: '/contact' },
+  { label: "Services", to: "/services" },
+  { label: "Global Reach", to: "/global-reach" },
+  { label: "Quality", to: "/quality" },
+  { label: "FAQ", to: "/faq" },
+  { label: "Contact", to: "/contact" },
 ];
 
 export default function Navbar() {
@@ -43,11 +74,13 @@ export default function Navbar() {
   }, [location]);
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === "/";
 
   return (
     <>
@@ -55,11 +88,17 @@ export default function Navbar() {
       <div className="fixed top-0 left-0 right-0 z-50 hidden lg:flex bg-navy-900">
         <div className="section-container flex items-center justify-between w-full py-1.5">
           <div className="flex items-center gap-6 text-xs text-white/65">
-            <a href="tel:+919152121077" className="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
+            <a
+              href="tel:+919152121077"
+              className="flex items-center gap-1.5 hover:text-gold-300 transition-colors"
+            >
               <Phone size={11} /> +91 91521 21077
             </a>
-            <a href="mailto:info@tanisiimpex.com" className="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
-              <Mail size={11} /> info@tanisiimpex.com
+            <a
+              href="mailto:tanisiimpex@gmail.com"
+              className="flex items-center gap-1.5 hover:text-gold-300 transition-colors"
+            >
+              <Mail size={11} /> tanisiimpex@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-3 text-[11px] text-white/45">
@@ -75,17 +114,17 @@ export default function Navbar() {
       {/* ── Main Navbar (fixed, below info bar) ── */}
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-500 bg-navy-800/95 backdrop-blur-xl border-b border-white/10 shadow-lg ${
-          isScrolled ? 'top-0 py-0' : 'top-0 lg:top-[32px] py-1 lg:py-0'
+          isScrolled ? "top-0 py-0" : "top-0 lg:top-[32px] py-1 lg:py-0"
         }`}
       >
         <div className="section-container">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
-              <img 
-                src="/images/logo.png" 
-                alt="Tanisi Impex Logo" 
-                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              <img
+                src="/images/logo.png"
+                alt="Tanisi Impex Logo"
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
               <div>
                 <div className="font-heading font-bold text-white text-[17px] leading-none tracking-wider">
@@ -112,14 +151,16 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         `flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium font-body transition-all duration-200
                         text-white/80 hover:text-white hover:bg-white/10
-                        ${isActive ? '!text-gold-300' : ''}`
+                        ${isActive ? "!text-gold-300" : ""}`
                       }
                     >
                       {link.label}
                       <ChevronDown
                         size={13}
                         className={`text-white/50 transition-transform duration-200 ${
-                          openDropdown === link.label ? 'rotate-180 text-gold-300' : ''
+                          openDropdown === link.label
+                            ? "rotate-180 text-gold-300"
+                            : ""
                         }`}
                       />
                     </NavLink>
@@ -140,12 +181,15 @@ export default function Navbar() {
                               className={({ isActive }) =>
                                 `flex items-center gap-3 px-4 py-2.5 text-sm font-body transition-colors ${
                                   isActive
-                                    ? 'text-gold-500 bg-gold-50 font-semibold'
-                                    : 'text-gray-700 hover:bg-navy-50 hover:text-navy-800'
+                                    ? "text-gold-500 bg-gold-50 font-semibold"
+                                    : "text-gray-700 hover:bg-navy-50 hover:text-navy-800"
                                 }`
                               }
                             >
-                              <Icon size={15} className="text-navy-400 shrink-0" />
+                              <Icon
+                                size={15}
+                                className="text-navy-400 shrink-0"
+                              />
                               {label}
                             </NavLink>
                           ))}
@@ -157,22 +201,25 @@ export default function Navbar() {
                   <NavLink
                     key={link.to}
                     to={link.to}
-                    end={link.to === '/'}
+                    end={link.to === "/"}
                     className={({ isActive }) =>
                       `px-3.5 py-2 rounded-lg text-sm font-medium font-body transition-all duration-200
                       text-white/80 hover:text-white hover:bg-white/10
-                      ${isActive ? '!text-gold-300 bg-white/8' : ''}`
+                      ${isActive ? "!text-gold-300 bg-white/8" : ""}`
                     }
                   >
                     {link.label}
                   </NavLink>
-                )
+                ),
               )}
             </nav>
 
             {/* CTA + Hamburger */}
             <div className="flex items-center gap-3">
-              <Link to="/inquiry" className="hidden sm:flex btn-primary text-sm px-5 py-2.5">
+              <Link
+                to="/inquiry"
+                className="hidden sm:flex btn-primary text-sm px-5 py-2.5"
+              >
                 Request a Quote
               </Link>
               <button
@@ -199,17 +246,23 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
             />
             <motion.div
-              initial={{ x: '100%' }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 26, stiffness: 260 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 26, stiffness: 260 }}
               className="fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-navy-900 z-[61] lg:hidden overflow-y-auto"
             >
               {/* Drawer header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
                 <div className="flex items-center gap-2.5">
-                  <img src="/images/logo.png" alt="Tanisi Impex Logo" className="h-8 w-auto object-contain" />
-                  <span className="font-heading font-bold text-white text-base">TANISI IMPEX</span>
+                  <img
+                    src="/images/logo.png"
+                    alt="Tanisi Impex Logo"
+                    className="h-8 w-auto object-contain"
+                  />
+                  <span className="font-heading font-bold text-white text-base">
+                    TANISI IMPEX
+                  </span>
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}
@@ -225,7 +278,9 @@ export default function Navbar() {
                     <div key={link.label}>
                       <button
                         onClick={() =>
-                          setOpenDropdown(openDropdown === link.label ? null : link.label)
+                          setOpenDropdown(
+                            openDropdown === link.label ? null : link.label,
+                          )
                         }
                         className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-white/80 hover:text-white hover:bg-white/8 transition-colors text-sm font-medium font-body"
                       >
@@ -233,7 +288,7 @@ export default function Navbar() {
                         <ChevronDown
                           size={14}
                           className={`transition-transform text-white/40 ${
-                            openDropdown === link.label ? 'rotate-180' : ''
+                            openDropdown === link.label ? "rotate-180" : ""
                           }`}
                         />
                       </button>
@@ -241,7 +296,7 @@ export default function Navbar() {
                         {openDropdown === link.label && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
+                            animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
                             className="overflow-hidden pl-2"
                           >
@@ -252,12 +307,15 @@ export default function Navbar() {
                                 className={({ isActive }) =>
                                   `flex items-center gap-2.5 px-4 py-2.5 rounded-lg text-sm font-body transition-colors ${
                                     isActive
-                                      ? 'text-gold-300 bg-white/8 font-semibold'
-                                      : 'text-white/60 hover:text-white hover:bg-white/8'
+                                      ? "text-gold-300 bg-white/8 font-semibold"
+                                      : "text-white/60 hover:text-white hover:bg-white/8"
                                   }`
                                 }
                               >
-                                <Icon size={14} className="shrink-0 opacity-70" />
+                                <Icon
+                                  size={14}
+                                  className="shrink-0 opacity-70"
+                                />
                                 {label}
                               </NavLink>
                             ))}
@@ -269,31 +327,40 @@ export default function Navbar() {
                     <NavLink
                       key={link.to}
                       to={link.to}
-                      end={link.to === '/'}
+                      end={link.to === "/"}
                       className={({ isActive }) =>
                         `block px-4 py-3 rounded-xl text-sm font-medium font-body transition-colors ${
                           isActive
-                            ? 'text-gold-300 bg-white/8 font-semibold'
-                            : 'text-white/80 hover:text-white hover:bg-white/8'
+                            ? "text-gold-300 bg-white/8 font-semibold"
+                            : "text-white/80 hover:text-white hover:bg-white/8"
                         }`
                       }
                     >
                       {link.label}
                     </NavLink>
-                  )
+                  ),
                 )}
               </nav>
 
               <div className="px-4 pb-6 mt-2 border-t border-white/10 pt-4 space-y-3">
-                <Link to="/inquiry" className="btn-primary w-full justify-center text-sm">
+                <Link
+                  to="/inquiry"
+                  className="btn-primary w-full justify-center text-sm"
+                >
                   Request a Quote
                 </Link>
                 <div className="flex flex-col gap-2 text-sm text-white/45">
-                  <a href="tel:+919152121077" className="flex items-center gap-2 hover:text-gold-300 transition-colors">
+                  <a
+                    href="tel:+919152121077"
+                    className="flex items-center gap-2 hover:text-gold-300 transition-colors"
+                  >
                     <Phone size={13} /> +91 91521 21077
                   </a>
-                  <a href="mailto:info@tanisiimpex.com" className="flex items-center gap-2 hover:text-gold-300 transition-colors">
-                    <Mail size={13} /> info@tanisiimpex.com
+                  <a
+                    href="mailto:tanisiimpex@gmail.com"
+                    className="flex items-center gap-2 hover:text-gold-300 transition-colors"
+                  >
+                    <Mail size={13} /> tanisiimpex@gmail.com
                   </a>
                 </div>
               </div>

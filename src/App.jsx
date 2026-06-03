@@ -19,6 +19,7 @@ const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
 const Products = lazy(() => import('@/pages/Products'));
 const ProductCategory = lazy(() => import('@/pages/ProductCategory'));
+const ProductDetail = lazy(() => import('@/pages/ProductDetail'));
 const Services = lazy(() => import('@/pages/Services'));
 const GlobalReach = lazy(() => import('@/pages/GlobalReach'));
 const Quality = lazy(() => import('@/pages/Quality'));
@@ -66,6 +67,7 @@ const router = createBrowserRouter([
       { path: 'about',                element: <S><About /></S> },
       { path: 'products',             element: <S><Products /></S> },
       { path: 'products/:category',   element: <S><ProductCategory /></S> },
+      { path: 'products/:category/:product', element: <S><ProductDetail /></S> },
       { path: 'services',             element: <S><Services /></S> },
       { path: 'global-reach',         element: <S><GlobalReach /></S> },
       { path: 'quality',              element: <S><Quality /></S> },
