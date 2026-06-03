@@ -104,11 +104,20 @@ function AboutSnapshot() {
                   <span className="text-[10px] md:text-xs font-body text-white/80 text-center leading-tight">{label}</span>
                 </motion.div>
               ))}
-            </div>
-            {/* Experience badge */}
-            <div className="absolute -bottom-5 right-4 sm:-right-5 bg-gold-gradient rounded-2xl p-4 shadow-gold text-center">
-              <div className="font-heading font-bold text-navy-800 text-3xl">15+</div>
-              <div className="text-navy-700 text-xs font-body font-semibold leading-tight mt-0.5">Years of<br />Excellence</div>
+              
+              {/* Experience badge rendered natively as the 6th item in the bento grid */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 5 * 0.06 }}
+                className="bg-gold-gradient rounded-2xl p-4 md:p-5 flex flex-col items-center justify-center gap-1.5 text-navy-800 aspect-square shadow-gold text-center"
+              >
+                <div className="font-heading font-bold text-3xl md:text-4xl text-navy-800">15+</div>
+                <div className="text-navy-700 text-[10px] md:text-xs font-body font-semibold leading-tight">
+                  Years of<br />Excellence
+                </div>
+              </motion.div>
             </div>
           </motion.div>
 

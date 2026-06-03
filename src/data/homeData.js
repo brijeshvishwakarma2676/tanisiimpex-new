@@ -18,7 +18,6 @@ export const aboutSnapshotIcons = [
   { Icon: Leaf, label: 'Organic Products', bg: 'bg-green-700' },
   { Icon: Sprout, label: 'Spices & Condiments', bg: 'bg-slate-700' },
   { Icon: FileText, label: 'Export Documentation', bg: 'bg-indigo-700' },
-  { Icon: Globe, label: 'Worldwide Markets', bg: 'bg-blue-700' },
 ];
 
 export const aboutSnapshotStats = [
