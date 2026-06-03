@@ -42,11 +42,11 @@ function HeroSection() {
         href: "/products",
       }}
       backgroundImage="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&auto=format&fit=crop&q=80"
-      contactInfo={{
-        website: "www.tanisiimpex.com",
-        phone: "+91 91521 21077",
-        address: "1403, A Wing, Vasudev Paradise, Kanakia Road, Near Unique Garden, Mira Road, Mumbai",
-      }}
+      highlights={[
+        { icon: <Globe size={18} />, text: "30+ Countries Served" },
+        { icon: <Award size={18} />, text: "APEDA & FSSAI Certified" },
+        { icon: <Shield size={18} />, text: "15+ Years Industry Trust" }
+      ]}
     />
   );
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Globe, Phone, MapPin } from "lucide-react";
+import { Globe, Phone, MapPin, ShieldCheck, Award, Ship } from "lucide-react";
 import { GlobeStickers } from "./cobe-globe-stickers";
 
 // Icon component for contact details
@@ -25,6 +25,7 @@ const HeroSection = React.forwardRef(
       callToAction,
       backgroundImage,
       contactInfo,
+      highlights,
       ...props
     },
     ref,
@@ -201,28 +202,52 @@ const HeroSection = React.forwardRef(
             </motion.main>
           </div>
 
-          {/* Bottom Section: Footer Info */}
-          <motion.footer
-            className="mt-10 md:mt-12 w-full pointer-events-auto"
-            variants={itemVariants}
-          >
-            <div className="flex flex-col gap-4 text-xs md:text-sm font-body text-white/70 sm:flex-row sm:gap-6">
-              <div className="flex items-center">
-                <InfoIcon type="website" />
-                <span>{contactInfo.website}</span>
-              </div>
-              <div className="flex items-center">
-                <InfoIcon type="phone" />
-                <span>{contactInfo.phone}</span>
-              </div>
-              <div className="flex items-center">
-                <InfoIcon type="address" />
-                <span className="whitespace-pre-line truncate max-w-[200px] md:max-w-none">
-                  {contactInfo.address}
-                </span>
-              </div>
-            </div>
-          </motion.footer>
+          {/* Bottom Section: Footer Info or Highlights */}
+          {(highlights || contactInfo) && (
+            <motion.footer
+              className="mt-10 md:mt-12 w-full pointer-events-auto"
+              variants={itemVariants}
+            >
+              {highlights ? (
+                <div className="flex flex-wrap gap-4 text-xs md:text-sm font-body text-white/80">
+                  {highlights.map((h, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center bg-white/5 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-200"
+                    >
+                      {h.icon && <span className="mr-2 text-gold-400 flex items-center">{h.icon}</span>}
+                      <span className="font-medium tracking-wide">{h.text}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                contactInfo && (
+                  <div className="flex flex-col gap-4 text-xs md:text-sm font-body text-white/70 sm:flex-row sm:gap-6">
+                    {contactInfo.website && (
+                      <div className="flex items-center">
+                        <InfoIcon type="website" />
+                        <span>{contactInfo.website}</span>
+                      </div>
+                    )}
+                    {contactInfo.phone && (
+                      <div className="flex items-center">
+                        <InfoIcon type="phone" />
+                        <span>{contactInfo.phone}</span>
+                      </div>
+                    )}
+                    {contactInfo.address && (
+                      <div className="flex items-center">
+                        <InfoIcon type="address" />
+                        <span className="whitespace-pre-line truncate max-w-[200px] md:max-w-none">
+                          {contactInfo.address}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )
+              )}
+            </motion.footer>
+          )}
         </div>
 
         {/* Right Side: Image with Clip Path Animation (Responsive) */}
