@@ -12,9 +12,53 @@ export default function Inquiry() {
   const [submitted, setSubmitted] = useState(false);
 
   const onSubmit = async (data) => {
-    await new Promise((r) => setTimeout(r, 1500));
-    setSubmitted(true);
-    reset();
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+    if (accessKey) {
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `New B2B Quote Inquiry from ${data.name} (${data.company})`,
+            from_name: `${data.name} via Tanisi Impex`,
+            "Client Name": data.name,
+            "Company Name": data.company,
+            "Country of Destination": data.country,
+            "Contact Number / WhatsApp": data.phone,
+            "Email Address": data.email,
+            "Requested Product": data.product,
+            "Order Quantity": data.quantity,
+            "Destination Port": data.destination,
+            "Preferred Incoterm": data.incoterm || "FOB",
+            "Payment Term Preference": data.paymentTerm || "L/C (Letter of Credit)",
+            "Expected Delivery Timeline": data.timeline || "Not specified",
+            "Special Instructions / Notes": data.notes || "None",
+          }),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          setSubmitted(true);
+          reset();
+        } else {
+          alert(`Submission failed: ${result.message || "Please try again or contact us on WhatsApp."}`);
+        }
+      } catch (error) {
+        console.error("Web3Forms submission error:", error);
+        alert("An error occurred. Please try again or reach out on WhatsApp/Email.");
+      }
+    } else {
+      // Simulate form submission fallback in development
+      await new Promise((r) => setTimeout(r, 1500));
+      console.log("Inquiry form data (simulated):", data);
+      setSubmitted(true);
+      reset();
+    }
   };
 
   if (submitted) {

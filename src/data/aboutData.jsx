@@ -25,13 +25,13 @@ export const team = [
     name: 'Vishakha M Agarwal', 
     role: 'FOUNDER & BUSINESS HEAD', 
     bio: 'Expert in brand positioning, international sourcing, and product curation. Vishakha leads client-centric strategy across agribusiness and global commodity logistics.', 
-    image: 'https://img.magnific.com/premium-vector/smiling-woman-avatar_937492-6135.jpg?semt=ais_hybrid&w=740&q=80' 
+    image: '/images/team/vishakha.png' 
   },
   { 
     name: 'Manish K Agarwal', 
     role: 'FINANCE & ADMIN HEAD', 
     bio: 'Expert in export-import compliance, documentation channels, and risk mitigation. Manish directs trade financial controls and operational administration cycles.', 
-    image: 'https://static.vecteezy.com/system/resources/thumbnails/024/183/502/small/male-avatar-portrait-of-a-young-man-with-a-beard-illustration-of-male-character-in-modern-color-style-vector.jpg' 
+    image: '/images/team/Manish.png' 
   },
 ];
 

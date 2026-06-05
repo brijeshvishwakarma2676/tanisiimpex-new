@@ -25,11 +25,49 @@ function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
 
   const onSubmit = async (data) => {
-    // Simulate form submission (replace with EmailJS/Formspree)
-    await new Promise((r) => setTimeout(r, 1200));
-    console.log("Contact form data:", data);
-    setSubmitted(true);
-    reset();
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+    if (accessKey) {
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `New B2B Contact Message from ${data.name}`,
+            from_name: `${data.name} via Tanisi Impex`,
+            "Client Name": data.name,
+            "Company Name": data.company,
+            "Country of Origin": data.country,
+            "Contact Number / WhatsApp": data.phone,
+            "Email Address": data.email,
+            "Product Category Interest": data.product,
+            "Estimated Quantity": data.quantity || "Not specified",
+            "Inquiry Details / Message": data.message || "No message provided",
+          }),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          setSubmitted(true);
+          reset();
+        } else {
+          alert(`Submission failed: ${result.message || "Please try again or contact us on WhatsApp."}`);
+        }
+      } catch (error) {
+        console.error("Web3Forms submission error:", error);
+        alert("An error occurred. Please try again or reach out on WhatsApp/Email.");
+      }
+    } else {
+      // Simulate form submission fallback in development
+      await new Promise((r) => setTimeout(r, 1200));
+      console.log("Contact form data (simulated):", data);
+      setSubmitted(true);
+      reset();
+    }
   };
 
   if (submitted) {
