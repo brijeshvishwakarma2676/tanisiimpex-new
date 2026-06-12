@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Showcase Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .macbook-frame {
+            position: relative;
+            width: 800px;
+            height: 480px;
+            background: #e2e8f0;
+            border-radius: 20px 20px 0 0;
+            padding: 20px 20px 0 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            margin: 0 auto;
+        }
+        .macbook-camera {
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: #94a3b8;
+            border-radius: 50%;
+        }
+        .macbook-screen {
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+            border: 2px solid #0f172a;
+        }
+        .macbook-base {
+            width: 900px;
+            height: 24px;
+            background: #cbd5e1;
+            border-radius: 0 0 12px 12px;
+            margin: 0 auto;
+            position: relative;
+            left: -50px;
+            box-shadow: inset 0 -4px 6px rgba(0,0,0,0.1);
+        }
+        .macbook-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 10px;
+            background: #94a3b8;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .iphone-frame {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            background: #1e293b;
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+            border: 2px solid #475569;
+        }
+        .iphone-screen {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        .iphone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background: #1e293b;
+            border-radius: 0 0 15px 15px;
+            z-index: 10;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Scale down the iframe for mobile view to simulate a phone */
+        .mobile-iframe-wrapper {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .mobile-iframe-wrapper iframe {
+            width: 400px; /* Simulate mobile width */
+            height: 850px; /* Simulate mobile height */
+            transform: scale(0.69);
+            transform-origin: top left;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-100 to-slate-300 min-h-screen py-12 font-sans">
+    
+    <div class="max-w-6xl mx-auto text-center mb-12">
+        <h1 class="text-4xl font-bold text-slate-800 mb-4">Your Professional Portfolio Mockups</h1>
+        <p class="text-slate-600">Take a screenshot of these beautifully framed mockups below and upload them to your WhatsApp Catalog!</p>
+        <p class="text-sm text-amber-600 mt-2">Note: Ensure your Tanisi Impex local server is running (npm run dev) so the previews load.</p>
+    </div>
+
+    <!-- Desktop Mockup -->
+    <div class="mb-24">
+        <div class="macbook-frame">
+            <div class="macbook-camera"></div>
+            <div class="macbook-screen">
+                <iframe src="http://localhost:5174/"></iframe>
+            </div>
+        </div>
+        <div class="macbook-base">
+            <div class="macbook-notch"></div>
+        </div>
+    </div>
+
+    <!-- Mobile Mockups (Side by side) -->
+    <div class="flex flex-wrap justify-center gap-12 pb-24">
+        
+        <!-- Mobile View: Home -->
+        <div class="iphone-frame">
+            <div class="iphone-screen">
+                <div class="iphone-notch"></div>
+                <div class="mobile-iframe-wrapper">
+                    <iframe src="http://localhost:5174/"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile View: About Map -->
+        <div class="iphone-frame">
+            <div class="iphone-screen">
+                <div class="iphone-notch"></div>
+                <div class="mobile-iframe-wrapper">
+                    <iframe src="http://localhost:5174/about"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

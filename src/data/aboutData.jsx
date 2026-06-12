@@ -23,13 +23,13 @@ export const values = [
 export const team = [
   { 
     name: 'Vishakha M Agarwal', 
-    role: 'FOUNDER & BUSINESS HEAD', 
+    role: 'DIRECTOR', 
     bio: 'Expert in brand positioning, international sourcing, and product curation. Vishakha leads client-centric strategy across agribusiness and global commodity logistics.', 
     image: '/images/team/vishakha.png' 
   },
   { 
     name: 'Manish K Agarwal', 
-    role: 'FINANCE & ADMIN HEAD', 
+    role: 'MANAGING DIRECTOR', 
     bio: 'Expert in export-import compliance, documentation channels, and risk mitigation. Manish directs trade financial controls and operational administration cycles.', 
     image: '/images/team/Manish.png' 
   },
